@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68A76CAEA9DF78B9FDDDFC98 /* Pods_VALUN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8260C6E4A81A06CEFE105FF2 /* Pods_VALUN.framework */; };
 		EB78C6C0295185B10027DD1E /* map_pinup_custom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB78C69B295185B10027DD1E /* map_pinup_custom@3x.png */; };
 		EB78C6C1295185B10027DD1E /* map_pin_custom.png in Resources */ = {isa = PBXBuildFile; fileRef = EB78C69C295185B10027DD1E /* map_pin_custom.png */; };
 		EB78C6C2295185B10027DD1E /* shadow_balloon.png in Resources */ = {isa = PBXBuildFile; fileRef = EB78C69D295185B10027DD1E /* shadow_balloon.png */; };
@@ -53,6 +54,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50F5DC97A33750D68DF498B2 /* Pods-VALUN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VALUN.release.xcconfig"; path = "Target Support Files/Pods-VALUN/Pods-VALUN.release.xcconfig"; sourceTree = "<group>"; };
+		8260C6E4A81A06CEFE105FF2 /* Pods_VALUN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VALUN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		905D43EDF5643BE800197714 /* Pods-VALUN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VALUN.debug.xcconfig"; path = "Target Support Files/Pods-VALUN/Pods-VALUN.debug.xcconfig"; sourceTree = "<group>"; };
 		EB78C696295184650027DD1E /* VALUN-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VALUN-Header.h"; sourceTree = "<group>"; };
 		EB78C69B295185B10027DD1E /* map_pinup_custom@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pinup_custom@3x.png"; sourceTree = "<group>"; };
 		EB78C69C295185B10027DD1E /* map_pin_custom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_custom.png; sourceTree = "<group>"; };
@@ -122,12 +126,23 @@
 				EB78C6DB295185B10027DD1E /* DaumMap.framework in Frameworks */,
 				EB78C6E0295185D20027DD1E /* SystemConfiguration.framework in Frameworks */,
 				EB78C6DE295185C90027DD1E /* OpenGLES.framework in Frameworks */,
+				68A76CAEA9DF78B9FDDDFC98 /* Pods_VALUN.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		96E807CB05C35EBF144A41FA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				905D43EDF5643BE800197714 /* Pods-VALUN.debug.xcconfig */,
+				50F5DC97A33750D68DF498B2 /* Pods-VALUN.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EB78C699295185B10027DD1E /* DaumMap.embeddedframework */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +212,7 @@
 				EB78C6E1295185DC0027DD1E /* CoreLocation.framework */,
 				EB78C6DF295185D20027DD1E /* SystemConfiguration.framework */,
 				EB78C6DD295185C90027DD1E /* OpenGLES.framework */,
+				8260C6E4A81A06CEFE105FF2 /* Pods_VALUN.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -243,6 +259,7 @@
 				EB96628829484D5B00040DCD /* VALUN */,
 				EB96628729484D5B00040DCD /* Products */,
 				EB78C6DC295185C80027DD1E /* Frameworks */,
+				96E807CB05C35EBF144A41FA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -275,9 +292,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB96629A29484D5C00040DCD /* Build configuration list for PBXNativeTarget "VALUN" */;
 			buildPhases = (
+				95E5778A1176A49862BF120A /* [CP] Check Pods Manifest.lock */,
 				EB96628229484D5B00040DCD /* Sources */,
 				EB96628329484D5B00040DCD /* Frameworks */,
 				EB96628429484D5B00040DCD /* Resources */,
+				987F2D1E936A3C73E0FAA968 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -361,6 +380,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		95E5778A1176A49862BF120A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VALUN-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		987F2D1E936A3C73E0FAA968 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VALUN/Pods-VALUN-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VALUN/Pods-VALUN-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VALUN/Pods-VALUN-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EB96628229484D5B00040DCD /* Sources */ = {
@@ -512,6 +573,7 @@
 		};
 		EB96629B29484D5C00040DCD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 905D43EDF5643BE800197714 /* Pods-VALUN.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -546,6 +608,7 @@
 		};
 		EB96629C29484D5C00040DCD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50F5DC97A33750D68DF498B2 /* Pods-VALUN.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
