@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController, MTMapViewDelegate {
+class MapViewController: UIViewController, MTMapViewDelegate {
     
     @IBOutlet var subView: UIView!
     var mapView: MTMapView?

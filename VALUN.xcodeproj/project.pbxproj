@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		68A76CAEA9DF78B9FDDDFC98 /* Pods_VALUN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8260C6E4A81A06CEFE105FF2 /* Pods_VALUN.framework */; };
+		EB2A68C529570BF400A85299 /* MyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB2A68C429570BF400A85299 /* MyProfile.storyboard */; };
 		EB78C6C0295185B10027DD1E /* map_pinup_custom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB78C69B295185B10027DD1E /* map_pinup_custom@3x.png */; };
 		EB78C6C1295185B10027DD1E /* map_pin_custom.png in Resources */ = {isa = PBXBuildFile; fileRef = EB78C69C295185B10027DD1E /* map_pin_custom.png */; };
 		EB78C6C2295185B10027DD1E /* shadow_balloon.png in Resources */ = {isa = PBXBuildFile; fileRef = EB78C69D295185B10027DD1E /* shadow_balloon.png */; };
@@ -47,16 +48,20 @@
 		EB78C6F3295188FD0027DD1E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB78C6F2295188FD0027DD1E /* LoginViewController.swift */; };
 		EB96628A29484D5B00040DCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB96628929484D5B00040DCD /* AppDelegate.swift */; };
 		EB96628C29484D5B00040DCD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB96628B29484D5B00040DCD /* SceneDelegate.swift */; };
-		EB96628E29484D5B00040DCD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB96628D29484D5B00040DCD /* MainViewController.swift */; };
-		EB96629129484D5B00040DCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB96628F29484D5B00040DCD /* Main.storyboard */; };
+		EB96628E29484D5B00040DCD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB96628D29484D5B00040DCD /* MapViewController.swift */; };
+		EB96629129484D5B00040DCD /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB96628F29484D5B00040DCD /* Map.storyboard */; };
 		EB96629329484D5C00040DCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB96629229484D5C00040DCD /* Assets.xcassets */; };
 		EB96629629484D5C00040DCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB96629429484D5C00040DCD /* LaunchScreen.storyboard */; };
+		EBF4C3482955854200936E8D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF4C3472955854200936E8D /* Home.storyboard */; };
+		EBF4C34A2955858400936E8D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4C3492955858400936E8D /* HomeViewController.swift */; };
+		EBF4C3522955902700936E8D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4C3512955902700936E8D /* UIViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		50F5DC97A33750D68DF498B2 /* Pods-VALUN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VALUN.release.xcconfig"; path = "Target Support Files/Pods-VALUN/Pods-VALUN.release.xcconfig"; sourceTree = "<group>"; };
 		8260C6E4A81A06CEFE105FF2 /* Pods_VALUN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VALUN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		905D43EDF5643BE800197714 /* Pods-VALUN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VALUN.debug.xcconfig"; path = "Target Support Files/Pods-VALUN/Pods-VALUN.debug.xcconfig"; sourceTree = "<group>"; };
+		EB2A68C429570BF400A85299 /* MyProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyProfile.storyboard; sourceTree = "<group>"; };
 		EB78C696295184650027DD1E /* VALUN-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VALUN-Header.h"; sourceTree = "<group>"; };
 		EB78C69B295185B10027DD1E /* map_pinup_custom@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pinup_custom@3x.png"; sourceTree = "<group>"; };
 		EB78C69C295185B10027DD1E /* map_pin_custom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_custom.png; sourceTree = "<group>"; };
@@ -106,11 +111,14 @@
 		EB96628629484D5B00040DCD /* VALUN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VALUN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB96628929484D5B00040DCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB96628B29484D5B00040DCD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EB96628D29484D5B00040DCD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		EB96629029484D5B00040DCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EB96628D29484D5B00040DCD /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		EB96629029484D5B00040DCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Map.storyboard; sourceTree = "<group>"; };
 		EB96629229484D5C00040DCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB96629529484D5C00040DCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB96629729484D5C00040DCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBF4C3472955854200936E8D /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		EBF4C3492955858400936E8D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EBF4C3512955902700936E8D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +147,36 @@
 				905D43EDF5643BE800197714 /* Pods-VALUN.debug.xcconfig */,
 				50F5DC97A33750D68DF498B2 /* Pods-VALUN.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		EB2A68C0295709FA00A85299 /* IssueReport */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IssueReport;
+			sourceTree = "<group>";
+		};
+		EB2A68C129570A0B00A85299 /* MyProfile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyProfile;
+			sourceTree = "<group>";
+		};
+		EB2A68C229570A9000A85299 /* IssueReport */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IssueReport;
+			sourceTree = "<group>";
+		};
+		EB2A68C329570AE600A85299 /* MyProfile */ = {
+			isa = PBXGroup;
+			children = (
+				EB2A68C429570BF400A85299 /* MyProfile.storyboard */,
+			);
+			path = MyProfile;
 			sourceTree = "<group>";
 		};
 		EB78C699295185B10027DD1E /* DaumMap.embeddedframework */ = {
@@ -230,9 +266,9 @@
 		EB78C6EC295188480027DD1E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EB96628F29484D5B00040DCD /* Main.storyboard */,
+				EBF4C34E29558BCA00936E8D /* Home */,
+				EBF4C34D29558BBD00936E8D /* Login */,
 				EB96629429484D5C00040DCD /* LaunchScreen.storyboard */,
-				EB78C6F02951888A0027DD1E /* Login.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -240,8 +276,8 @@
 		EB78C6EE295188620027DD1E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				EB96628D29484D5B00040DCD /* MainViewController.swift */,
-				EB78C6F2295188FD0027DD1E /* LoginViewController.swift */,
+				EBF4C35029558BE700936E8D /* Login */,
+				EBF4C34B2955893800936E8D /* Home */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -274,8 +310,9 @@
 		EB96628829484D5B00040DCD /* VALUN */ = {
 			isa = PBXGroup;
 			children = (
-				EB78C6EF295188690027DD1E /* Model */,
+				EBF4C3532955905C00936E8D /* Extension */,
 				EB78C6EE295188620027DD1E /* Controller */,
+				EB78C6EF295188690027DD1E /* Model */,
 				EB78C6EC295188480027DD1E /* View */,
 				EB78C6EB295188230027DD1E /* BaseFile */,
 				EB78C699295185B10027DD1E /* DaumMap.embeddedframework */,
@@ -283,6 +320,68 @@
 				EB78C696295184650027DD1E /* VALUN-Header.h */,
 			);
 			path = VALUN;
+			sourceTree = "<group>";
+		};
+		EBF4C34B2955893800936E8D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EBF4C3492955858400936E8D /* HomeViewController.swift */,
+				EB2A68C0295709FA00A85299 /* IssueReport */,
+				EBF4C34C2955894000936E8D /* Map */,
+				EB2A68C129570A0B00A85299 /* MyProfile */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EBF4C34C2955894000936E8D /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				EB96628D29484D5B00040DCD /* MapViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		EBF4C34D29558BBD00936E8D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				EB78C6F02951888A0027DD1E /* Login.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		EBF4C34E29558BCA00936E8D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EB2A68C329570AE600A85299 /* MyProfile */,
+				EB2A68C229570A9000A85299 /* IssueReport */,
+				EBF4C34F29558BD300936E8D /* Map */,
+				EBF4C3472955854200936E8D /* Home.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EBF4C34F29558BD300936E8D /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				EB96628F29484D5B00040DCD /* Map.storyboard */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		EBF4C35029558BE700936E8D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				EB78C6F2295188FD0027DD1E /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		EBF4C3532955905C00936E8D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EBF4C3512955902700936E8D /* UIViewController+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +459,7 @@
 				EB78C6DA295185B10027DD1E /* map_pin_shadow.png in Resources */,
 				EB78C6CD295185B10027DD1E /* map_present_tracking.png in Resources */,
 				EB78C6F12951888A0027DD1E /* Login.storyboard in Resources */,
+				EBF4C3482955854200936E8D /* Home.storyboard in Resources */,
 				EB78C6C4295185B10027DD1E /* detail_button.png in Resources */,
 				EB78C6D7295185B10027DD1E /* noimage.png in Resources */,
 				EB78C6C9295185B10027DD1E /* th_line.png in Resources */,
@@ -373,7 +473,8 @@
 				EB78C6D3295185B10027DD1E /* noimage256.png in Resources */,
 				EB78C6C2295185B10027DD1E /* shadow_balloon.png in Resources */,
 				EB96629329484D5C00040DCD /* Assets.xcassets in Resources */,
-				EB96629129484D5B00040DCD /* Main.storyboard in Resources */,
+				EB2A68C529570BF400A85299 /* MyProfile.storyboard in Resources */,
+				EB96629129484D5B00040DCD /* Map.storyboard in Resources */,
 				EB78C6D9295185B10027DD1E /* daum_th_line.png in Resources */,
 				EB78C6C3295185B10027DD1E /* map_pinup.png in Resources */,
 			);
@@ -428,8 +529,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBF4C3522955902700936E8D /* UIViewController+Extension.swift in Sources */,
+				EBF4C34A2955858400936E8D /* HomeViewController.swift in Sources */,
 				EB78C6F3295188FD0027DD1E /* LoginViewController.swift in Sources */,
-				EB96628E29484D5B00040DCD /* MainViewController.swift in Sources */,
+				EB96628E29484D5B00040DCD /* MapViewController.swift in Sources */,
 				EB96628A29484D5B00040DCD /* AppDelegate.swift in Sources */,
 				EB96628C29484D5B00040DCD /* SceneDelegate.swift in Sources */,
 			);
@@ -438,12 +541,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EB96628F29484D5B00040DCD /* Main.storyboard */ = {
+		EB96628F29484D5B00040DCD /* Map.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EB96629029484D5B00040DCD /* Base */,
 			);
-			name = Main.storyboard;
+			name = Map.storyboard;
 			sourceTree = "<group>";
 		};
 		EB96629429484D5C00040DCD /* LaunchScreen.storyboard */ = {
