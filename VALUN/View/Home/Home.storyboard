@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VALUN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUe-sR-R7z">
-                                        <rect key="frame" x="15.999999999999996" y="10.000000000000002" width="47.666666666666657" height="23.666666666666671"/>
+                                        <rect key="frame" x="16.000000000000004" y="9.9999999999999982" width="61.333333333333343" height="22.333333333333329"/>
                                         <fontDescription key="fontDescription" name="MPLUS1Code-Medium" family="M PLUS 1 Code" pointSize="19"/>
                                         <color key="textColor" red="0.41568627450980389" green="0.76862745098039209" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -65,6 +65,9 @@
                                 <color key="backgroundColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="지도"/>
+                                <connections>
+                                    <action selector="mapBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="SNb-50-9L0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9M-Ks-hNB">
                                 <rect key="frame" x="35" y="578" width="147" height="124"/>
@@ -86,6 +89,9 @@
                                 <color key="backgroundColor" red="0.72156862749999995" green="0.72156862749999995" blue="0.72156862749999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="제보"/>
+                                <connections>
+                                    <action selector="issueReportBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cw9-wh-Cyn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>

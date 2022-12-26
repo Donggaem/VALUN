@@ -11,7 +11,7 @@
         <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MapViewController" customModule="VALUN" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="BYZ-38-t0r" customClass="MapViewController" customModule="VALUN" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,18 +20,30 @@
                                 <rect key="frame" x="0.0" y="91" width="390" height="719"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LtA-IP-JO4">
+                                <rect key="frame" x="153" y="689" width="83" height="35"/>
+                                <color key="backgroundColor" red="0.41568627450000001" green="0.76862745099999996" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="목록보기"/>
+                                <connections>
+                                    <action selector="listBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hm0-oX-pvE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ttg-jw-2ez" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1sH-6z-GVR"/>
                             <constraint firstItem="ttg-jw-2ez" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NhT-Bb-rFT"/>
+                            <constraint firstItem="LtA-IP-JO4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="153" id="XSo-lh-OgH"/>
                             <constraint firstItem="ttg-jw-2ez" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZrW-Lv-Fqb"/>
                             <constraint firstItem="ttg-jw-2ez" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bmX-fr-5td"/>
+                            <constraint firstAttribute="bottom" secondItem="LtA-IP-JO4" secondAttribute="bottom" constant="120" id="qMx-q2-GEK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GRd-iv-Nlb"/>
                     <connections>
+                        <outlet property="listBtn" destination="LtA-IP-JO4" id="E9O-1Q-C9h"/>
                         <outlet property="subView" destination="ttg-jw-2ez" id="MT5-xy-vvr"/>
                     </connections>
                 </viewController>

@@ -7,13 +7,33 @@
 
 import UIKit
 
-class MapViewController: UIViewController, MTMapViewDelegate {
+class MapViewController: UIViewController {
     
     @IBOutlet var subView: UIView!
     var mapView: MTMapView?
-
+    
+    @IBOutlet var listBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setMap()
+        setUI()
+    }
+    
+    //MARK: - Inner Func
+    private func setUI() {
+        self.view.bringSubviewToFront(listBtn) // 뷰를 최상위로
+
+    }
+    @IBAction func listBtnPressed(_ sender: UIButton) {
+        print("클릭")
+    }
+    
+}
+
+//MARK: - MapExtension
+extension MapViewController: MTMapViewDelegate {
+    
+    private func setMap() {
         // 지도 불러오기
         mapView = MTMapView(frame: subView.frame)
         
@@ -27,11 +47,9 @@ class MapViewController: UIViewController, MTMapViewDelegate {
             mapView.currentLocationTrackingMode = .onWithoutHeading
             mapView.showCurrentLocationMarker = true
             
-            // 지도의 센터를 설정 (x와 y 좌표, 줌 레벨 등을 설정)
-            mapView.setMapCenter(MTMapPoint(geoCoord: MTMapPointGeo(latitude:  37.456518177069526, longitude: 126.70531256589555)), zoomLevel: 5, animated: true)
             self.view.addSubview(mapView)
-        }    }
-    
-    
+
+        }
+    }
 }
 

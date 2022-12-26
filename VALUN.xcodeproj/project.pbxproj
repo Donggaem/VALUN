@@ -52,6 +52,11 @@
 		EB96629129484D5B00040DCD /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB96628F29484D5B00040DCD /* Map.storyboard */; };
 		EB96629329484D5C00040DCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB96629229484D5C00040DCD /* Assets.xcassets */; };
 		EB96629629484D5C00040DCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB96629429484D5C00040DCD /* LaunchScreen.storyboard */; };
+		EBACD9CB29586DDD00EF1A5C /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBACD9CA29586DDD00EF1A5C /* MyProfileViewController.swift */; };
+		EBACD9CD29586E1600EF1A5C /* MapModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBACD9CC29586E1600EF1A5C /* MapModalViewController.swift */; };
+		EBACD9CF29586E2100EF1A5C /* MapListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBACD9CE29586E2100EF1A5C /* MapListViewController.swift */; };
+		EBACD9D129586E3800EF1A5C /* IssueReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBACD9D029586E3800EF1A5C /* IssueReportViewController.swift */; };
+		EBACD9D329586E4B00EF1A5C /* IssueReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBACD9D229586E4B00EF1A5C /* IssueReport.storyboard */; };
 		EBF4C3482955854200936E8D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF4C3472955854200936E8D /* Home.storyboard */; };
 		EBF4C34A2955858400936E8D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4C3492955858400936E8D /* HomeViewController.swift */; };
 		EBF4C3522955902700936E8D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4C3512955902700936E8D /* UIViewController+Extension.swift */; };
@@ -116,6 +121,11 @@
 		EB96629229484D5C00040DCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB96629529484D5C00040DCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB96629729484D5C00040DCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBACD9CA29586DDD00EF1A5C /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		EBACD9CC29586E1600EF1A5C /* MapModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModalViewController.swift; sourceTree = "<group>"; };
+		EBACD9CE29586E2100EF1A5C /* MapListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListViewController.swift; sourceTree = "<group>"; };
+		EBACD9D029586E3800EF1A5C /* IssueReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueReportViewController.swift; sourceTree = "<group>"; };
+		EBACD9D229586E4B00EF1A5C /* IssueReport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IssueReport.storyboard; sourceTree = "<group>"; };
 		EBF4C3472955854200936E8D /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		EBF4C3492955858400936E8D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EBF4C3512955902700936E8D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -153,6 +163,7 @@
 		EB2A68C0295709FA00A85299 /* IssueReport */ = {
 			isa = PBXGroup;
 			children = (
+				EBACD9D029586E3800EF1A5C /* IssueReportViewController.swift */,
 			);
 			path = IssueReport;
 			sourceTree = "<group>";
@@ -160,6 +171,7 @@
 		EB2A68C129570A0B00A85299 /* MyProfile */ = {
 			isa = PBXGroup;
 			children = (
+				EBACD9CA29586DDD00EF1A5C /* MyProfileViewController.swift */,
 			);
 			path = MyProfile;
 			sourceTree = "<group>";
@@ -167,6 +179,7 @@
 		EB2A68C229570A9000A85299 /* IssueReport */ = {
 			isa = PBXGroup;
 			children = (
+				EBACD9D229586E4B00EF1A5C /* IssueReport.storyboard */,
 			);
 			path = IssueReport;
 			sourceTree = "<group>";
@@ -337,6 +350,8 @@
 			isa = PBXGroup;
 			children = (
 				EB96628D29484D5B00040DCD /* MapViewController.swift */,
+				EBACD9CC29586E1600EF1A5C /* MapModalViewController.swift */,
+				EBACD9CE29586E2100EF1A5C /* MapListViewController.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -452,6 +467,7 @@
 				EB78C6C0295185B10027DD1E /* map_pinup_custom@3x.png in Resources */,
 				EB78C6C8295185B10027DD1E /* copyright.png in Resources */,
 				EB78C6C7295185B10027DD1E /* map_pin_shadow@3x.png in Resources */,
+				EBACD9D329586E4B00EF1A5C /* IssueReport.storyboard in Resources */,
 				EB96629629484D5C00040DCD /* LaunchScreen.storyboard in Resources */,
 				EB78C6CB295185B10027DD1E /* daum_copyright.png in Resources */,
 				EB78C6CF295185B10027DD1E /* info_box.png in Resources */,
@@ -529,8 +545,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBACD9CF29586E2100EF1A5C /* MapListViewController.swift in Sources */,
 				EBF4C3522955902700936E8D /* UIViewController+Extension.swift in Sources */,
+				EBACD9CD29586E1600EF1A5C /* MapModalViewController.swift in Sources */,
 				EBF4C34A2955858400936E8D /* HomeViewController.swift in Sources */,
+				EBACD9D129586E3800EF1A5C /* IssueReportViewController.swift in Sources */,
+				EBACD9CB29586DDD00EF1A5C /* MyProfileViewController.swift in Sources */,
 				EB78C6F3295188FD0027DD1E /* LoginViewController.swift in Sources */,
 				EB96628E29484D5B00040DCD /* MapViewController.swift in Sources */,
 				EB96628A29484D5B00040DCD /* AppDelegate.swift in Sources */,
