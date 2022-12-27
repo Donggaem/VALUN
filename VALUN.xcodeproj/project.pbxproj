@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		68A76CAEA9DF78B9FDDDFC98 /* Pods_VALUN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8260C6E4A81A06CEFE105FF2 /* Pods_VALUN.framework */; };
+		EB264846295AA5CC0014BC89 /* SUIT-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB26483C295AA5CC0014BC89 /* SUIT-Thin.otf */; };
+		EB264847295AA5CC0014BC89 /* SUIT-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB26483D295AA5CC0014BC89 /* SUIT-Regular.otf */; };
+		EB264848295AA5CC0014BC89 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = EB26483E295AA5CC0014BC89 /* LICENSE */; };
+		EB264849295AA5CC0014BC89 /* SUIT-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB26483F295AA5CC0014BC89 /* SUIT-Heavy.otf */; };
+		EB26484A295AA5CC0014BC89 /* SUIT-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB264840295AA5CC0014BC89 /* SUIT-Bold.otf */; };
+		EB26484B295AA5CC0014BC89 /* SUIT-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB264841295AA5CC0014BC89 /* SUIT-Light.otf */; };
+		EB26484C295AA5CC0014BC89 /* SUIT-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB264842295AA5CC0014BC89 /* SUIT-ExtraLight.otf */; };
+		EB26484D295AA5CC0014BC89 /* SUIT-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB264843295AA5CC0014BC89 /* SUIT-SemiBold.otf */; };
+		EB26484E295AA5CC0014BC89 /* SUIT-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB264844295AA5CC0014BC89 /* SUIT-Medium.otf */; };
+		EB26484F295AA5CC0014BC89 /* SUIT-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB264845295AA5CC0014BC89 /* SUIT-ExtraBold.otf */; };
+		EB264851295AB9130014BC89 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB264850295AB9130014BC89 /* ListTableViewCell.xib */; };
+		EB264853295AB95A0014BC89 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB264852295AB95A0014BC89 /* ListTableViewCell.swift */; };
 		EB2A68C529570BF400A85299 /* MyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB2A68C429570BF400A85299 /* MyProfile.storyboard */; };
 		EB78C6C0295185B10027DD1E /* map_pinup_custom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB78C69B295185B10027DD1E /* map_pinup_custom@3x.png */; };
 		EB78C6C1295185B10027DD1E /* map_pin_custom.png in Resources */ = {isa = PBXBuildFile; fileRef = EB78C69C295185B10027DD1E /* map_pin_custom.png */; };
@@ -53,8 +65,6 @@
 		EB96629329484D5C00040DCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB96629229484D5C00040DCD /* Assets.xcassets */; };
 		EB96629629484D5C00040DCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB96629429484D5C00040DCD /* LaunchScreen.storyboard */; };
 		EBACD9CB29586DDD00EF1A5C /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBACD9CA29586DDD00EF1A5C /* MyProfileViewController.swift */; };
-		EBACD9CD29586E1600EF1A5C /* MapModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBACD9CC29586E1600EF1A5C /* MapModalViewController.swift */; };
-		EBACD9CF29586E2100EF1A5C /* MapListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBACD9CE29586E2100EF1A5C /* MapListViewController.swift */; };
 		EBACD9D129586E3800EF1A5C /* IssueReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBACD9D029586E3800EF1A5C /* IssueReportViewController.swift */; };
 		EBACD9D329586E4B00EF1A5C /* IssueReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBACD9D229586E4B00EF1A5C /* IssueReport.storyboard */; };
 		EBF4C3482955854200936E8D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF4C3472955854200936E8D /* Home.storyboard */; };
@@ -66,6 +76,18 @@
 		50F5DC97A33750D68DF498B2 /* Pods-VALUN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VALUN.release.xcconfig"; path = "Target Support Files/Pods-VALUN/Pods-VALUN.release.xcconfig"; sourceTree = "<group>"; };
 		8260C6E4A81A06CEFE105FF2 /* Pods_VALUN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VALUN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		905D43EDF5643BE800197714 /* Pods-VALUN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VALUN.debug.xcconfig"; path = "Target Support Files/Pods-VALUN/Pods-VALUN.debug.xcconfig"; sourceTree = "<group>"; };
+		EB26483C295AA5CC0014BC89 /* SUIT-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Thin.otf"; sourceTree = "<group>"; };
+		EB26483D295AA5CC0014BC89 /* SUIT-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Regular.otf"; sourceTree = "<group>"; };
+		EB26483E295AA5CC0014BC89 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		EB26483F295AA5CC0014BC89 /* SUIT-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Heavy.otf"; sourceTree = "<group>"; };
+		EB264840295AA5CC0014BC89 /* SUIT-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Bold.otf"; sourceTree = "<group>"; };
+		EB264841295AA5CC0014BC89 /* SUIT-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Light.otf"; sourceTree = "<group>"; };
+		EB264842295AA5CC0014BC89 /* SUIT-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-ExtraLight.otf"; sourceTree = "<group>"; };
+		EB264843295AA5CC0014BC89 /* SUIT-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-SemiBold.otf"; sourceTree = "<group>"; };
+		EB264844295AA5CC0014BC89 /* SUIT-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Medium.otf"; sourceTree = "<group>"; };
+		EB264845295AA5CC0014BC89 /* SUIT-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-ExtraBold.otf"; sourceTree = "<group>"; };
+		EB264850295AB9130014BC89 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		EB264852295AB95A0014BC89 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		EB2A68C429570BF400A85299 /* MyProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyProfile.storyboard; sourceTree = "<group>"; };
 		EB78C696295184650027DD1E /* VALUN-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VALUN-Header.h"; sourceTree = "<group>"; };
 		EB78C69B295185B10027DD1E /* map_pinup_custom@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pinup_custom@3x.png"; sourceTree = "<group>"; };
@@ -122,8 +144,6 @@
 		EB96629529484D5C00040DCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB96629729484D5C00040DCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBACD9CA29586DDD00EF1A5C /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
-		EBACD9CC29586E1600EF1A5C /* MapModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModalViewController.swift; sourceTree = "<group>"; };
-		EBACD9CE29586E2100EF1A5C /* MapListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapListViewController.swift; sourceTree = "<group>"; };
 		EBACD9D029586E3800EF1A5C /* IssueReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueReportViewController.swift; sourceTree = "<group>"; };
 		EBACD9D229586E4B00EF1A5C /* IssueReport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IssueReport.storyboard; sourceTree = "<group>"; };
 		EBF4C3472955854200936E8D /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -158,6 +178,32 @@
 				50F5DC97A33750D68DF498B2 /* Pods-VALUN.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		EB26483A295AA5A90014BC89 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				EB26483B295AA5CC0014BC89 /* SUIT-otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		EB26483B295AA5CC0014BC89 /* SUIT-otf */ = {
+			isa = PBXGroup;
+			children = (
+				EB26483C295AA5CC0014BC89 /* SUIT-Thin.otf */,
+				EB26483D295AA5CC0014BC89 /* SUIT-Regular.otf */,
+				EB26483E295AA5CC0014BC89 /* LICENSE */,
+				EB26483F295AA5CC0014BC89 /* SUIT-Heavy.otf */,
+				EB264840295AA5CC0014BC89 /* SUIT-Bold.otf */,
+				EB264841295AA5CC0014BC89 /* SUIT-Light.otf */,
+				EB264842295AA5CC0014BC89 /* SUIT-ExtraLight.otf */,
+				EB264843295AA5CC0014BC89 /* SUIT-SemiBold.otf */,
+				EB264844295AA5CC0014BC89 /* SUIT-Medium.otf */,
+				EB264845295AA5CC0014BC89 /* SUIT-ExtraBold.otf */,
+			);
+			name = "SUIT-otf";
+			path = "../../../../../../Downloads/SUIT-otf";
 			sourceTree = "<group>";
 		};
 		EB2A68C0295709FA00A85299 /* IssueReport */ = {
@@ -269,6 +315,7 @@
 		EB78C6EB295188230027DD1E /* BaseFile */ = {
 			isa = PBXGroup;
 			children = (
+				EB26483A295AA5A90014BC89 /* Font */,
 				EB96629229484D5C00040DCD /* Assets.xcassets */,
 				EB96628929484D5B00040DCD /* AppDelegate.swift */,
 				EB96628B29484D5B00040DCD /* SceneDelegate.swift */,
@@ -350,8 +397,7 @@
 			isa = PBXGroup;
 			children = (
 				EB96628D29484D5B00040DCD /* MapViewController.swift */,
-				EBACD9CC29586E1600EF1A5C /* MapModalViewController.swift */,
-				EBACD9CE29586E2100EF1A5C /* MapListViewController.swift */,
+				EB264852295AB95A0014BC89 /* ListTableViewCell.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -379,6 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				EB96628F29484D5B00040DCD /* Map.storyboard */,
+				EB264850295AB9130014BC89 /* ListTableViewCell.xib */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -463,20 +510,27 @@
 				EB78C6CC295185B10027DD1E /* map_pin@3x.png in Resources */,
 				EB78C6CA295185B10027DD1E /* map_pin_red@3x.png in Resources */,
 				EB78C6D5295185B10027DD1E /* map_pin.png in Resources */,
+				EB264851295AB9130014BC89 /* ListTableViewCell.xib in Resources */,
 				EB78C6CE295185B10027DD1E /* map_pin_red.png in Resources */,
 				EB78C6C0295185B10027DD1E /* map_pinup_custom@3x.png in Resources */,
 				EB78C6C8295185B10027DD1E /* copyright.png in Resources */,
 				EB78C6C7295185B10027DD1E /* map_pin_shadow@3x.png in Resources */,
+				EB264849295AA5CC0014BC89 /* SUIT-Heavy.otf in Resources */,
+				EB264848295AA5CC0014BC89 /* LICENSE in Resources */,
 				EBACD9D329586E4B00EF1A5C /* IssueReport.storyboard in Resources */,
 				EB96629629484D5C00040DCD /* LaunchScreen.storyboard in Resources */,
+				EB26484F295AA5CC0014BC89 /* SUIT-ExtraBold.otf in Resources */,
 				EB78C6CB295185B10027DD1E /* daum_copyright.png in Resources */,
 				EB78C6CF295185B10027DD1E /* info_box.png in Resources */,
+				EB264846295AA5CC0014BC89 /* SUIT-Thin.otf in Resources */,
 				EB78C6C5295185B10027DD1E /* map_pin_custom@3x.png in Resources */,
+				EB26484E295AA5CC0014BC89 /* SUIT-Medium.otf in Resources */,
 				EB78C6DA295185B10027DD1E /* map_pin_shadow.png in Resources */,
 				EB78C6CD295185B10027DD1E /* map_present_tracking.png in Resources */,
 				EB78C6F12951888A0027DD1E /* Login.storyboard in Resources */,
 				EBF4C3482955854200936E8D /* Home.storyboard in Resources */,
 				EB78C6C4295185B10027DD1E /* detail_button.png in Resources */,
+				EB264847295AA5CC0014BC89 /* SUIT-Regular.otf in Resources */,
 				EB78C6D7295185B10027DD1E /* noimage.png in Resources */,
 				EB78C6C9295185B10027DD1E /* th_line.png in Resources */,
 				EB78C6D2295185B10027DD1E /* info_box_tail.png in Resources */,
@@ -486,11 +540,15 @@
 				EB78C6D0295185B10027DD1E /* point_sprite.png in Resources */,
 				EB78C6D8295185B10027DD1E /* map_present_background_update.png in Resources */,
 				EB78C6D4295185B10027DD1E /* map_present_direction.png in Resources */,
+				EB26484B295AA5CC0014BC89 /* SUIT-Light.otf in Resources */,
 				EB78C6D3295185B10027DD1E /* noimage256.png in Resources */,
 				EB78C6C2295185B10027DD1E /* shadow_balloon.png in Resources */,
 				EB96629329484D5C00040DCD /* Assets.xcassets in Resources */,
 				EB2A68C529570BF400A85299 /* MyProfile.storyboard in Resources */,
 				EB96629129484D5B00040DCD /* Map.storyboard in Resources */,
+				EB26484C295AA5CC0014BC89 /* SUIT-ExtraLight.otf in Resources */,
+				EB26484A295AA5CC0014BC89 /* SUIT-Bold.otf in Resources */,
+				EB26484D295AA5CC0014BC89 /* SUIT-SemiBold.otf in Resources */,
 				EB78C6D9295185B10027DD1E /* daum_th_line.png in Resources */,
 				EB78C6C3295185B10027DD1E /* map_pinup.png in Resources */,
 			);
@@ -545,13 +603,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBACD9CF29586E2100EF1A5C /* MapListViewController.swift in Sources */,
 				EBF4C3522955902700936E8D /* UIViewController+Extension.swift in Sources */,
-				EBACD9CD29586E1600EF1A5C /* MapModalViewController.swift in Sources */,
 				EBF4C34A2955858400936E8D /* HomeViewController.swift in Sources */,
 				EBACD9D129586E3800EF1A5C /* IssueReportViewController.swift in Sources */,
 				EBACD9CB29586DDD00EF1A5C /* MyProfileViewController.swift in Sources */,
 				EB78C6F3295188FD0027DD1E /* LoginViewController.swift in Sources */,
+				EB264853295AB95A0014BC89 /* ListTableViewCell.swift in Sources */,
 				EB96628E29484D5B00040DCD /* MapViewController.swift in Sources */,
 				EB96628A29484D5B00040DCD /* AppDelegate.swift in Sources */,
 				EB96628C29484D5B00040DCD /* SceneDelegate.swift in Sources */,

@@ -13,6 +13,24 @@ class MapViewController: UIViewController {
     var mapView: MTMapView?
     
     @IBOutlet var listBtn: UIButton!
+    
+    @IBOutlet var modalView: UIView!
+    @IBOutlet var modalBtn: UIButton!
+    
+    @IBOutlet var modalViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet var listBtnBottomToModalViewConstraint: NSLayoutConstraint!
+    @IBOutlet var listBtnBottomToListViewConstraint: NSLayoutConstraint!
+    
+    @IBOutlet var modalImage: UIImageView!
+    @IBOutlet var modalCategory: UILabel!
+    @IBOutlet var modalDistance: UILabel!
+    @IBOutlet var modalDetailBtn: UIButton!
+    @IBOutlet var modalSolveBtn: UIButton!
+    
+    @IBOutlet var listView: UIView!
+    @IBOutlet var listViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet var listTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setMap()
@@ -21,13 +39,103 @@ class MapViewController: UIViewController {
     
     //MARK: - Inner Func
     private func setUI() {
-        self.view.bringSubviewToFront(listBtn) // 뷰를 최상위로
+        // 뷰를 최상위로
+        self.view.bringSubviewToFront(listBtn)
+        self.view.bringSubviewToFront(modalBtn)
+        self.view.bringSubviewToFront(modalView)
+        self.view.bringSubviewToFront(listView)
 
-    }
-    @IBAction func listBtnPressed(_ sender: UIButton) {
-        print("클릭")
+        //둥글게
+        listBtn.layer.cornerRadius = 16
+        modalView.layer.cornerRadius = 10
+        modalView.clipsToBounds = true
+        
+        listView.layer.cornerRadius = 10
+        listView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
+        modalDetailBtn.layer.cornerRadius = 8
+        modalDetailBtn.layer.borderWidth = 1
+        modalDetailBtn.layer.borderColor = UIColor(red: 0.416, green: 0.769, blue: 0.478, alpha: 1).cgColor
+        
+        modalSolveBtn.layer.cornerRadius = 8
+        modalSolveBtn.layer.borderWidth = 1
+        modalSolveBtn.layer.borderColor = UIColor(red: 0.416, green: 0.769, blue: 0.478, alpha: 1).cgColor
+        
     }
     
+    @IBAction func listBtnPressed(_ sender: UIButton) {
+        if listBtn.titleLabel?.text == "  목록보기" {
+            self.listBtnBottomToListViewConstraint.isActive = true // 리스트버튼과 리스트뷰의 제약온
+            
+            //커스텀 모달뷰 방법
+            // Bottom 제약조건 높이 조절
+            self.listViewBottomConstraint.constant = 0 // 리스트뷰와 슈퍼뷰
+            self.listBtnBottomToListViewConstraint.constant = 16 //리스트버튼과 리스트뷰
+            self.listBtnBottomToModalViewConstraint.isActive = false //리스트버튼과 모달뷰의 제약 오프
+            
+            // 애니메이션 실행
+            UIView.animate(withDuration: 0.3, delay: 0, animations: {
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+            
+            listBtn.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
+            listBtn.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+            listBtn.setTitleColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+            listBtn.setTitle("  목록닫기", for: .normal)
+            listBtn.titleLabel?.font = UIFont(name: "SUIT-Regular", size: 14)
+        }else {
+            // 제약조건
+            self.listViewBottomConstraint.constant = -self.listView.frame.height //리스트뷰와 슈퍼뷰
+            self.listBtnBottomToListViewConstraint.constant = 64 //리스트버튼과 리스트뷰
+            
+            self.modalViewBottomConstraint.constant = -self.modalView.frame.height//모달뷰와 슈퍼뷰(모달을 열고 목록을 열고 닫고 했을때)
+
+            
+            // 애니메이션
+            UIView.animate(withDuration: 0.3, delay: 0, animations: {
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+            
+            listBtn.setImage(UIImage(systemName: "list.bullet"), for: .normal)
+            listBtn.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+            listBtn.setTitleColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+            listBtn.setTitle("  목록보기", for: .normal)
+            listBtn.titleLabel?.font = UIFont(name: "SUIT-Regular", size: 14)
+        }
+        
+    }
+    
+    @IBAction func modalTest(_ sender: UIButton) {
+        self.listBtnBottomToModalViewConstraint.isActive = true //리스트버튼과 모달뷰의 제약 온
+
+        //커스텀 모달뷰 방법
+        // Bottom 제약조건 높이 조절
+        self.modalViewBottomConstraint.constant = 56 //모달뷰와 슈퍼뷰
+        self.listBtnBottomToModalViewConstraint.constant = 16 //리스트버튼과 모달뷰
+        self.listBtnBottomToListViewConstraint.isActive = false //리스트버튼과 리스트뷰의 제약 오프
+        
+        // 애니메이션 실행
+        UIView.animate(withDuration: 0.3, delay: 0, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+
+    }
+    
+    @IBAction func exitBtnPresed(_ sender: UIButton) {
+        // 제약조건
+        self.modalViewBottomConstraint.constant = -self.modalView.frame.height
+        self.listBtnBottomToModalViewConstraint.constant = 64
+        
+        // 애니메이션
+        UIView.animate(withDuration: 0.3, delay: 0, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        
+    }
+    @IBAction func modalDetailBtnPressed(_ sender: UIButton) {
+    }
+    @IBAction func modalSolveBtnPressed(_ sender: UIButton) {
+    }
 }
 
 //MARK: - MapExtension
