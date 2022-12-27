@@ -9,7 +9,11 @@ import UIKit
 
 class ListTableViewCell: UITableViewCell {
 
-    @IBOutlet var listImage: UIImageView!
+    @IBOutlet var listImage: UIImageView! {
+        didSet {
+            listImage.layer.cornerRadius = 10
+        }
+    }
     @IBOutlet var listCategory: UILabel!
     @IBOutlet var listDeatance: UILabel!
     @IBOutlet var listSolveBtn: UIButton! {

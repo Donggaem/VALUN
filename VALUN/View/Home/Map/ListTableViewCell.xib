@@ -16,7 +16,7 @@
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ListTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="84" id="rIn-XO-6XD" customClass="ListTableViewCell" customModule="VALUN" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="455" height="84"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rIn-XO-6XD" id="Zhs-Qk-x42">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rIn-XO-6XD" id="Zhs-Qk-x42">
                 <rect key="frame" x="0.0" y="0.0" width="455" height="84"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -69,6 +69,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="42U-xz-V1x" firstAttribute="top" secondItem="zB8-BE-Ymp" secondAttribute="bottom" constant="12" id="01K-zZ-muK"/>
+                    <constraint firstAttribute="bottom" secondItem="42U-xz-V1x" secondAttribute="bottom" constant="4" id="1Yr-OH-EtR"/>
                     <constraint firstItem="zB8-BE-Ymp" firstAttribute="top" secondItem="Zhs-Qk-x42" secondAttribute="top" constant="8" id="1hW-KO-Y7s"/>
                     <constraint firstItem="fJI-n7-joh" firstAttribute="top" secondItem="hPX-Jd-Zoh" secondAttribute="bottom" constant="6" id="1jZ-RI-GzO"/>
                     <constraint firstItem="mxq-K8-VbD" firstAttribute="leading" secondItem="Zhs-Qk-x42" secondAttribute="leading" constant="16" id="2uN-Uk-CuW"/>

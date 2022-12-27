@@ -140,7 +140,7 @@
                                         </prototypes>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="7Lj-lQ-KEE" secondAttribute="trailing" id="2Na-ew-R1u"/>
                                     <constraint firstAttribute="width" constant="390" id="7z6-cv-TTz"/>

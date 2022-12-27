@@ -31,10 +31,15 @@ class MapViewController: UIViewController {
     @IBOutlet var listViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet var listTableView: UITableView!
     
+    var tabletest1: [String] = ["test1", "test2", "test3"]
+    var tabletest2: [String] = ["test1", "test2", "test3"]
+    var tabletestImg: [String] = ["common1", "common2", "common3"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setMap()
         setUI()
+        setTableView()
     }
     
     //MARK: - Inner Func
@@ -161,3 +166,39 @@ extension MapViewController: MTMapViewDelegate {
     }
 }
 
+//MARK: - TableViewExtension
+extension MapViewController: UITableViewDataSource, UITableViewDelegate{
+    
+    private func setTableView() {
+        //TableView
+        self.listTableView.delegate = self
+        self.listTableView.dataSource = self
+        self.listTableView.register(UINib(nibName: "ListTableViewCell", bundle: nil),  forCellReuseIdentifier: "ListTableViewCell")
+        
+        listTableView.separatorStyle = UITableViewCell.SeparatorStyle.none //테이블뷰 셀 선 없애기
+
+    }
+    
+    
+    //Cell 갯수 반환
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tabletest1.count
+    }
+    
+    //각Row에서 해당하는 Cell을 Return하는 메소드
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as! ListTableViewCell
+        
+        cell.listCategory.text = tabletest1[indexPath.row]
+        cell.listDeatance.text = tabletest2[indexPath.row]
+        cell.listImage.image = UIImage(named: tabletestImg[indexPath.row])
+        
+        cell.selectionStyle = .none
+        return cell
+    }
+    
+    //클릭한 셀의 이벤트 처리
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+}
