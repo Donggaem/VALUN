@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -182,8 +183,48 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V6N-xp-Q5d" userLabel="TopView">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="144"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UMx-We-elo">
+                                        <rect key="frame" x="18" y="94" width="372" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="ez8-IF-hj8"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="McW-zs-FXD">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wbW-lK-w9q">
+                                                <rect key="frame" x="0.0" y="-39" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="XCj-ia-XZE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </collectionViewCellContentView>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcJ-3c-F9R">
+                                        <rect key="frame" x="19" y="54" width="12.666666666666664" height="22"/>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="chevron.backward" catalog="system"/>
+                                        <connections>
+                                            <action selector="backBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3bX-XU-E9V"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="gcJ-3c-F9R" firstAttribute="leading" secondItem="V6N-xp-Q5d" secondAttribute="leading" constant="19" id="1s2-14-sTr"/>
+                                    <constraint firstItem="gcJ-3c-F9R" firstAttribute="top" secondItem="V6N-xp-Q5d" secondAttribute="top" constant="54" id="69l-GZ-uAP"/>
+                                    <constraint firstItem="UMx-We-elo" firstAttribute="leading" secondItem="V6N-xp-Q5d" secondAttribute="leading" constant="18" id="Uzp-1h-kQB"/>
+                                    <constraint firstAttribute="bottom" secondItem="UMx-We-elo" secondAttribute="bottom" id="Zhb-aC-5PS"/>
+                                    <constraint firstItem="UMx-We-elo" firstAttribute="top" secondItem="gcJ-3c-F9R" secondAttribute="bottom" constant="18" id="bGD-fG-YHg"/>
+                                    <constraint firstAttribute="trailing" secondItem="UMx-We-elo" secondAttribute="trailing" id="oVw-Jy-dCe"/>
                                     <constraint firstAttribute="height" constant="144" id="z3n-cc-o7E"/>
                                 </constraints>
                             </view>
@@ -209,8 +250,11 @@
                             <constraint firstItem="Wtk-JD-eF2" firstAttribute="top" secondItem="LtA-IP-JO4" secondAttribute="bottom" constant="64" id="xfD-4u-VL5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="GRd-iv-Nlb"/>
+                    <navigationItem key="navigationItem" id="GRd-iv-Nlb">
+                        <nil key="title"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="filterCollectionView" destination="UMx-We-elo" id="O34-5V-5mm"/>
                         <outlet property="listBtn" destination="LtA-IP-JO4" id="E9O-1Q-C9h"/>
                         <outlet property="listBtnBottomToListViewConstraint" destination="8uI-YZ-5a4" id="qie-0i-ztZ"/>
                         <outlet property="listBtnBottomToModalViewConstraint" destination="xfD-4u-VL5" id="87M-Tu-qfW"/>
@@ -252,6 +296,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="list.bullet" catalog="system" width="128" height="87"/>
         <image name="multiply" catalog="system" width="128" height="111"/>
         <image name="pp" width="10" height="10"/>

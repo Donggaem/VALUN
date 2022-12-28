@@ -15,7 +15,7 @@ class ListTableViewCell: UITableViewCell {
         }
     }
     @IBOutlet var listCategory: UILabel!
-    @IBOutlet var listDeatance: UILabel!
+    @IBOutlet var listDestance: UILabel!
     @IBOutlet var listSolveBtn: UIButton! {
         didSet{
             listSolveBtn.layer.cornerRadius = 8

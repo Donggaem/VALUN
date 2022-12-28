@@ -35,7 +35,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJI-n7-joh">
-                        <rect key="frame" x="108" y="34" width="21" height="10"/>
+                        <rect key="frame" x="108" y="34" width="19.666666666666671" height="10"/>
                         <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="8"/>
                         <color key="textColor" red="0.41568627450000001" green="0.76862745099999996" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
@@ -87,7 +87,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="listCategory" destination="hPX-Jd-Zoh" id="TXc-87-sR7"/>
-                <outlet property="listDeatance" destination="fJI-n7-joh" id="gkg-ca-nVz"/>
+                <outlet property="listDestance" destination="fJI-n7-joh" id="gkg-ca-nVz"/>
                 <outlet property="listImage" destination="mxq-K8-VbD" id="Anz-CO-TMi"/>
                 <outlet property="listSolveBtn" destination="zB8-BE-Ymp" id="My5-UQ-48z"/>
             </connections>

@@ -35,15 +35,23 @@ class MapViewController: UIViewController {
     var tabletest2: [String] = ["test1", "test2", "test3"]
     var tabletestImg: [String] = ["common1", "common2", "common3"]
     
+    @IBOutlet var filterCollectionView: UICollectionView!
+    var filtertest: [String] = ["전체", "일반쓰레기", "플라스틱", "유리", "종이", "박스"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setMap()
         setUI()
         setTableView()
+        setCollectionView()
     }
     
     //MARK: - Inner Func
     private func setUI() {
+        
+        //네비바 숨김
+        self.navigationController?.navigationBar.isHidden = true
+        
         // 뷰를 최상위로
         self.view.bringSubviewToFront(listBtn)
         self.view.bringSubviewToFront(modalBtn)
@@ -68,6 +76,11 @@ class MapViewController: UIViewController {
         
     }
     
+    //MARK: - IBAction
+    
+    @IBAction func backBtnPressed(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
     @IBAction func listBtnPressed(_ sender: UIButton) {
         if listBtn.titleLabel?.text == "  목록보기" {
             self.listBtnBottomToListViewConstraint.isActive = true // 리스트버튼과 리스트뷰의 제약온
@@ -138,6 +151,9 @@ class MapViewController: UIViewController {
         
     }
     @IBAction func modalDetailBtnPressed(_ sender: UIButton) {
+        let storyBoard = UIStoryboard(name: "IssueDetail", bundle: nil)
+        let issueDetailVC = storyBoard.instantiateViewController(identifier: "IssueDetailViewController")
+        self.navigationController?.pushViewController(issueDetailVC, animated: true)
     }
     @IBAction func modalSolveBtnPressed(_ sender: UIButton) {
     }
@@ -166,11 +182,61 @@ extension MapViewController: MTMapViewDelegate {
     }
 }
 
+//MARK: - CollectionViewExtension
+extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    // CollectionView 셋팅
+    func setCollectionView() {
+        filterCollectionView.reloadData()
+        filterCollectionView.delegate = self
+        filterCollectionView.dataSource = self
+        filterCollectionView.register(UINib(nibName: "FilterCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "FilterCollectionViewCell")
+    }
+    
+    // CollectionView item 개수
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return filtertest.count
+    }
+    
+    // CollectionView Cell의 Object
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FilterCollectionViewCell", for: indexPath) as! FilterCollectionViewCell
+                
+        cell.filterBtn.setTitle(filtertest[indexPath.row], for: .normal)
+        
+        return cell
+    }
+    
+    // CollectionView Cell 터치
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+    }
+    
+    // CollectionView Cell의 Size
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width: CGFloat = collectionView.frame.width / 5 - 1.0
+        
+        return CGSize(width: width, height: 28)
+    }
+    
+    // CollectionView Cell의 위아래 간격
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10.0
+    }
+    
+    // CollectionView Cell의 옆 간격
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 4.0
+    }
+    
+}
+
 //MARK: - TableViewExtension
 extension MapViewController: UITableViewDataSource, UITableViewDelegate{
-    
+   
+    // TableView 셋팅
     private func setTableView() {
-        //TableView
         self.listTableView.delegate = self
         self.listTableView.dataSource = self
         self.listTableView.register(UINib(nibName: "ListTableViewCell", bundle: nil),  forCellReuseIdentifier: "ListTableViewCell")
@@ -190,7 +256,7 @@ extension MapViewController: UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as! ListTableViewCell
         
         cell.listCategory.text = tabletest1[indexPath.row]
-        cell.listDeatance.text = tabletest2[indexPath.row]
+        cell.listDestance.text = tabletest2[indexPath.row]
         cell.listImage.image = UIImage(named: tabletestImg[indexPath.row])
         
         cell.selectionStyle = .none
