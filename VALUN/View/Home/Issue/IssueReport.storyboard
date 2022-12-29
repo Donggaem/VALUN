@@ -25,10 +25,10 @@
                                 <rect key="frame" x="0.0" y="47" width="390" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwg-K1-EiJ">
-                                        <rect key="frame" x="19" y="15" width="12" height="14"/>
+                                        <rect key="frame" x="19" y="15" width="20" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="12" id="2He-ev-c4s"/>
-                                            <constraint firstAttribute="height" constant="14" id="BSC-IN-Tj5"/>
+                                            <constraint firstAttribute="width" constant="20" id="2He-ev-c4s"/>
+                                            <constraint firstAttribute="height" constant="20" id="BSC-IN-Tj5"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="tintColor" red="0.10980392160000001" green="0.1058823529" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>

@@ -30,7 +30,7 @@ class IssueDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-//        setMap() // 뷰가 이상하게 나옴
+        setMap() // 뷰가 이상하게 나옴
     }
 
     //MARK: - INNER Func
@@ -38,9 +38,6 @@ class IssueDetailViewController: UIViewController {
         
         //네비바 숨김
         self.navigationController?.navigationBar.isHidden = true
-        
-        self.view.bringSubviewToFront(bottomView)
-
         
         //Button UI조정
         //미해결
@@ -88,7 +85,7 @@ extension IssueDetailViewController: MTMapViewDelegate {
     
     private func setMap() {
         // 지도 불러오기
-        mapView = MTMapView(frame: mapSubView.frame)
+        mapView = MTMapView(frame: mapSubView.bounds)
         
         if let mapView = mapView {
             // 델리게이트 연결
@@ -96,11 +93,11 @@ extension IssueDetailViewController: MTMapViewDelegate {
             // 지도의 타입 설정 - hybrid: 하이브리드, satellite: 위성지도, standard: 기본지도
             mapView.baseMapType = .standard
             
-            // 현재 위치 트래킹
-            mapView.currentLocationTrackingMode = .onWithoutHeading
-            mapView.showCurrentLocationMarker = true
+            //맵 센터
+            mapView.setMapCenter( MTMapPoint(geoCoord: MTMapPointGeo(latitude: 37.44128488649227, longitude: 127.12907852966377)), zoomLevel: -2, animated: true)
             
-            self.view.addSubview(mapView)
+            mapSubView.addSubview(mapView)
+            
             setPin()
         }
     }

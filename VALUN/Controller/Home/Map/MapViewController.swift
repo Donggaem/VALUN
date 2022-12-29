@@ -132,6 +132,13 @@ class MapViewController: UIViewController {
         self.listBtnBottomToModalViewConstraint.constant = 16 //리스트버튼과 모달뷰
         self.listBtnBottomToListViewConstraint.isActive = false //리스트버튼과 리스트뷰의 제약 오프
         
+        self.listViewBottomConstraint.constant = -self.listView.frame.height //리스트뷰와 슈퍼뷰
+        listBtn.setImage(UIImage(systemName: "list.bullet"), for: .normal)
+        listBtn.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        listBtn.setTitleColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+        listBtn.setTitle("  목록보기", for: .normal)
+        listBtn.titleLabel?.font = UIFont(name: "SUIT-Regular", size: 14)
+        
         // 애니메이션 실행
         UIView.animate(withDuration: 0.3, delay: 0, animations: {
             self.view.layoutIfNeeded()
