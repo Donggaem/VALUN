@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DropDown
 
 class IssueDetailViewController: UIViewController {
 
@@ -27,10 +28,14 @@ class IssueDetailViewController: UIViewController {
     @IBOutlet var issueResolveBtn: UIButton!
     
     @IBOutlet var bottomView: UIView!
+    
+    let dropDown = DropDown()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        setMap() // 뷰가 이상하게 나옴
+        setMap()
+        
     }
 
     //MARK: - INNER Func
@@ -66,12 +71,38 @@ class IssueDetailViewController: UIViewController {
 
     }
     
+    private func setDropDown() {
+        
+        dropDown.dataSource = ["수정", "삭제"]
+        dropDown.show()
+        dropDown.textColor = UIColor.gray
+        dropDown.selectedTextColor = UIColor.black
+        dropDown.backgroundColor = UIColor.white
+        dropDown.cornerRadius = 10
+        dropDown.anchorView = optionBtn
+        dropDown.bottomOffset = CGPoint(x: 0, y: (dropDown.anchorView?.plainView.bounds.height) ?? 35.0)
+        dropDown.textFont = UIFont(name: "Pretendard-Bold", size: 14) ?? UIFont.systemFont(ofSize: 14)
+        dropDown.width = 100
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            print("선택한 아이템 : \(item)")
+            
+            if item == "수정" {
+                
+
+            }else {
+                
+
+            }
+        }
+    }
+    
     //MARK: - IBAction
     @IBAction func backBtnPressed(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
 
     }
     @IBAction func optionBtnPressed(_ sender: UIButton) {
+        setDropDown()
     }
     @IBAction func chatBtnPressed(_ sender: UIButton) {
     }
@@ -93,8 +124,12 @@ extension IssueDetailViewController: MTMapViewDelegate {
             // 지도의 타입 설정 - hybrid: 하이브리드, satellite: 위성지도, standard: 기본지도
             mapView.baseMapType = .standard
             
+
+            
             //맵 센터
             mapView.setMapCenter( MTMapPoint(geoCoord: MTMapPointGeo(latitude: 37.44128488649227, longitude: 127.12907852966377)), zoomLevel: -2, animated: true)
+            
+            mapView.isUserInteractionEnabled = false
             
             mapSubView.addSubview(mapView)
             

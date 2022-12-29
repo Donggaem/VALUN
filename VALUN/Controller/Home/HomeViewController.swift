@@ -70,8 +70,8 @@ extension HomeViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 //        print("didUpdateLocations")
         if let location = locations.first {
-            print("위도: \(location.coordinate.latitude)")
-            print("경도: \(location.coordinate.longitude)")
+//            print("위도: \(location.coordinate.latitude)")
+//            print("경도: \(location.coordinate.longitude)")
             
             lat_now = location.coordinate.latitude
             lng_now = location.coordinate.longitude

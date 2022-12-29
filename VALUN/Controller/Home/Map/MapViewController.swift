@@ -46,6 +46,12 @@ class MapViewController: UIViewController {
         setCollectionView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setMap()
+        setUI()
+    }
+    
     //MARK: - Inner Func
     private func setUI() {
         
@@ -161,6 +167,10 @@ class MapViewController: UIViewController {
         let storyBoard = UIStoryboard(name: "IssueDetail", bundle: nil)
         let issueDetailVC = storyBoard.instantiateViewController(identifier: "IssueDetailViewController")
         self.navigationController?.pushViewController(issueDetailVC, animated: true)
+        
+        // 현재 위치 트래킹
+        mapView!.currentLocationTrackingMode = .off
+        mapView!.showCurrentLocationMarker = false
     }
     @IBAction func modalSolveBtnPressed(_ sender: UIButton) {
     }

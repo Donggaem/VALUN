@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Pretendard-Bold.ttf">
+        <array key="Pretendard-Bold.otf">
             <string>Pretendard-Bold</string>
         </array>
-        <array key="Pretendard-Regular.ttf">
+        <array key="Pretendard-Regular.otf">
             <string>Pretendard-Regular</string>
         </array>
         <array key="SUIT-Bold.otf">
@@ -54,7 +54,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="To1-c1-RfV">
-                                        <rect key="frame" x="365.66666666666669" y="14" width="18.333333333333314" height="22"/>
+                                        <rect key="frame" x="352.66666666666669" y="14" width="18.333333333333314" height="22"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="ellipsis" catalog="system"/>
@@ -68,7 +68,7 @@
                                     <constraint firstAttribute="height" constant="44" id="4dc-rX-05G"/>
                                     <constraint firstItem="YSB-UI-gbh" firstAttribute="top" secondItem="aPq-mm-HEr" secondAttribute="top" constant="15" id="5zP-q1-Y5y"/>
                                     <constraint firstItem="YSB-UI-gbh" firstAttribute="leading" secondItem="aPq-mm-HEr" secondAttribute="leading" constant="19" id="Dyn-c3-45W"/>
-                                    <constraint firstAttribute="trailing" secondItem="To1-c1-RfV" secondAttribute="trailing" constant="6" id="Gg3-xi-zp3"/>
+                                    <constraint firstAttribute="trailing" secondItem="To1-c1-RfV" secondAttribute="trailing" constant="19" id="Gg3-xi-zp3"/>
                                     <constraint firstItem="QL6-cV-fGV" firstAttribute="centerX" secondItem="aPq-mm-HEr" secondAttribute="centerX" id="civ-6a-3lF"/>
                                     <constraint firstItem="QL6-cV-fGV" firstAttribute="top" secondItem="aPq-mm-HEr" secondAttribute="top" constant="11" id="kvY-dN-Uu2"/>
                                     <constraint firstItem="To1-c1-RfV" firstAttribute="centerY" secondItem="YSB-UI-gbh" secondAttribute="centerY" id="lGF-ZD-tTY"/>
