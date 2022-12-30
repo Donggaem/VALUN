@@ -22,6 +22,13 @@ class HomeViewController: UIViewController {
     }
     
     //MARK: - IBAction
+    
+    @IBAction func profileBtnPressed(_ sender: UIButton) {
+        let storyBoard = UIStoryboard(name: "MyProfile", bundle: nil)
+        let profileVC = storyBoard.instantiateViewController(identifier: "MyProfileViewController")
+        self.navigationController?.pushViewController(profileVC, animated: true)
+    }
+    
     @IBAction func issueReportBtnPressed(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "IssueReport", bundle: nil)
         let issueReportVC = storyBoard.instantiateViewController(identifier: "IssueReportViewController")

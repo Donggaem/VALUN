@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -30,19 +31,26 @@
                                         <color key="textColor" red="0.41568627450980389" green="0.76862745098039209" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OwE-Y2-hEk">
-                                        <rect key="frame" x="344" y="10.999999999999998" width="30" height="28.666666666666664"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0so-6z-BtN">
+                                        <rect key="frame" x="340" y="11" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Eyx-86-7c1"/>
-                                            <constraint firstAttribute="width" constant="30" id="TZ2-SN-3ji"/>
+                                            <constraint firstAttribute="width" constant="30" id="LgV-4r-LDk"/>
+                                            <constraint firstAttribute="height" constant="30" id="YlU-x1-UvE"/>
                                         </constraints>
-                                    </imageView>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button">
+                                            <imageReference key="image" image="person.circle.fill" catalog="system" symbolScale="large"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="profileBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="BHg-mU-5WH"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="OwE-Y2-hEk" firstAttribute="top" secondItem="hhE-eY-qTd" secondAttribute="top" constant="10" id="IE4-HJ-L0J"/>
                                     <constraint firstItem="IUe-sR-R7z" firstAttribute="top" secondItem="hhE-eY-qTd" secondAttribute="top" constant="10" id="LbM-EB-U5w"/>
-                                    <constraint firstAttribute="trailing" secondItem="OwE-Y2-hEk" secondAttribute="trailing" constant="16" id="Oao-jE-Zg3"/>
+                                    <constraint firstItem="0so-6z-BtN" firstAttribute="top" secondItem="hhE-eY-qTd" secondAttribute="top" constant="11" id="Y6L-iJ-e6p"/>
+                                    <constraint firstAttribute="trailing" secondItem="0so-6z-BtN" secondAttribute="trailing" constant="20" id="ZhV-OG-0fp"/>
                                     <constraint firstItem="IUe-sR-R7z" firstAttribute="leading" secondItem="hhE-eY-qTd" secondAttribute="leading" constant="16" id="glI-5R-yI8"/>
                                     <constraint firstAttribute="height" constant="44" id="piX-kT-mxa"/>
                                 </constraints>

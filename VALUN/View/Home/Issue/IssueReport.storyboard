@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Klj-9f-rWR" userLabel="naviView">
-                                <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwg-K1-EiJ">
                                         <rect key="frame" x="19" y="15" width="20" height="20"/>
@@ -55,7 +55,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Klj-9f-rWR" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="47" id="2xz-eJ-RD4"/>
+                            <constraint firstItem="Klj-9f-rWR" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="44" id="2xz-eJ-RD4"/>
                             <constraint firstItem="Klj-9f-rWR" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="Qdx-E3-yND"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Klj-9f-rWR" secondAttribute="trailing" id="dD1-T3-kcH"/>
                         </constraints>
