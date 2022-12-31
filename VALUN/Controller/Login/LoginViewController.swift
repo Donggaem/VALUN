@@ -24,4 +24,9 @@ class LoginViewController: UIViewController {
         let homeNav = storyBoard.instantiateViewController(identifier: "HomeNav")
         self.changeRootViewController(homeNav)
     }
+    @IBAction func signupBtnPressed(_ sender: UIButton) {
+        let storyBoard = UIStoryboard(name: "Signup", bundle: nil)
+        let signupVC = storyBoard.instantiateViewController(identifier: "SignupViewController")
+        self.navigationController?.pushViewController(signupVC, animated: true)
+    }
 }
