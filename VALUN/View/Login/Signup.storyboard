@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Pretendard-Bold.ttf">
+            <string>Pretendard-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8yN-ha-8ko" userLabel="naviView">
+                                <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzn-bT-7UU">
+                                        <rect key="frame" x="19" y="15" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="8Qx-jg-md0"/>
+                                            <constraint firstAttribute="width" constant="20" id="E5i-0t-feo"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="tintColor" red="0.10980392160000001" green="0.1058823529" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="chevron.backward" catalog="system"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3g-Jm-OOb">
+                                        <rect key="frame" x="164" y="11.000000000000002" width="62.333333333333343" height="21.666666666666671"/>
+                                        <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="18"/>
+                                        <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="B3g-Jm-OOb" firstAttribute="centerX" secondItem="8yN-ha-8ko" secondAttribute="centerX" id="3mf-ao-Xwl"/>
+                                    <constraint firstItem="hzn-bT-7UU" firstAttribute="top" secondItem="8yN-ha-8ko" secondAttribute="top" constant="15" id="Dha-dH-5tD"/>
+                                    <constraint firstItem="B3g-Jm-OOb" firstAttribute="top" secondItem="8yN-ha-8ko" secondAttribute="top" constant="11" id="bjC-a2-5V4"/>
+                                    <constraint firstItem="hzn-bT-7UU" firstAttribute="leading" secondItem="8yN-ha-8ko" secondAttribute="leading" constant="19" id="qev-0N-qvM"/>
+                                    <constraint firstAttribute="height" constant="44" id="znr-KK-btq"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="kOI-Xb-gpt">
+                                <rect key="frame" x="141" y="149" width="108" height="108"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="108" id="2En-g9-ty3"/>
+                                    <constraint firstAttribute="height" constant="108" id="Cze-A1-eYS"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kOI-Xb-gpt" secondAttribute="trailing" constant="141" id="9dc-X9-8ub"/>
+                            <constraint firstItem="8yN-ha-8ko" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="dFo-z1-Y58"/>
+                            <constraint firstItem="kOI-Xb-gpt" firstAttribute="top" secondItem="8yN-ha-8ko" secondAttribute="bottom" constant="61" id="du3-vo-ad3"/>
+                            <constraint firstAttribute="trailing" secondItem="8yN-ha-8ko" secondAttribute="trailing" id="ewJ-1e-sN1"/>
+                            <constraint firstItem="8yN-ha-8ko" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="44" id="hIf-Dq-PTf"/>
+                            <constraint firstItem="kOI-Xb-gpt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="141" id="p2M-v7-Q0V"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="X12-fG-86h"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1069.2307692307693" y="4.9763033175355451"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qfR-WV-8MV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vfm-b8-AS5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DnD-ju-Ctb">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="q33-Kl-jud"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eq2-OR-bpb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="4.9763033175355451"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.backward" catalog="system" width="97" height="128"/>
+        <image name="profile" width="108" height="108"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

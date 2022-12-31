@@ -92,6 +92,7 @@
 		EBF4C3482955854200936E8D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF4C3472955854200936E8D /* Home.storyboard */; };
 		EBF4C34A2955858400936E8D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4C3492955858400936E8D /* HomeViewController.swift */; };
 		EBF4C3522955902700936E8D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4C3512955902700936E8D /* UIViewController+Extension.swift */; };
+		EBFBA3FA29605F180038F0CE /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBFBA3F929605F180038F0CE /* Signup.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -193,6 +194,7 @@
 		EBF4C3472955854200936E8D /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		EBF4C3492955858400936E8D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EBF4C3512955902700936E8D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		EBFBA3F929605F180038F0CE /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -496,6 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				EB78C6F02951888A0027DD1E /* Login.storyboard */,
+				EBFBA3F929605F180038F0CE /* Signup.storyboard */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				EB264848295AA5CC0014BC89 /* LICENSE in Resources */,
 				EB4E8539295C07DE00986888 /* Pretendard-SemiBold.ttf in Resources */,
 				EBACD9D329586E4B00EF1A5C /* IssueReport.storyboard in Resources */,
+				EBFBA3FA29605F180038F0CE /* Signup.storyboard in Resources */,
 				EB4E8542295C07DE00986888 /* Pretendard-Bold.otf in Resources */,
 				EB96629629484D5C00040DCD /* LaunchScreen.storyboard in Resources */,
 				EB26484F295AA5CC0014BC89 /* SUIT-ExtraBold.otf in Resources */,

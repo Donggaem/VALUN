@@ -9,7 +9,20 @@ import UIKit
 import CoreLocation
 
 class HomeViewController: UIViewController {
-
+    
+    @IBOutlet var topView: UIView!
+    @IBOutlet var nickNameLabel: UILabel!
+    @IBOutlet var profileImgBtn: UIButton!
+    
+    @IBOutlet var locationNowView: UIView!
+    @IBOutlet var locationNowBtn: UIButton!
+    @IBOutlet var locationNowLabel: UILabel!
+    
+    @IBOutlet var issueReportBtn: UIButton!
+    @IBOutlet var mapShowBtn: UIButton!
+    @IBOutlet var communityBtn: UIButton!
+    @IBOutlet var environmentalInfoBtn: UIButton!
+    
     //위치
     var locationManger = CLLocationManager()
     var lat_now = 0.0
@@ -17,13 +30,13 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUI()
         setLocation()
     }
     
     //MARK: - IBAction
     
-    @IBAction func profileBtnPressed(_ sender: UIButton) {
+    @IBAction func profileImgBtnPressed(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "MyProfile", bundle: nil)
         let profileVC = storyBoard.instantiateViewController(identifier: "MyProfileViewController")
         self.navigationController?.pushViewController(profileVC, animated: true)
@@ -35,13 +48,46 @@ class HomeViewController: UIViewController {
         self.navigationController?.pushViewController(issueReportVC, animated: true)
     }
     
-    @IBAction func mapBtnPressed(_ sender: UIButton) {
+    @IBAction func mapShowBtnPressed(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "Map", bundle: nil)
         let mapVC = storyBoard.instantiateViewController(identifier: "MapViewController")
         self.navigationController?.pushViewController(mapVC, animated: true)
 
     }
     
+    @IBAction func communityBtnPressed(_ sender: UIButton) {
+    }
+    
+    @IBAction func environmentalInfoBtnPressed(_ sender: UIButton) {
+    }
+    
+    //MAEK: - INNER Func
+    private func setUI() {
+        
+        //view
+        topView.layer.cornerRadius = 10
+        topView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        
+        locationNowView.layer.cornerRadius = 20
+        
+        //button
+        makeBtnShdow(btn: issueReportBtn)
+        makeBtnShdow(btn: mapShowBtn)
+        makeBtnShdow(btn: communityBtn)
+        makeBtnShdow(btn: environmentalInfoBtn)
+
+        
+    }
+    
+    private func makeBtnShdow(btn : UIButton) {
+        btn.layer.cornerRadius = 10
+        btn.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.05).cgColor
+        btn.layer.shadowOpacity = 1
+        btn.layer.shadowRadius = 10
+        btn.layer.shadowOffset = CGSize(width: 2, height: 2)
+        btn.layer.masksToBounds = false
+        
+    }
 }
 
 //MARK: - Location Extension
