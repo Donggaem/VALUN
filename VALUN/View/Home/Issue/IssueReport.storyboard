@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Pretendard-Bold.otf">
+        <array key="Pretendard-Bold.ttf">
             <string>Pretendard-Bold</string>
         </array>
         <array key="Pretendard-Regular.otf">
@@ -136,12 +136,6 @@
                                     <constraint firstAttribute="width" constant="16" id="NHZ-SH-Cqu"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이슈에 대한 내용을 작성해 주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gv3-xd-0zL">
-                                <rect key="frame" x="38" y="532" width="160.33333333333334" height="14.333333333333371"/>
-                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
-                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="Hm7-3A-X5X">
                                 <rect key="frame" x="157" y="226" width="76" height="55"/>
                                 <constraints>
@@ -165,11 +159,9 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gv3-xd-0zL" firstAttribute="top" secondItem="rvn-Ln-PVx" secondAttribute="bottom" constant="26" id="1Sf-48-Ykk"/>
                             <constraint firstItem="Hm7-3A-X5X" firstAttribute="top" secondItem="Klj-9f-rWR" secondAttribute="bottom" constant="138" id="273-2v-CcY"/>
                             <constraint firstItem="Klj-9f-rWR" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="44" id="2xz-eJ-RD4"/>
                             <constraint firstItem="VcB-4h-aLC" firstAttribute="centerY" secondItem="9da-rB-ZjC" secondAttribute="centerY" id="7bd-Vc-nzt"/>
-                            <constraint firstItem="gv3-xd-0zL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="38" id="8SN-4M-Ubj"/>
                             <constraint firstItem="TUv-H3-6Gu" firstAttribute="top" secondItem="rvn-Ln-PVx" secondAttribute="bottom" constant="8" id="Bm7-l6-Wh2"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="9wq-aj-qk1" secondAttribute="trailing" constant="22" id="COk-ee-YjR"/>
                             <constraint firstItem="DXq-pc-oCq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="22" id="EnB-Zg-5Z1"/>
@@ -203,7 +195,6 @@
                         <outlet property="contentTextView" destination="TUv-H3-6Gu" id="OvJ-c5-vBd"/>
                         <outlet property="issueReportBtn" destination="9wq-aj-qk1" id="Jlf-Mu-9fW"/>
                         <outlet property="issueReportImage" destination="cGA-Tf-VeG" id="kcH-Vk-9Eo"/>
-                        <outlet property="placeholder" destination="gv3-xd-0zL" id="SNC-uF-hkF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
