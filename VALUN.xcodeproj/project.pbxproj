@@ -89,6 +89,8 @@
 		EBACD9D329586E4B00EF1A5C /* IssueReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBACD9D229586E4B00EF1A5C /* IssueReport.storyboard */; };
 		EBE33266295BF977001A615B /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE33265295BF977001A615B /* FilterCollectionViewCell.swift */; };
 		EBE33268295BF9C5001A615B /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBE33267295BF9C5001A615B /* FilterCollectionViewCell.xib */; };
+		EBEAE22829629AF20015BB82 /* IssueResolution.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBEAE22729629AF20015BB82 /* IssueResolution.storyboard */; };
+		EBEAE22A2962A6370015BB82 /* IssueResolutionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEAE2292962A6370015BB82 /* IssueResolutionViewController.swift */; };
 		EBF4C3482955854200936E8D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF4C3472955854200936E8D /* Home.storyboard */; };
 		EBF4C34A2955858400936E8D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4C3492955858400936E8D /* HomeViewController.swift */; };
 		EBF4C3522955902700936E8D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4C3512955902700936E8D /* UIViewController+Extension.swift */; };
@@ -192,6 +194,8 @@
 		EBACD9D229586E4B00EF1A5C /* IssueReport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IssueReport.storyboard; sourceTree = "<group>"; };
 		EBE33265295BF977001A615B /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		EBE33267295BF9C5001A615B /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
+		EBEAE22729629AF20015BB82 /* IssueResolution.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IssueResolution.storyboard; sourceTree = "<group>"; };
+		EBEAE2292962A6370015BB82 /* IssueResolutionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueResolutionViewController.swift; sourceTree = "<group>"; };
 		EBF4C3472955854200936E8D /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		EBF4C3492955858400936E8D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EBF4C3512955902700936E8D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -260,6 +264,7 @@
 			children = (
 				EBACD9D029586E3800EF1A5C /* IssueReportViewController.swift */,
 				EB85B0FC295C543A00823E87 /* IssueDetailViewController.swift */,
+				EBEAE2292962A6370015BB82 /* IssueResolutionViewController.swift */,
 			);
 			path = Issue;
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 			children = (
 				EBACD9D229586E4B00EF1A5C /* IssueReport.storyboard */,
 				EB4E8546295C09BC00986888 /* IssueDetail.storyboard */,
+				EBEAE22729629AF20015BB82 /* IssueResolution.storyboard */,
 			);
 			path = Issue;
 			sourceTree = "<group>";
@@ -609,6 +615,7 @@
 				EB4E8541295C07DE00986888 /* Pretendard-ExtraBold.otf in Resources */,
 				EB78C6CA295185B10027DD1E /* map_pin_red@3x.png in Resources */,
 				EB78C6D5295185B10027DD1E /* map_pin.png in Resources */,
+				EBEAE22829629AF20015BB82 /* IssueResolution.storyboard in Resources */,
 				EBE33268295BF9C5001A615B /* FilterCollectionViewCell.xib in Resources */,
 				EB264851295AB9130014BC89 /* ListTableViewCell.xib in Resources */,
 				EB78C6CE295185B10027DD1E /* map_pin_red.png in Resources */,
@@ -725,6 +732,7 @@
 				EBF4C3522955902700936E8D /* UIViewController+Extension.swift in Sources */,
 				EB85B0FD295C543A00823E87 /* IssueDetailViewController.swift in Sources */,
 				EBF4C34A2955858400936E8D /* HomeViewController.swift in Sources */,
+				EBEAE22A2962A6370015BB82 /* IssueResolutionViewController.swift in Sources */,
 				EBACD9D129586E3800EF1A5C /* IssueReportViewController.swift in Sources */,
 				EBACD9CB29586DDD00EF1A5C /* MyProfileViewController.swift in Sources */,
 				EBFBA3FC29607A9E0038F0CE /* SignupViewController.swift in Sources */,

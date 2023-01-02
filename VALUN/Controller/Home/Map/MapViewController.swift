@@ -173,6 +173,9 @@ class MapViewController: UIViewController {
         mapView!.showCurrentLocationMarker = false
     }
     @IBAction func modalSolveBtnPressed(_ sender: UIButton) {
+        let storyBoard = UIStoryboard(name: "IssueResolution", bundle: nil)
+        let issueResolutionVC = storyBoard.instantiateViewController(identifier: "IssueResolutionViewController")
+        self.navigationController?.pushViewController(issueResolutionVC, animated: true)
     }
 }
 
@@ -202,6 +205,7 @@ extension MapViewController: MTMapViewDelegate {
 //MARK: - CollectionViewExtension
 extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    //필터
     // CollectionView 셋팅
     func setCollectionView() {
         filterCollectionView.reloadData()
