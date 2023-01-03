@@ -11,6 +11,9 @@
         <array key="Pretendard-Bold.otf">
             <string>Pretendard-Bold</string>
         </array>
+        <array key="Pretendard-Regular.ttf">
+            <string>Pretendard-Regular</string>
+        </array>
         <array key="SUIT-Bold.otf">
             <string>SUIT-Bold</string>
         </array>
@@ -85,7 +88,7 @@
                                                         <rect key="frame" x="0.0" y="239" width="29" height="29"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqE-84-uJD">
-                                                                <rect key="frame" x="8" y="6.3333333333333144" width="13" height="16.333333333333332"/>
+                                                                <rect key="frame" x="8" y="5.6666666666666856" width="13" height="17.666666666666668"/>
                                                                 <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="14"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -125,7 +128,7 @@
                                                         <rect key="frame" x="73" y="247" width="29" height="29"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="후" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3U9-0h-UYO">
-                                                                <rect key="frame" x="8" y="6.3333333333333712" width="13" height="16.333333333333332"/>
+                                                                <rect key="frame" x="8" y="5.6666666666666288" width="13" height="17.666666666666668"/>
                                                                 <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="14"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -214,7 +217,7 @@
                                                             <constraint firstAttribute="height" constant="85" id="Hd5-HU-Uzq"/>
                                                         </constraints>
                                                         <color key="textColor" systemColor="labelColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="12"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                 </subviews>
@@ -233,7 +236,7 @@
                                                 <rect key="frame" x="0.0" y="958" width="390" height="100"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEY-L5-dAt">
-                                                        <rect key="frame" x="22" y="24" width="346" height="52"/>
+                                                        <rect key="frame" x="22" y="0.0" width="346" height="52"/>
                                                         <color key="backgroundColor" red="0.41568627450000001" green="0.76862745099999996" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="52" id="XWR-IU-Z7R"/>
@@ -251,9 +254,9 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="aEY-L5-dAt" secondAttribute="trailing" constant="22" id="3e9-cr-6TM"/>
-                                                    <constraint firstAttribute="bottom" secondItem="aEY-L5-dAt" secondAttribute="bottom" constant="24" id="4QV-Pa-cjN"/>
+                                                    <constraint firstAttribute="bottom" secondItem="aEY-L5-dAt" secondAttribute="bottom" constant="48" id="4QV-Pa-cjN"/>
                                                     <constraint firstAttribute="height" constant="100" id="7Vw-I3-W9a"/>
-                                                    <constraint firstItem="aEY-L5-dAt" firstAttribute="top" secondItem="ACe-QS-vrP" secondAttribute="top" constant="24" id="W5U-90-N1H"/>
+                                                    <constraint firstItem="aEY-L5-dAt" firstAttribute="top" secondItem="ACe-QS-vrP" secondAttribute="top" id="SJi-Xu-8WS"/>
                                                     <constraint firstItem="aEY-L5-dAt" firstAttribute="leading" secondItem="ACe-QS-vrP" secondAttribute="leading" constant="22" id="nRa-SQ-Yf9"/>
                                                 </constraints>
                                             </view>

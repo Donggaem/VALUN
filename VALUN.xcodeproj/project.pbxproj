@@ -91,6 +91,8 @@
 		EBE33268295BF9C5001A615B /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBE33267295BF9C5001A615B /* FilterCollectionViewCell.xib */; };
 		EBEAE22829629AF20015BB82 /* IssueResolution.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBEAE22729629AF20015BB82 /* IssueResolution.storyboard */; };
 		EBEAE22A2962A6370015BB82 /* IssueResolutionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEAE2292962A6370015BB82 /* IssueResolutionViewController.swift */; };
+		EBEAE22C2962B7D80015BB82 /* IssueValidation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBEAE22B2962B7D80015BB82 /* IssueValidation.storyboard */; };
+		EBEAE22E2962B8130015BB82 /* IssueValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEAE22D2962B8130015BB82 /* IssueValidationViewController.swift */; };
 		EBF4C3482955854200936E8D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBF4C3472955854200936E8D /* Home.storyboard */; };
 		EBF4C34A2955858400936E8D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4C3492955858400936E8D /* HomeViewController.swift */; };
 		EBF4C3522955902700936E8D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF4C3512955902700936E8D /* UIViewController+Extension.swift */; };
@@ -196,6 +198,8 @@
 		EBE33267295BF9C5001A615B /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
 		EBEAE22729629AF20015BB82 /* IssueResolution.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IssueResolution.storyboard; sourceTree = "<group>"; };
 		EBEAE2292962A6370015BB82 /* IssueResolutionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueResolutionViewController.swift; sourceTree = "<group>"; };
+		EBEAE22B2962B7D80015BB82 /* IssueValidation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IssueValidation.storyboard; sourceTree = "<group>"; };
+		EBEAE22D2962B8130015BB82 /* IssueValidationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueValidationViewController.swift; sourceTree = "<group>"; };
 		EBF4C3472955854200936E8D /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		EBF4C3492955858400936E8D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EBF4C3512955902700936E8D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 				EBACD9D029586E3800EF1A5C /* IssueReportViewController.swift */,
 				EB85B0FC295C543A00823E87 /* IssueDetailViewController.swift */,
 				EBEAE2292962A6370015BB82 /* IssueResolutionViewController.swift */,
+				EBEAE22D2962B8130015BB82 /* IssueValidationViewController.swift */,
 			);
 			path = Issue;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 				EBACD9D229586E4B00EF1A5C /* IssueReport.storyboard */,
 				EB4E8546295C09BC00986888 /* IssueDetail.storyboard */,
 				EBEAE22729629AF20015BB82 /* IssueResolution.storyboard */,
+				EBEAE22B2962B7D80015BB82 /* IssueValidation.storyboard */,
 			);
 			path = Issue;
 			sourceTree = "<group>";
@@ -637,6 +643,7 @@
 				EB264846295AA5CC0014BC89 /* SUIT-Thin.otf in Resources */,
 				EB78C6C5295185B10027DD1E /* map_pin_custom@3x.png in Resources */,
 				EB26484E295AA5CC0014BC89 /* SUIT-Medium.otf in Resources */,
+				EBEAE22C2962B7D80015BB82 /* IssueValidation.storyboard in Resources */,
 				EB78C6DA295185B10027DD1E /* map_pin_shadow.png in Resources */,
 				EB78C6CD295185B10027DD1E /* map_present_tracking.png in Resources */,
 				EB78C6F12951888A0027DD1E /* Login.storyboard in Resources */,
@@ -741,6 +748,7 @@
 				EB96628E29484D5B00040DCD /* MapViewController.swift in Sources */,
 				EB96628A29484D5B00040DCD /* AppDelegate.swift in Sources */,
 				EB96628C29484D5B00040DCD /* SceneDelegate.swift in Sources */,
+				EBEAE22E2962B8130015BB82 /* IssueValidationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
