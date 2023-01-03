@@ -20,6 +20,7 @@
 		EB26484F295AA5CC0014BC89 /* SUIT-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB264845295AA5CC0014BC89 /* SUIT-ExtraBold.otf */; };
 		EB264851295AB9130014BC89 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB264850295AB9130014BC89 /* ListTableViewCell.xib */; };
 		EB264853295AB95A0014BC89 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB264852295AB95A0014BC89 /* ListTableViewCell.swift */; };
+		EB27564C2963F7D800BC8073 /* RejectedModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB27564B2963F7D800BC8073 /* RejectedModalViewController.swift */; };
 		EB2A68C529570BF400A85299 /* MyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB2A68C429570BF400A85299 /* MyProfile.storyboard */; };
 		EB4E8534295C07DE00986888 /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB4E8522295C07DE00986888 /* Pretendard-Medium.ttf */; };
 		EB4E8535295C07DE00986888 /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB4E8523295C07DE00986888 /* Pretendard-Black.ttf */; };
@@ -116,6 +117,7 @@
 		EB264845295AA5CC0014BC89 /* SUIT-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-ExtraBold.otf"; sourceTree = "<group>"; };
 		EB264850295AB9130014BC89 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		EB264852295AB95A0014BC89 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		EB27564B2963F7D800BC8073 /* RejectedModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RejectedModalViewController.swift; sourceTree = "<group>"; };
 		EB2A68C429570BF400A85299 /* MyProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyProfile.storyboard; sourceTree = "<group>"; };
 		EB4E8522295C07DE00986888 /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.ttf"; sourceTree = "<group>"; };
 		EB4E8523295C07DE00986888 /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.ttf"; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				EB85B0FC295C543A00823E87 /* IssueDetailViewController.swift */,
 				EBEAE2292962A6370015BB82 /* IssueResolutionViewController.swift */,
 				EBEAE22D2962B8130015BB82 /* IssueValidationViewController.swift */,
+				EB27564B2963F7D800BC8073 /* RejectedModalViewController.swift */,
 			);
 			path = Issue;
 			sourceTree = "<group>";
@@ -746,6 +749,7 @@
 				EB78C6F3295188FD0027DD1E /* LoginViewController.swift in Sources */,
 				EB264853295AB95A0014BC89 /* ListTableViewCell.swift in Sources */,
 				EB96628E29484D5B00040DCD /* MapViewController.swift in Sources */,
+				EB27564C2963F7D800BC8073 /* RejectedModalViewController.swift in Sources */,
 				EB96628A29484D5B00040DCD /* AppDelegate.swift in Sources */,
 				EB96628C29484D5B00040DCD /* SceneDelegate.swift in Sources */,
 				EBEAE22E2962B8130015BB82 /* IssueValidationViewController.swift in Sources */,

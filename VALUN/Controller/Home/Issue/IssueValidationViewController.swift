@@ -35,6 +35,11 @@ class IssueValidationViewController: UIViewController {
 
     }
     @IBAction func refusalBtnBtnPressed(_ sender: UIButton) {
+        let storyboard = UIStoryboard.init(name: "IssueValidation", bundle: nil)
+        let popUp = storyboard.instantiateViewController(identifier: "RejectedModalViewController")
+        popUp.modalPresentationStyle = .overFullScreen
+        popUp.modalTransitionStyle = .crossDissolve
+        self.present(popUp, animated: true, completion: nil)
     }
     @IBAction func acceptBtnPressed(_ sender: UIButton) {
     }
