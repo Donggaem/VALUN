@@ -13,5 +13,7 @@ pod 'SnapKit'
 pod 'Kingfisher'
 pod 'DropDown'
 pod 'FSPagerView'
+pod 'Tabman'
+pod 'Pageboy'
 
 end

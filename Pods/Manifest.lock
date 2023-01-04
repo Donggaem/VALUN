@@ -4,7 +4,10 @@ PODS:
   - FSPagerView (0.8.3)
   - IQKeyboardManagerSwift (6.5.10)
   - Kingfisher (7.4.0)
+  - Pageboy (3.7.0)
   - SnapKit (5.6.0)
+  - Tabman (2.13.0):
+    - Pageboy (~> 3.7.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -12,7 +15,9 @@ DEPENDENCIES:
   - FSPagerView
   - IQKeyboardManagerSwift
   - Kingfisher
+  - Pageboy
   - SnapKit
+  - Tabman
 
 SPEC REPOS:
   trunk:
@@ -21,7 +26,9 @@ SPEC REPOS:
     - FSPagerView
     - IQKeyboardManagerSwift
     - Kingfisher
+    - Pageboy
     - SnapKit
+    - Tabman
 
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
@@ -29,8 +36,10 @@ SPEC CHECKSUMS:
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   IQKeyboardManagerSwift: 52962c76ab33532f15ad9f3ff4e5715eda5335bb
   Kingfisher: 596b207973051aae5e4c54a1c1cb39837ea10d36
+  Pageboy: fe646118f7168960058bea7a96038386aa7c0da8
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  Tabman: 66ea44c44488327ec20f3c8dc5554a5d22f5908c
 
-PODFILE CHECKSUM: a3a894d7f2df80cf4e9bf9acf3d30d18722ca5d0
+PODFILE CHECKSUM: d095f18ec9061bec9a45547ff39069cece8fe49b
 
 COCOAPODS: 1.11.3

@@ -256,6 +256,7 @@ extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegat
 //MARK: - TableViewExtension
 extension MapViewController: UITableViewDataSource, UITableViewDelegate{
    
+    
     // TableView 셋팅
     private func setTableView() {
         self.listTableView.delegate = self

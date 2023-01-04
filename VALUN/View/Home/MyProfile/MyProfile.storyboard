@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Pretendard-Bold.otf">
+        <array key="Pretendard-Bold.ttf">
             <string>Pretendard-Bold</string>
         </array>
         <array key="SUIT-Bold.otf">
@@ -116,6 +116,9 @@
                                 <color key="tintColor" red="0.050980392156862744" green="0.050980392156862744" blue="0.050980392156862744" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="vector"/>
+                                <connections>
+                                    <action selector="profileNickChange:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ydn-xP-efQ"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dO1-kh-laj" userLabel="Line1View">
                                 <rect key="frame" x="0.0" y="310" width="390" height="1"/>
@@ -140,6 +143,9 @@
                                 <color key="tintColor" red="0.050980392156862744" green="0.050980392156862744" blue="0.050980392156862744" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="vector"/>
+                                <connections>
+                                    <action selector="pwChangeBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="khl-bY-jPD"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78x-Aa-PwX" userLabel="Line1View">
                                 <rect key="frame" x="0.0" y="362" width="390" height="1"/>
@@ -170,6 +176,9 @@
                                 <color key="tintColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="vector"/>
+                                <connections>
+                                    <action selector="reportIssueBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Yq7-3s-O5n"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k1m-uC-r1D" userLabel="Line1View">
                                 <rect key="frame" x="0.0" y="474" width="390" height="1"/>
@@ -194,6 +203,9 @@
                                 <color key="tintColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="vector"/>
+                                <connections>
+                                    <action selector="solveIssueBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fTC-A5-bry"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NtB-ku-D1V" userLabel="Line1View">
                                 <rect key="frame" x="0.0" y="526" width="390" height="1"/>
@@ -218,6 +230,9 @@
                                 <color key="tintColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="vector"/>
+                                <connections>
+                                    <action selector="myCommentsBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="GQk-Vh-Qfp"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LGJ-bb-1ge" userLabel="Line1View">
                                 <rect key="frame" x="0.0" y="578" width="390" height="1"/>
@@ -248,6 +263,9 @@
                                 <color key="tintColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="vector"/>
+                                <connections>
+                                    <action selector="myPostBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="jev-Tf-xbf"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hHT-W3-rfw" userLabel="Line1View">
                                 <rect key="frame" x="0.0" y="690" width="390" height="1"/>
@@ -272,6 +290,9 @@
                                 <color key="tintColor" red="0.050980392159999999" green="0.050980392159999999" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="vector"/>
+                                <connections>
+                                    <action selector="comunity_myCommentsBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8rY-TD-h2j"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NpK-rJ-ENZ" userLabel="Line1View">
                                 <rect key="frame" x="0.0" y="742" width="390" height="1"/>
