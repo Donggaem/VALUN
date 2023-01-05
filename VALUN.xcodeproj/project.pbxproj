@@ -56,6 +56,8 @@
 		EB4E8544295C07DE00986888 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB4E8532295C07DE00986888 /* Pretendard-ExtraLight.otf */; };
 		EB4E8545295C07DE00986888 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB4E8533295C07DE00986888 /* Pretendard-SemiBold.otf */; };
 		EB4E8547295C09BC00986888 /* IssueDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB4E8546295C09BC00986888 /* IssueDetail.storyboard */; };
+		EB61517F2965AC97008B743C /* ProfileNickChangeModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB61517E2965AC97008B743C /* ProfileNickChangeModalViewController.swift */; };
+		EB6151812965ACB6008B743C /* PwChangeModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6151802965ACB6008B743C /* PwChangeModalViewController.swift */; };
 		EB78C6C0295185B10027DD1E /* map_pinup_custom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB78C69B295185B10027DD1E /* map_pinup_custom@3x.png */; };
 		EB78C6C1295185B10027DD1E /* map_pin_custom.png in Resources */ = {isa = PBXBuildFile; fileRef = EB78C69C295185B10027DD1E /* map_pin_custom.png */; };
 		EB78C6C2295185B10027DD1E /* shadow_balloon.png in Resources */ = {isa = PBXBuildFile; fileRef = EB78C69D295185B10027DD1E /* shadow_balloon.png */; };
@@ -168,6 +170,8 @@
 		EB4E8532295C07DE00986888 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		EB4E8533295C07DE00986888 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		EB4E8546295C09BC00986888 /* IssueDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IssueDetail.storyboard; sourceTree = "<group>"; };
+		EB61517E2965AC97008B743C /* ProfileNickChangeModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNickChangeModalViewController.swift; sourceTree = "<group>"; };
+		EB6151802965ACB6008B743C /* PwChangeModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwChangeModalViewController.swift; sourceTree = "<group>"; };
 		EB78C696295184650027DD1E /* VALUN-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VALUN-Header.h"; sourceTree = "<group>"; };
 		EB78C69B295185B10027DD1E /* map_pinup_custom@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pinup_custom@3x.png"; sourceTree = "<group>"; };
 		EB78C69C295185B10027DD1E /* map_pin_custom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_custom.png; sourceTree = "<group>"; };
@@ -361,6 +365,8 @@
 			isa = PBXGroup;
 			children = (
 				EBACD9CA29586DDD00EF1A5C /* MyProfileViewController.swift */,
+				EB61517E2965AC97008B743C /* ProfileNickChangeModalViewController.swift */,
+				EB6151802965ACB6008B743C /* PwChangeModalViewController.swift */,
 				EB1CAE3E296565F8009425EA /* Cell */,
 				EB1CAE2229655FF0009425EA /* I_Reported_Issue */,
 				EB1CAE2F2965614A009425EA /* I_Solved_Issue */,
@@ -512,8 +518,8 @@
 		EB78C6EC295188480027DD1E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EBF4C34E29558BCA00936E8D /* Home */,
 				EBF4C34D29558BBD00936E8D /* Login */,
+				EBF4C34E29558BCA00936E8D /* Home */,
 				EB96629429484D5C00040DCD /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -840,11 +846,13 @@
 				EBACD9D129586E3800EF1A5C /* IssueReportViewController.swift in Sources */,
 				EB1CAE2A296560F0009425EA /* Reported_UnresolvedViewController.swift in Sources */,
 				EBACD9CB29586DDD00EF1A5C /* MyProfileViewController.swift in Sources */,
+				EB6151812965ACB6008B743C /* PwChangeModalViewController.swift in Sources */,
 				EBFBA3FC29607A9E0038F0CE /* SignupViewController.swift in Sources */,
 				EB78C6F3295188FD0027DD1E /* LoginViewController.swift in Sources */,
 				EB1CAE2E29656125009425EA /* Reported_CompletedViewController.swift in Sources */,
 				EB264853295AB95A0014BC89 /* ListTableViewCell.swift in Sources */,
 				EB1CAE3329656197009425EA /* I_Solved_IssueTabmanViewController.swift in Sources */,
+				EB61517F2965AC97008B743C /* ProfileNickChangeModalViewController.swift in Sources */,
 				EB96628E29484D5B00040DCD /* MapViewController.swift in Sources */,
 				EB27564C2963F7D800BC8073 /* RejectedModalViewController.swift in Sources */,
 				EB1CAE2C29656108009425EA /* Reported_SolvingViewController.swift in Sources */,

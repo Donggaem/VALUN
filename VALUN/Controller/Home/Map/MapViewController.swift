@@ -69,6 +69,8 @@ class MapViewController: UIViewController {
         modalView.layer.cornerRadius = 10
         modalView.clipsToBounds = true
         
+        modalImage.layer.cornerRadius = 10
+        
         listView.layer.cornerRadius = 10
         listView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         

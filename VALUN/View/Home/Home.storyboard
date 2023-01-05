@@ -29,10 +29,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="240"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0so-6z-BtN">
-                                        <rect key="frame" x="330" y="66" width="36" height="36"/>
+                                        <rect key="frame" x="316" y="66" width="50" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="36" id="LgV-4r-LDk"/>
-                                            <constraint firstAttribute="height" constant="36" id="YlU-x1-UvE"/>
+                                            <constraint firstAttribute="width" constant="50" id="LgV-4r-LDk"/>
+                                            <constraint firstAttribute="height" constant="50" id="YlU-x1-UvE"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal">
@@ -44,31 +44,31 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMs-Gi-4lF">
-                                        <rect key="frame" x="24.000000000000007" y="66" width="110.66666666666669" height="28"/>
+                                        <rect key="frame" x="24" y="66" width="112" height="30"/>
                                         <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="24"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8t-dM-jq6">
-                                        <rect key="frame" x="136.66666666666666" y="66" width="63" height="28"/>
+                                        <rect key="frame" x="138" y="66" width="63" height="30"/>
                                         <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="24"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="님!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMC-V3-OEg">
-                                        <rect key="frame" x="199.66666666666666" y="66" width="27" height="28"/>
+                                        <rect key="frame" x="201" y="66" width="29.666666666666657" height="30"/>
                                         <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="24"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="무엇을 버리시나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vof-wy-iZH">
-                                        <rect key="frame" x="24" y="96" width="187" height="28"/>
+                                        <rect key="frame" x="24" y="98" width="187" height="30"/>
                                         <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="24"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4N9-Xc-2aW">
-                                        <rect key="frame" x="24" y="162" width="342" height="46"/>
+                                        <rect key="frame" x="24" y="166" width="342" height="46"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djc-Ov-DT8">
                                                 <rect key="frame" x="62" y="13" width="20" height="22"/>
@@ -76,7 +76,7 @@
                                                 <state key="normal" image="location"/>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yfr-Mc-75v">
-                                                <rect key="frame" x="94" y="13.666666666666657" width="45" height="21"/>
+                                                <rect key="frame" x="94" y="12.666666666666659" width="45" height="22.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="SUIT-Regular" family="SUIT" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

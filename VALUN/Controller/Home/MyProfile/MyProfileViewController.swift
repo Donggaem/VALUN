@@ -9,6 +9,9 @@ import UIKit
 
 class MyProfileViewController: UIViewController {
 
+    @IBOutlet var myProfileImage: UIImageView!
+    @IBOutlet var myNickLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,9 +20,23 @@ class MyProfileViewController: UIViewController {
     }
     
     @IBAction func profileNickChangeBtnPressed(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard.init(name: "MyProfile", bundle: nil)
+        let popUp = storyboard.instantiateViewController(identifier: "ProfileNickChangeModalViewController")
+        popUp.modalPresentationStyle = .overFullScreen
+        popUp.modalTransitionStyle = .crossDissolve
+        self.present(popUp, animated: true, completion: nil)
+        
     }
     
     @IBAction func pwChangeBtnPressed(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard.init(name: "MyProfile", bundle: nil)
+        let popUp = storyboard.instantiateViewController(identifier: "PwChangeModalViewController")
+        popUp.modalPresentationStyle = .overFullScreen
+        popUp.modalTransitionStyle = .crossDissolve
+        self.present(popUp, animated: true, completion: nil)
+        
     }
     @IBAction func reportIssueBtnPressed(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "I_Reported_Issue", bundle: nil)
@@ -43,5 +60,9 @@ class MyProfileViewController: UIViewController {
     private func setUI() {
         //네비바 숨김
         self.navigationController?.navigationBar.isHidden = true
+        
+        //프사 이미지 둥글게
+        myProfileImage.layer.cornerRadius = myProfileImage.frame.height/2
+        myProfileImage.clipsToBounds = true
     }
 }
