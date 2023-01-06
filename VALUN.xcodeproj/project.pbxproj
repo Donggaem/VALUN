@@ -58,6 +58,12 @@
 		EB4E8547295C09BC00986888 /* IssueDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB4E8546295C09BC00986888 /* IssueDetail.storyboard */; };
 		EB61517F2965AC97008B743C /* ProfileNickChangeModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB61517E2965AC97008B743C /* ProfileNickChangeModalViewController.swift */; };
 		EB6151812965ACB6008B743C /* PwChangeModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6151802965ACB6008B743C /* PwChangeModalViewController.swift */; };
+		EB625F3B29667CC80084808A /* VALUNLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB625F3A29667CC80084808A /* VALUNLog.swift */; };
+		EB625F3E29667DA80084808A /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB625F3D29667DA80084808A /* LoginRequest.swift */; };
+		EB625F4029667DBC0084808A /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB625F3F29667DBC0084808A /* LoginResponse.swift */; };
+		EB625F4229667DCD0084808A /* SignupRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB625F4129667DCD0084808A /* SignupRequest.swift */; };
+		EB625F4429667DE30084808A /* SignupResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB625F4329667DE30084808A /* SignupResponse.swift */; };
+		EB625F46296688950084808A /* VALUNURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB625F45296688950084808A /* VALUNURL.swift */; };
 		EB78C6C0295185B10027DD1E /* map_pinup_custom@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EB78C69B295185B10027DD1E /* map_pinup_custom@3x.png */; };
 		EB78C6C1295185B10027DD1E /* map_pin_custom.png in Resources */ = {isa = PBXBuildFile; fileRef = EB78C69C295185B10027DD1E /* map_pin_custom.png */; };
 		EB78C6C2295185B10027DD1E /* shadow_balloon.png in Resources */ = {isa = PBXBuildFile; fileRef = EB78C69D295185B10027DD1E /* shadow_balloon.png */; };
@@ -102,6 +108,7 @@
 		EB96629129484D5B00040DCD /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB96628F29484D5B00040DCD /* Map.storyboard */; };
 		EB96629329484D5C00040DCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB96629229484D5C00040DCD /* Assets.xcassets */; };
 		EB96629629484D5C00040DCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB96629429484D5C00040DCD /* LaunchScreen.storyboard */; };
+		EB9C1CF2296695F200F3F729 /* ErrorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9C1CF1296695F200F3F729 /* ErrorData.swift */; };
 		EBACD9CB29586DDD00EF1A5C /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBACD9CA29586DDD00EF1A5C /* MyProfileViewController.swift */; };
 		EBACD9D129586E3800EF1A5C /* IssueReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBACD9D029586E3800EF1A5C /* IssueReportViewController.swift */; };
 		EBACD9D329586E4B00EF1A5C /* IssueReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBACD9D229586E4B00EF1A5C /* IssueReport.storyboard */; };
@@ -172,6 +179,12 @@
 		EB4E8546295C09BC00986888 /* IssueDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IssueDetail.storyboard; sourceTree = "<group>"; };
 		EB61517E2965AC97008B743C /* ProfileNickChangeModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNickChangeModalViewController.swift; sourceTree = "<group>"; };
 		EB6151802965ACB6008B743C /* PwChangeModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwChangeModalViewController.swift; sourceTree = "<group>"; };
+		EB625F3A29667CC80084808A /* VALUNLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VALUNLog.swift; sourceTree = "<group>"; };
+		EB625F3D29667DA80084808A /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		EB625F3F29667DBC0084808A /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		EB625F4129667DCD0084808A /* SignupRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRequest.swift; sourceTree = "<group>"; };
+		EB625F4329667DE30084808A /* SignupResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupResponse.swift; sourceTree = "<group>"; };
+		EB625F45296688950084808A /* VALUNURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VALUNURL.swift; sourceTree = "<group>"; };
 		EB78C696295184650027DD1E /* VALUN-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VALUN-Header.h"; sourceTree = "<group>"; };
 		EB78C69B295185B10027DD1E /* map_pinup_custom@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map_pinup_custom@3x.png"; sourceTree = "<group>"; };
 		EB78C69C295185B10027DD1E /* map_pin_custom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_custom.png; sourceTree = "<group>"; };
@@ -227,6 +240,7 @@
 		EB96629229484D5C00040DCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB96629529484D5C00040DCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB96629729484D5C00040DCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB9C1CF1296695F200F3F729 /* ErrorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorData.swift; sourceTree = "<group>"; };
 		EBACD9CA29586DDD00EF1A5C /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		EBACD9D029586E3800EF1A5C /* IssueReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueReportViewController.swift; sourceTree = "<group>"; };
 		EBACD9D229586E4B00EF1A5C /* IssueReport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IssueReport.storyboard; sourceTree = "<group>"; };
@@ -430,6 +444,24 @@
 			path = alternative;
 			sourceTree = "<group>";
 		};
+		EB625F3929667C5E0084808A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				EB625F3D29667DA80084808A /* LoginRequest.swift */,
+				EB625F3F29667DBC0084808A /* LoginResponse.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		EB625F3C29667D6E0084808A /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				EB625F4129667DCD0084808A /* SignupRequest.swift */,
+				EB625F4329667DE30084808A /* SignupResponse.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
 		EB78C699295185B10027DD1E /* DaumMap.embeddedframework */ = {
 			isa = PBXGroup;
 			children = (
@@ -511,6 +543,7 @@
 				EB96629229484D5C00040DCD /* Assets.xcassets */,
 				EB96628929484D5B00040DCD /* AppDelegate.swift */,
 				EB96628B29484D5B00040DCD /* SceneDelegate.swift */,
+				EB625F3A29667CC80084808A /* VALUNLog.swift */,
 			);
 			path = BaseFile;
 			sourceTree = "<group>";
@@ -537,6 +570,10 @@
 		EB78C6EF295188690027DD1E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EB625F45296688950084808A /* VALUNURL.swift */,
+				EB9C1CF1296695F200F3F729 /* ErrorData.swift */,
+				EB625F3929667C5E0084808A /* Login */,
+				EB625F3C29667D6E0084808A /* Signup */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -832,11 +869,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB625F4429667DE30084808A /* SignupResponse.swift in Sources */,
 				EB1CAE3529656206009425EA /* Solved_AllIssueViewController.swift in Sources */,
 				EBE33266295BF977001A615B /* FilterCollectionViewCell.swift in Sources */,
 				EB1CAE372965623F009425EA /* Solved_SolvingViewController.swift in Sources */,
 				EB1CAE392965625E009425EA /* Solved_CompletedViewController.swift in Sources */,
 				EBF4C3522955902700936E8D /* UIViewController+Extension.swift in Sources */,
+				EB9C1CF2296695F200F3F729 /* ErrorData.swift in Sources */,
 				EB1CAE28296560D6009425EA /* Reported_AllIssueViewController.swift in Sources */,
 				EB85B0FD295C543A00823E87 /* IssueDetailViewController.swift in Sources */,
 				EB1CAE2429656003009425EA /* I_Reported_IssueViewController.swift in Sources */,
@@ -849,10 +888,12 @@
 				EB6151812965ACB6008B743C /* PwChangeModalViewController.swift in Sources */,
 				EBFBA3FC29607A9E0038F0CE /* SignupViewController.swift in Sources */,
 				EB78C6F3295188FD0027DD1E /* LoginViewController.swift in Sources */,
+				EB625F3B29667CC80084808A /* VALUNLog.swift in Sources */,
 				EB1CAE2E29656125009425EA /* Reported_CompletedViewController.swift in Sources */,
 				EB264853295AB95A0014BC89 /* ListTableViewCell.swift in Sources */,
 				EB1CAE3329656197009425EA /* I_Solved_IssueTabmanViewController.swift in Sources */,
 				EB61517F2965AC97008B743C /* ProfileNickChangeModalViewController.swift in Sources */,
+				EB625F4029667DBC0084808A /* LoginResponse.swift in Sources */,
 				EB96628E29484D5B00040DCD /* MapViewController.swift in Sources */,
 				EB27564C2963F7D800BC8073 /* RejectedModalViewController.swift in Sources */,
 				EB1CAE2C29656108009425EA /* Reported_SolvingViewController.swift in Sources */,
@@ -860,7 +901,10 @@
 				EB1CAE2629656032009425EA /* I_Reported_IssueTabmanViewController.swift in Sources */,
 				EB1CAE3129656187009425EA /* I_Solved_IssueViewController.swift in Sources */,
 				EB96628C29484D5B00040DCD /* SceneDelegate.swift in Sources */,
+				EB625F4229667DCD0084808A /* SignupRequest.swift in Sources */,
 				EBEAE22E2962B8130015BB82 /* IssueValidationViewController.swift in Sources */,
+				EB625F46296688950084808A /* VALUNURL.swift in Sources */,
+				EB625F3E29667DA80084808A /* LoginRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

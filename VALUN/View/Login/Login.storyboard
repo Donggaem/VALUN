@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ie-QZ-8Ru">
-                                <rect key="frame" x="30" y="463.33333333333331" width="330" height="45"/>
+                                <rect key="frame" x="30" y="464.66666666666669" width="330" height="45"/>
                                 <color key="backgroundColor" red="0.73333333329999995" green="0.73333333329999995" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="mta-xR-EyH"/>
@@ -43,12 +43,12 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="KZ4-tk-RG6" userLabel="아비Stack View">
-                                <rect key="frame" x="30" y="307" width="330" height="111.33333333333331"/>
+                                <rect key="frame" x="30" y="307" width="330" height="112.66666666666669"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="oBz-1O-UHu" userLabel="아이디Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="330" height="34.333333333333336"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이디" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="n5h-5C-fpn">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test0" placeholder="아이디" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="n5h-5C-fpn">
                                                 <rect key="frame" x="0.0" y="0.0" width="330" height="19.333333333333332"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
@@ -64,16 +64,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="mRM-Ag-Q7E" userLabel="비밀번호Stack View">
-                                        <rect key="frame" x="0.0" y="78.333333333333314" width="330" height="33"/>
+                                        <rect key="frame" x="0.0" y="78.333333333333314" width="330" height="34.333333333333343"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ldh-te-1zz">
-                                                <rect key="frame" x="0.0" y="0.0" width="330" height="18"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test1234" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ldh-te-1zz">
+                                                <rect key="frame" x="0.0" y="0.0" width="330" height="19.333333333333332"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="THc-Hp-exp">
-                                                <rect key="frame" x="0.0" y="32" width="330" height="1"/>
+                                                <rect key="frame" x="0.0" y="33.333333333333371" width="330" height="1"/>
                                                 <color key="backgroundColor" systemColor="labelColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="dlq-Em-T4b"/>
@@ -93,7 +93,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ju0-8v-Zol" userLabel="회가,아비찾Stack View">
-                                <rect key="frame" x="200" y="522.33333333333337" width="160" height="12"/>
+                                <rect key="frame" x="200" y="523.66666666666663" width="160" height="12"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAE-KH-hwL">
                                         <rect key="frame" x="0.0" y="0.0" width="42" height="12"/>
@@ -142,7 +142,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="X5C-oU-SQS"/>
                     <connections>
-                        <outlet property="idTextField" destination="ldh-te-1zz" id="UK8-bO-UGp"/>
+                        <outlet property="idTextField" destination="n5h-5C-fpn" id="vXZ-3a-cI0"/>
                         <outlet property="loginBtn" destination="6Ie-QZ-8Ru" id="IFj-Jg-q2o"/>
                         <outlet property="pwTextField" destination="ldh-te-1zz" id="bLr-kr-eB2"/>
                     </connections>
