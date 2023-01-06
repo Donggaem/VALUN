@@ -44,15 +44,18 @@ class LoginViewController: UIViewController {
             .responseDecodable(of: LoginResponse.self) { [self] response in
                 switch response.result {
                 case .success(let response):
-                    print("성공")
+                    VALUNLog.debug("PostLogin - Success")
                     if response.data != nil {
-                        let storyBoard = UIStoryboard(name: "Home", bundle: nil)
-                        let homeNav = storyBoard.instantiateViewController(identifier: "HomeNav")
-                        self.changeRootViewController(homeNav)
+                        UserDefaults.standard.set(response.data?.accessToken, forKey: "token")
+                    
                     }
-
+                    
+                    let storyBoard = UIStoryboard(name: "Home", bundle: nil)
+                    let homeNav = storyBoard.instantiateViewController(identifier: "HomeNav")
+                    self.changeRootViewController(homeNav)
+                    
                 case .failure(let error):
-                    VALUNLog.error("postLogin - err")
+                    VALUNLog.error("PostLogin - err")
                     print(error.localizedDescription)
                     if let statusCode = response.response?.statusCode {
                         print("에러코드 : \(statusCode)")
