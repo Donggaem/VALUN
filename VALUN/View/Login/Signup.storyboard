@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Pretendard-Bold.otf">
+        <array key="Pretendard-Bold.ttf">
             <string>Pretendard-Bold</string>
         </array>
         <array key="SUIT-Bold.otf">
@@ -80,15 +80,15 @@
                                         <fontDescription key="fontDescription" name="SUIT-Regular" family="SUIT" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cD-Zd-IEm">
-                                        <rect key="frame" x="40" y="58" width="30" height="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영어 대소문자, 숫자 사용 5자이상 15자 이내" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cD-Zd-IEm">
+                                        <rect key="frame" x="40" y="58" width="206" height="15"/>
                                         <fontDescription key="fontDescription" name="SUIT-Regular" family="SUIT" pointSize="12"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7B-Km-Fub">
                                         <rect key="frame" x="283" y="12" width="75" height="25"/>
-                                        <color key="backgroundColor" red="0.41568627450000001" green="0.76862745099999996" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="kGs-a8-oNf"/>
                                             <constraint firstAttribute="width" constant="75" id="zoK-Mf-6P6"/>
@@ -96,7 +96,7 @@
                                         <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="12"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="중복확인">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="idOverlapBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Z4G-xL-GkY"/>
@@ -124,10 +124,10 @@
                                 <fontDescription key="fontDescription" name="SUIT-Regular" family="SUIT" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한/영 특수문자 제외, 10자 이내" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxw-SR-CTm">
-                                <rect key="frame" x="40" y="478" width="147" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영어 대소문자, 숫자 기호(!_@$%^&amp;+=])사용 6자 이상 15자 이내" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxw-SR-CTm">
+                                <rect key="frame" x="40" y="478" width="317.66666666666669" height="15"/>
                                 <fontDescription key="fontDescription" name="SUIT-Regular" family="SUIT" pointSize="12"/>
-                                <color key="textColor" red="0.92941176470588238" green="0.42352941176470588" blue="0.40392156862745099" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호 확인" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ex-HH-BSz">
@@ -159,15 +159,15 @@
                                         <fontDescription key="fontDescription" name="SUIT-Regular" family="SUIT" pointSize="16"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIS-tD-4tt">
-                                        <rect key="frame" x="40" y="58" width="30" height="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한글, 영어 대소문자, 숫자 사용 2자이상 15자 이내" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIS-tD-4tt">
+                                        <rect key="frame" x="39.999999999999986" y="58" width="232.66666666666663" height="15"/>
                                         <fontDescription key="fontDescription" name="SUIT-Regular" family="SUIT" pointSize="12"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CC6-aD-glw">
                                         <rect key="frame" x="283" y="12" width="75" height="25"/>
-                                        <color key="backgroundColor" red="0.41568627450000001" green="0.76862745099999996" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="TCm-VG-sAo"/>
                                             <constraint firstAttribute="width" constant="75" id="uIP-4m-y6e"/>
@@ -175,7 +175,7 @@
                                         <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="12"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="중복확인">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="nickOverlapBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lp7-2x-2bn"/>
@@ -195,14 +195,14 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0f-l6-4Oo">
                                 <rect key="frame" x="0.0" y="764" width="390" height="80"/>
-                                <color key="backgroundColor" red="0.41568627450000001" green="0.76862745099999996" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="eHH-c9-hur"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="20"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="회원가입">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="signupBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="YVp-CB-1St"/>
