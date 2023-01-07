@@ -71,13 +71,16 @@
                                         <rect key="frame" x="24" y="166" width="342" height="46"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djc-Ov-DT8">
-                                                <rect key="frame" x="62" y="13" width="20" height="22"/>
+                                                <rect key="frame" x="40" y="13" width="20" height="22"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="location"/>
+                                                <connections>
+                                                    <action selector="locationNowBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1Cr-2E-rac"/>
+                                                </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yfr-Mc-75v">
-                                                <rect key="frame" x="94" y="12.666666666666659" width="45" height="22.666666666666671"/>
-                                                <fontDescription key="fontDescription" name="SUIT-Regular" family="SUIT" pointSize="18"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재위치를 알려주세요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yfr-Mc-75v">
+                                                <rect key="frame" x="71.999999999999986" y="14.666666666666657" width="134.66666666666663" height="19"/>
+                                                <fontDescription key="fontDescription" name="SUIT-Regular" family="SUIT" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -87,7 +90,7 @@
                                             <constraint firstItem="Yfr-Mc-75v" firstAttribute="centerY" secondItem="Djc-Ov-DT8" secondAttribute="centerY" id="RmI-hM-SE7"/>
                                             <constraint firstItem="Djc-Ov-DT8" firstAttribute="top" secondItem="4N9-Xc-2aW" secondAttribute="top" constant="13" id="dVH-np-N2h"/>
                                             <constraint firstAttribute="height" constant="46" id="fcb-NU-GPU"/>
-                                            <constraint firstItem="Djc-Ov-DT8" firstAttribute="leading" secondItem="4N9-Xc-2aW" secondAttribute="leading" constant="62" id="gEf-rG-aA5"/>
+                                            <constraint firstItem="Djc-Ov-DT8" firstAttribute="leading" secondItem="4N9-Xc-2aW" secondAttribute="leading" constant="40" id="gEf-rG-aA5"/>
                                             <constraint firstItem="Yfr-Mc-75v" firstAttribute="leading" secondItem="Djc-Ov-DT8" secondAttribute="trailing" constant="12" id="wrr-7q-c2u"/>
                                         </constraints>
                                     </view>

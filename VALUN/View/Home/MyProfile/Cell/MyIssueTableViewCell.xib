@@ -28,23 +28,23 @@
                             <constraint firstAttribute="width" constant="110" id="p0q-QY-1Ri"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fs-6Z-qW3">
-                        <rect key="frame" x="142" y="20" width="39" height="19"/>
-                        <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="15"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEM-kb-Dxo">
-                        <rect key="frame" x="142" y="47" width="39" height="19"/>
+                        <rect key="frame" x="142" y="50.666666666666664" width="39" height="18.999999999999993"/>
                         <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="15"/>
                         <color key="textColor" red="0.53725490196078429" green="0.53725490196078429" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fs-6Z-qW3">
+                        <rect key="frame" x="201" y="23.666666666666671" width="39" height="19"/>
+                        <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bd5-Nr-5jF">
-                        <rect key="frame" x="24" y="22" width="65" height="22"/>
+                        <rect key="frame" x="142" y="22" width="53" height="22"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9CH-pf-9A1">
-                                <rect key="frame" x="18.333333333333336" y="4" width="28.666666666666664" height="14"/>
+                                <rect key="frame" x="12.333333333333345" y="4" width="28.666666666666671" height="14"/>
                                 <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="11"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -53,7 +53,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="9CH-pf-9A1" firstAttribute="centerX" secondItem="bd5-Nr-5jF" secondAttribute="centerX" id="5bx-us-zfo"/>
-                            <constraint firstAttribute="width" constant="65" id="WKF-KP-jDQ"/>
+                            <constraint firstAttribute="width" constant="53" id="WKF-KP-jDQ"/>
                             <constraint firstItem="9CH-pf-9A1" firstAttribute="centerY" secondItem="bd5-Nr-5jF" secondAttribute="centerY" id="mab-7B-Mt2"/>
                             <constraint firstAttribute="height" constant="22" id="wP1-w6-iNq"/>
                         </constraints>
@@ -61,14 +61,14 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="bd5-Nr-5jF" firstAttribute="top" secondItem="gdD-v2-Id0" secondAttribute="top" constant="22" id="6Zt-RK-43L"/>
-                    <constraint firstItem="0fs-6Z-qW3" firstAttribute="leading" secondItem="Ah3-Q2-Bce" secondAttribute="trailing" constant="14" id="8uS-nX-Rn2"/>
-                    <constraint firstItem="dEM-kb-Dxo" firstAttribute="leading" secondItem="0fs-6Z-qW3" secondAttribute="leading" id="L4B-DW-lfb"/>
                     <constraint firstAttribute="bottom" secondItem="Ah3-Q2-Bce" secondAttribute="bottom" constant="2" id="OdX-MA-Bps"/>
                     <constraint firstItem="Ah3-Q2-Bce" firstAttribute="leading" secondItem="gdD-v2-Id0" secondAttribute="leading" constant="18" id="Ond-7k-3xX"/>
-                    <constraint firstItem="0fs-6Z-qW3" firstAttribute="top" secondItem="gdD-v2-Id0" secondAttribute="top" constant="20" id="ZDL-C1-Uz4"/>
-                    <constraint firstItem="bd5-Nr-5jF" firstAttribute="leading" secondItem="gdD-v2-Id0" secondAttribute="leading" constant="24" id="gRm-gZ-fzI"/>
+                    <constraint firstItem="bd5-Nr-5jF" firstAttribute="leading" secondItem="Ah3-Q2-Bce" secondAttribute="trailing" constant="14" id="f5Q-66-Jys"/>
                     <constraint firstItem="dEM-kb-Dxo" firstAttribute="top" secondItem="0fs-6Z-qW3" secondAttribute="bottom" constant="8" id="nxq-2Y-jgM"/>
+                    <constraint firstItem="0fs-6Z-qW3" firstAttribute="leading" secondItem="bd5-Nr-5jF" secondAttribute="trailing" constant="6" id="pxh-FN-HhU"/>
                     <constraint firstItem="Ah3-Q2-Bce" firstAttribute="top" secondItem="gdD-v2-Id0" secondAttribute="top" constant="16" id="tJL-jP-isg"/>
+                    <constraint firstItem="dEM-kb-Dxo" firstAttribute="leading" secondItem="bd5-Nr-5jF" secondAttribute="leading" id="y6u-xG-cnO"/>
+                    <constraint firstItem="0fs-6Z-qW3" firstAttribute="centerY" secondItem="bd5-Nr-5jF" secondAttribute="centerY" id="yOy-We-1ev"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

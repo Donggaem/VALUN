@@ -36,6 +36,11 @@ class HomeViewController: UIViewController {
     
     //MARK: - IBAction
     
+    @IBAction func locationNowBtnPressed(_ sender: UIButton) {
+        addressInfo(lati: lat_now, longi: lng_now)
+        locationManger.stopUpdatingLocation()
+        
+    }
     @IBAction func profileImgBtnPressed(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "MyProfile", bundle: nil)
         let profileVC = storyBoard.instantiateViewController(identifier: "MyProfileViewController")
@@ -52,7 +57,7 @@ class HomeViewController: UIViewController {
         let storyBoard = UIStoryboard(name: "Map", bundle: nil)
         let mapVC = storyBoard.instantiateViewController(identifier: "MapViewController")
         self.navigationController?.pushViewController(mapVC, animated: true)
-
+        
     }
     
     @IBAction func communityBtnPressed(_ sender: UIButton) {
@@ -75,7 +80,7 @@ class HomeViewController: UIViewController {
         makeBtnShdow(btn: mapShowBtn)
         makeBtnShdow(btn: communityBtn)
         makeBtnShdow(btn: environmentalInfoBtn)
-
+        
         
     }
     
@@ -99,6 +104,8 @@ extension HomeViewController: CLLocationManagerDelegate {
         locationManger.delegate = self
         // 거리 정확도 설정
         locationManger.desiredAccuracy = kCLLocationAccuracyBest
+        
+        locationManger.startUpdatingLocation() //위치 정보 받아오기 시작
 
     }
     
@@ -116,15 +123,16 @@ extension HomeViewController: CLLocationManagerDelegate {
             self.locationManger.requestWhenInUseAuthorization() //권한허용 알란트
         default:
             print("GPS: Default")
+            self.locationManger.requestWhenInUseAuthorization() //권한허용 알란트
         }
     }
     
     // 위치 정보 계속 업데이트 -> 위도 경도 받아옴
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        print("didUpdateLocations")
+        //        print("didUpdateLocations")
         if let location = locations.first {
-//            print("위도: \(location.coordinate.latitude)")
-//            print("경도: \(location.coordinate.longitude)")
+            print("위도: \(location.coordinate.latitude)")
+            print("경도: \(location.coordinate.longitude)")
             
             lat_now = location.coordinate.latitude
             lng_now = location.coordinate.longitude
@@ -135,5 +143,33 @@ extension HomeViewController: CLLocationManagerDelegate {
     // 위도 경도 받아오기 에러
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
+    }
+    
+    func addressInfo(lati:CLLocationDegrees, longi:CLLocationDegrees){
+        let findLocation = CLLocation(latitude: lati, longitude: longi )
+        let geocoder = CLGeocoder()
+        let locale = Locale(identifier: "Ko-kr") // [나라 코드 설정]
+        
+        geocoder.reverseGeocodeLocation(findLocation, preferredLocale: locale, completionHandler: {(placemarks, error) in
+            
+            if error != nil {
+                
+                print("error : \(error?.localizedDescription)")
+                
+            }
+            else {
+                if let address: [CLPlacemark] = placemarks {
+                    
+                    self.locationNowLabel.text = "\(address.last?.administrativeArea ?? "") \(address.last?.locality ?? "") \(address.last?.name ?? "")"
+                    print("administrativeArea : \(address.last?.administrativeArea ?? "")")
+                    print("locality : \(address.last?.locality ?? "")")
+                    print("name : \(address.last?.name ?? "")")
+                    
+                    
+                }
+            }
+            
+        })
+        
     }
 }
