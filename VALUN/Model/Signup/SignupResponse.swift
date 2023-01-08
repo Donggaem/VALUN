@@ -10,7 +10,8 @@ import Foundation
 struct SignupResponse: Decodable {
     
     var message: String
-    var data: SignupData
+    var data: SignupData?
+    var error: ErrorData?
 }
 struct SignupData: Decodable {
     

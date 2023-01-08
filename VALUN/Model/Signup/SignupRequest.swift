@@ -12,4 +12,5 @@ struct SignupRequest: Encodable {
     var id: String
     var pw: String
     var nick: String
+    var image: Data
 }

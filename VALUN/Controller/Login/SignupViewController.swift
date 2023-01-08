@@ -8,9 +8,10 @@
 import UIKit
 import AVFoundation
 import Photos
+import Alamofire
 
 class SignupViewController: UIViewController {
-
+    
     
     @IBOutlet var profileImageView: UIImageView!
     
@@ -33,6 +34,8 @@ class SignupViewController: UIViewController {
     let imagePickerController = UIImagePickerController()
     let alertController = UIAlertController(title: "프로필 사진을 선택하세요", message: "기본이미지 또는 앨범에서 선택", preferredStyle: .actionSheet)
     
+    var imageData: Data? = nil
+    var baseImageData: Data = UIImage(systemName: "person.circle")!.jpegData(compressionQuality: 0.5)!
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -40,7 +43,7 @@ class SignupViewController: UIViewController {
         setImagePicker()
         setTextField()
     }
-
+    
     //MARK: - IBAction
     @IBAction func backBtnPressed(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -53,7 +56,13 @@ class SignupViewController: UIViewController {
         
     }
     @IBAction func signupBtnPressed(_ sender: UIButton) {
+        let id = self.idTextField.text ?? ""
+        let pw = self.pwTextField.text ?? ""
+        let nick = self.nickTextField.text ?? ""
+        let image = imageData ?? baseImageData
         
+        let params = SignupRequest(id: id, pw: pw, nick: nick, image: image)
+        postSignup(params)
     }
     
     //MARK: - OBJC
@@ -91,7 +100,7 @@ class SignupViewController: UIViewController {
         nickTextField.layer.borderWidth = 1
         nickTextField.layer.borderColor = UIColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 1).cgColor
         nickOverlapBtn.layer.cornerRadius = 10
-
+        
     }
     //알림창 설정
     private func enrollAlertEvent() {
@@ -119,8 +128,68 @@ class SignupViewController: UIViewController {
         else {return}
         prepareForPopoverPresentation(alertControllerPopoverPresentationController)
     }
+    
+    //MARK: - Post Signup
+    func postSignup(_ parameters: SignupRequest) {
+        let headers: HTTPHeaders = ["Content - type": "multipart/form-data"]
+        
+        AF.upload(multipartFormData: { (multipartFormData) in
+            let id = self.idTextField.text ?? ""
+            let pw = self.pwTextField.text ?? ""
+            let nick = self.nickTextField.text ?? ""
+            
+            let parameters: [String: Any] = [
+                "id": id,
+                "pw": pw,
+                "nick": nick
+            ]
+            
+            for (key, value) in parameters {
+                multipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
+            }
+            self.imageData = self.profileImageView.image?.jpegData(compressionQuality: 0.5)
+            
+            if let image = self.imageData {
+                multipartFormData.append(image, withName: "image", fileName: "test.jpeg", mimeType: "image/jpeg")
+            }
+            
+        }, to: VALUNURL.signupURL, method: .post, headers: headers).responseDecodable(of: SignupResponse.self) {
+            [self] response in
+            switch response.result {
+            case .success(let response):
+                VALUNLog.debug("PostSignup-success")
+                
+                let signup_alert = UIAlertController(title: "성공", message: response.message, preferredStyle: UIAlertController.Style.alert)
+                let okAction = UIAlertAction(title: "확인", style: .default) { (action) in
+                    
+                    self.navigationController?.popViewController(animated: true)
+        
+                }
+                signup_alert.addAction(okAction)
+                present(signup_alert, animated: false, completion: nil)
+                
+            case .failure(let error):
+                VALUNLog.error("PostSignup - err")
+                print(error.localizedDescription)
+                if let statusCode = response.response?.statusCode {
+                    print("에러코드 : \(statusCode)")
+                    switch (statusCode) {
+                        case 400..<500:
+                        let signupFail_alert = UIAlertController(title: "실패", message:"입력을 확인해 주세요", preferredStyle: UIAlertController.Style.alert)
+                        let okAction = UIAlertAction(title: "확인", style: .default)
+                        signupFail_alert.addAction(okAction)
+                        present(signupFail_alert, animated: false, completion: nil)
+                    default:
+                        let signupFail_alert = UIAlertController(title: "실패", message: "서버 통신 실패", preferredStyle: UIAlertController.Style.alert)
+                        let okAction = UIAlertAction(title: "확인", style: .default)
+                        signupFail_alert.addAction(okAction)
+                        present(signupFail_alert, animated: false, completion: nil)
+                    }
+                }
+            }
+        }
+    }
 }
-
 //MARK: Extension UIPopoverPresentation
 extension SignupViewController: UIPopoverPresentationControllerDelegate {
     func prepareForPopoverPresentation(_ popoverPresentationController: UIPopoverPresentationController) {
@@ -224,7 +293,7 @@ extension SignupViewController: UITextFieldDelegate {
         self.pwTextField.delegate = self
         self.pwCheckTextField.delegate = self
         self.nickTextField.delegate = self
-
+        
         
         //텍스트필드 입력값 변경 감지
         self.idTextField.addTarget(self, action: #selector(self.TFdidChanged(_:)), for: .editingChanged)
@@ -253,7 +322,7 @@ extension SignupViewController: UITextFieldDelegate {
                 self.nickMsgLabel.text = "한글, 영어 대소문자, 숫자 사용 2자이상 15자 이내"
                 self.nickMsgLabel.setGrayMsg()
                 self.nickOverlapBtn.setFalse()
-
+                
             }else if self.nickTextField.text!.count < 2 {
                 self.nickMsgLabel.text = "영어 대소문자, 숫자 사용 5자이상 15자 이내"
                 self.nickMsgLabel.setGrayMsg()
@@ -263,7 +332,7 @@ extension SignupViewController: UITextFieldDelegate {
                 self.nickOverlapBtn.setTrue()
             }
         }), for: .editingChanged)
-    
+        
     }
     
     //닉네임 형식 확인
@@ -300,7 +369,7 @@ extension SignupViewController: UITextFieldDelegate {
     
     //텍스트 필드 입력값 변하면 유효성 검사
     @objc func TFdidChanged(_ sender: UITextField) {
-                
+        
         if self.pwTextField.text?.isEmpty == true{
             pwMsgLabel.text = "영어 대소문자, 숫자 기호(!_@$%^&+=])사용 6자 이상 15자 이내"
             pwMsgLabel.setGrayMsg()
@@ -336,6 +405,9 @@ extension SignupViewController: UITextFieldDelegate {
                 let okAction = UIAlertAction(title: "확인", style: .default)
                 fail_alert.addAction(okAction)
                 present(fail_alert, animated: false, completion: nil)
+            }else {
+                pwMsgLabel.text = "사용가능한 비밀번호입니다"
+                pwMsgLabel.setGreenMsg()
             }
         }
     }
