@@ -65,8 +65,8 @@
                                     <constraint firstItem="D1W-fG-gqL" firstAttribute="leading" secondItem="Qdh-9m-d5k" secondAttribute="leading" constant="19" id="tpQ-GS-nCI"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qxr-Zy-Pmh">
-                                <rect key="frame" x="24" y="112" width="60" height="60"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qxr-Zy-Pmh">
+                                <rect key="frame" x="24" y="113" width="60" height="58.666666666666686"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="2CZ-XI-utc"/>
                                     <constraint firstAttribute="width" constant="60" id="Pha-aE-Zen"/>
@@ -381,6 +381,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="YKl-zu-JN9"/>
                     <connections>
+                        <outlet property="myBroomLabel" destination="kpd-Qa-IYR" id="mbA-Hv-o3P"/>
                         <outlet property="myNickLabel" destination="W1L-34-w0B" id="7BL-qq-16T"/>
                         <outlet property="myProfileImage" destination="qxr-Zy-Pmh" id="Hgx-27-U6x"/>
                     </connections>
@@ -638,6 +639,7 @@
     <resources>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
+        <image name="person.circle" catalog="system" width="128" height="123"/>
         <image name="vector" width="7" height="12"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

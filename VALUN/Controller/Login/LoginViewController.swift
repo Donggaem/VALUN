@@ -32,7 +32,7 @@ class LoginViewController: UIViewController {
     }
     @IBAction func signupBtnPressed(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "Signup", bundle: nil)
-        let signupVC = storyBoard.instantiateViewController(identifier: "SignupViewController")
+        let signupVC = storyBoard.instantiateViewController(identifier: "SignupViewController") as! SignupViewController
         self.navigationController?.pushViewController(signupVC, animated: true)
     }
     
@@ -55,7 +55,7 @@ class LoginViewController: UIViewController {
                     VALUNLog.debug("PostLogin - Success")
                     if response.data != nil {
                         UserDefaults.standard.set(response.data?.accessToken, forKey: "token")
-                    
+                        print("토큰 값 \(response.data?.accessToken)")
                     }
                     
                     let storyBoard = UIStoryboard(name: "Home", bundle: nil)

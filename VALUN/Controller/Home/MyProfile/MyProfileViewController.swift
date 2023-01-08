@@ -11,6 +11,12 @@ class MyProfileViewController: UIViewController {
 
     @IBOutlet var myProfileImage: UIImageView!
     @IBOutlet var myNickLabel: UILabel!
+    @IBOutlet var myBroomLabel: UILabel!
+    
+    var paramProfileImage = ""
+    var paramNick = ""
+    var paramId = ""
+    var paramBroom = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +68,14 @@ class MyProfileViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         
         //프사 이미지 둥글게
-        myProfileImage.layer.cornerRadius = myProfileImage.frame.height/2
+        myProfileImage.layer.cornerRadius = myProfileImage.bounds.height/2
         myProfileImage.clipsToBounds = true
+        
+        //받아온 정보 세팅
+        //서버에서 받아온 내정보 입력
+        let url = URL(string: paramProfileImage)
+        myProfileImage.kf.setImage(with: url)
+        myNickLabel.text = paramNick
+        myBroomLabel.text = String(paramBroom)
     }
 }

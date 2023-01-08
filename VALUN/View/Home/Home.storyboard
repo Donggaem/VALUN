@@ -3,7 +3,6 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,21 +27,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhE-eY-qTd" userLabel="naviView">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="240"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0so-6z-BtN">
-                                        <rect key="frame" x="316" y="66" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="LgV-4r-LDk"/>
-                                            <constraint firstAttribute="height" constant="50" id="YlU-x1-UvE"/>
-                                        </constraints>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal">
-                                            <imageReference key="image" image="person.circle" catalog="system" symbolScale="default"/>
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="36"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="profileImgBtnPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sMi-aN-pip"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMs-Gi-4lF">
                                         <rect key="frame" x="24" y="66" width="112" height="30"/>
                                         <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="24"/>
@@ -79,7 +63,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재위치를 알려주세요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yfr-Mc-75v">
-                                                <rect key="frame" x="71.999999999999986" y="14.666666666666657" width="134.66666666666663" height="19"/>
+                                                <rect key="frame" x="72" y="14.666666666666659" width="134" height="19"/>
                                                 <fontDescription key="fontDescription" name="SUIT-Regular" family="SUIT" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -94,12 +78,20 @@
                                             <constraint firstItem="Yfr-Mc-75v" firstAttribute="leading" secondItem="Djc-Ov-DT8" secondAttribute="trailing" constant="12" id="wrr-7q-c2u"/>
                                         </constraints>
                                     </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2bi-Kp-xQQ">
+                                        <rect key="frame" x="316" y="67" width="50" height="48.666666666666671"/>
+                                        <color key="tintColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="5FD-73-mxb"/>
+                                            <constraint firstAttribute="height" constant="50" id="8JU-kk-096"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.41568627450980389" green="0.76862745098039209" blue="0.47843137254901957" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="2bi-Kp-xQQ" secondAttribute="trailing" constant="24" id="D9b-oj-m9v"/>
+                                    <constraint firstItem="2bi-Kp-xQQ" firstAttribute="top" secondItem="hhE-eY-qTd" secondAttribute="top" constant="66" id="JQY-ua-lGi"/>
                                     <constraint firstItem="vMs-Gi-4lF" firstAttribute="leading" secondItem="hhE-eY-qTd" secondAttribute="leading" constant="24" id="NAW-1S-av9"/>
-                                    <constraint firstItem="0so-6z-BtN" firstAttribute="top" secondItem="hhE-eY-qTd" secondAttribute="top" constant="66" id="Y6L-iJ-e6p"/>
-                                    <constraint firstAttribute="trailing" secondItem="0so-6z-BtN" secondAttribute="trailing" constant="24" id="ZhV-OG-0fp"/>
                                     <constraint firstItem="4N9-Xc-2aW" firstAttribute="leading" secondItem="hhE-eY-qTd" secondAttribute="leading" constant="24" id="aHx-Sw-2n1"/>
                                     <constraint firstItem="kMC-V3-OEg" firstAttribute="leading" secondItem="g8t-dM-jq6" secondAttribute="trailing" id="arW-Sk-rKU"/>
                                     <constraint firstItem="4N9-Xc-2aW" firstAttribute="top" secondItem="Vof-wy-iZH" secondAttribute="bottom" constant="38" id="chW-tz-O6s"/>
@@ -205,7 +197,7 @@
                         <outlet property="locationNowView" destination="4N9-Xc-2aW" id="2aa-6T-Qmp"/>
                         <outlet property="mapShowBtn" destination="9Et-1Z-iDe" id="TMs-sd-Lxr"/>
                         <outlet property="nickNameLabel" destination="g8t-dM-jq6" id="4II-Ky-Eus"/>
-                        <outlet property="profileImgBtn" destination="0so-6z-BtN" id="dAP-6q-nf8"/>
+                        <outlet property="profileImageView" destination="2bi-Kp-xQQ" id="zqz-Ke-Bhp"/>
                         <outlet property="topView" destination="hhE-eY-qTd" id="sGi-aO-dBc"/>
                     </connections>
                 </viewController>

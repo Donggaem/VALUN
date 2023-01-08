@@ -21,6 +21,7 @@
 		EB1CAE392965625E009425EA /* Solved_CompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CAE382965625E009425EA /* Solved_CompletedViewController.swift */; };
 		EB1CAE3D296563D5009425EA /* MyIssueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB1CAE3C296563D5009425EA /* MyIssueTableViewCell.xib */; };
 		EB1CAE4029656615009425EA /* MyIssueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CAE3F29656615009425EA /* MyIssueTableViewCell.swift */; };
+		EB1EA0CB296A845000140622 /* myProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1EA0CA296A845000140622 /* myProfileResponse.swift */; };
 		EB264846295AA5CC0014BC89 /* SUIT-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB26483C295AA5CC0014BC89 /* SUIT-Thin.otf */; };
 		EB264847295AA5CC0014BC89 /* SUIT-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB26483D295AA5CC0014BC89 /* SUIT-Regular.otf */; };
 		EB264848295AA5CC0014BC89 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = EB26483E295AA5CC0014BC89 /* LICENSE */; };
@@ -142,6 +143,7 @@
 		EB1CAE382965625E009425EA /* Solved_CompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solved_CompletedViewController.swift; sourceTree = "<group>"; };
 		EB1CAE3C296563D5009425EA /* MyIssueTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyIssueTableViewCell.xib; sourceTree = "<group>"; };
 		EB1CAE3F29656615009425EA /* MyIssueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIssueTableViewCell.swift; sourceTree = "<group>"; };
+		EB1EA0CA296A845000140622 /* myProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myProfileResponse.swift; sourceTree = "<group>"; };
 		EB26483C295AA5CC0014BC89 /* SUIT-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Thin.otf"; sourceTree = "<group>"; };
 		EB26483D295AA5CC0014BC89 /* SUIT-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Regular.otf"; sourceTree = "<group>"; };
 		EB26483E295AA5CC0014BC89 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -334,6 +336,22 @@
 				EB1CAE3F29656615009425EA /* MyIssueTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		EB1EA0C8296A83ED00140622 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EB1EA0C9296A83FC00140622 /* MyProfile */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EB1EA0C9296A83FC00140622 /* MyProfile */ = {
+			isa = PBXGroup;
+			children = (
+				EB1EA0CA296A845000140622 /* myProfileResponse.swift */,
+			);
+			path = MyProfile;
 			sourceTree = "<group>";
 		};
 		EB26483A295AA5A90014BC89 /* Font */ = {
@@ -574,6 +592,7 @@
 				EB9C1CF1296695F200F3F729 /* ErrorData.swift */,
 				EB625F3929667C5E0084808A /* Login */,
 				EB625F3C29667D6E0084808A /* Signup */,
+				EB1EA0C8296A83ED00140622 /* Home */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -898,6 +917,7 @@
 				EB27564C2963F7D800BC8073 /* RejectedModalViewController.swift in Sources */,
 				EB1CAE2C29656108009425EA /* Reported_SolvingViewController.swift in Sources */,
 				EB96628A29484D5B00040DCD /* AppDelegate.swift in Sources */,
+				EB1EA0CB296A845000140622 /* myProfileResponse.swift in Sources */,
 				EB1CAE2629656032009425EA /* I_Reported_IssueTabmanViewController.swift in Sources */,
 				EB1CAE3129656187009425EA /* I_Solved_IssueViewController.swift in Sources */,
 				EB96628C29484D5B00040DCD /* SceneDelegate.swift in Sources */,

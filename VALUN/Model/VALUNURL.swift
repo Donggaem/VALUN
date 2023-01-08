@@ -18,5 +18,8 @@ struct VALUNURL {
     
     //MARK: - Signup
     static let signupURL = "http://valun.kro.kr/user/signup"
+    
+    //MARK: - MyProfile
+    static let myProfileURL = "http://valun.kro.kr/user/myprofile"
 }
 

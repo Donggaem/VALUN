@@ -7,12 +7,20 @@
 
 import UIKit
 import CoreLocation
+import Alamofire
+import Kingfisher
 
 class HomeViewController: UIViewController {
     
     @IBOutlet var topView: UIView!
     @IBOutlet var nickNameLabel: UILabel!
-    @IBOutlet var profileImgBtn: UIButton!
+    @IBOutlet var profileImageView: UIImageView! {
+        didSet {
+            if profileImageView == nil {
+                profileImageView.image = UIImage(systemName: "person.circle") ?? UIImage()
+            }
+        }
+    }
     
     @IBOutlet var locationNowView: UIView!
     @IBOutlet var locationNowBtn: UIButton!
@@ -28,12 +36,32 @@ class HomeViewController: UIViewController {
     var lat_now = 0.0
     var lng_now = 0.0
     
+    //내정보
+    var myProfile = ""
+    var myNick = ""
+    var myID = ""
+    var myBroom = 0
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        getMyProfile()
         setUI()
         setLocation()
     }
-    
+    //MARK: - OBJC
+    //이미지 탭 제스쳐
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        let storyBoard = UIStoryboard(name: "MyProfile", bundle: nil)
+        let profileVC = storyBoard.instantiateViewController(identifier: "MyProfileViewController") as! MyProfileViewController
+        self.navigationController?.pushViewController(profileVC, animated: true)
+        
+        profileVC.paramProfileImage = myProfile
+        profileVC.paramId = myID
+        profileVC.paramNick = myNick
+        profileVC.paramBroom = myBroom
+        
+    }
     //MARK: - IBAction
     
     @IBAction func locationNowBtnPressed(_ sender: UIButton) {
@@ -41,21 +69,16 @@ class HomeViewController: UIViewController {
         locationManger.stopUpdatingLocation()
         
     }
-    @IBAction func profileImgBtnPressed(_ sender: UIButton) {
-        let storyBoard = UIStoryboard(name: "MyProfile", bundle: nil)
-        let profileVC = storyBoard.instantiateViewController(identifier: "MyProfileViewController")
-        self.navigationController?.pushViewController(profileVC, animated: true)
-    }
     
     @IBAction func issueReportBtnPressed(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "IssueReport", bundle: nil)
-        let issueReportVC = storyBoard.instantiateViewController(identifier: "IssueReportViewController")
+        let issueReportVC = storyBoard.instantiateViewController(identifier: "IssueReportViewController") as! IssueReportViewController
         self.navigationController?.pushViewController(issueReportVC, animated: true)
     }
     
     @IBAction func mapShowBtnPressed(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "Map", bundle: nil)
-        let mapVC = storyBoard.instantiateViewController(identifier: "MapViewController")
+        let mapVC = storyBoard.instantiateViewController(identifier: "MapViewController") as! MapViewController
         self.navigationController?.pushViewController(mapVC, animated: true)
         
     }
@@ -68,12 +91,16 @@ class HomeViewController: UIViewController {
     
     //MAEK: - INNER Func
     private func setUI() {
-        
+
         //view
         topView.layer.cornerRadius = 10
         topView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
         locationNowView.layer.cornerRadius = 20
+        
+        //프사 이미지 둥글게
+        profileImageView.layer.cornerRadius = profileImageView.bounds.height/2
+        profileImageView.clipsToBounds = true
         
         //button
         makeBtnShdow(btn: issueReportBtn)
@@ -81,6 +108,13 @@ class HomeViewController: UIViewController {
         makeBtnShdow(btn: communityBtn)
         makeBtnShdow(btn: environmentalInfoBtn)
         
+        //이미지뷰 클릭동작
+        let tapImageViewRecognizer
+        = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        //이미지뷰가 상호작용할 수 있게 설정
+        profileImageView.isUserInteractionEnabled = true
+        //이미지뷰에 제스처인식기 연결
+        profileImageView.addGestureRecognizer(tapImageViewRecognizer)
         
     }
     
@@ -92,6 +126,43 @@ class HomeViewController: UIViewController {
         btn.layer.shadowOffset = CGSize(width: 2, height: 2)
         btn.layer.masksToBounds = false
         
+    }
+    
+    //MARK: - Get MyProfile
+    let header: HTTPHeaders = ["authorization": UserDefaults.standard.string(forKey: "token")!]
+    private func getMyProfile() {
+        AF.request(VALUNURL.myProfileURL, method: .get, headers: header)
+            .validate()
+            .responseDecodable(of: myProfileResponse.self) { [weak self] response in
+                guard let self = self else {return}
+                switch response.result {
+                case .success(let response):
+                        print(VALUNLog.debug("getMyProfile-success"))
+                    
+                    if response.data != nil {
+                        let data = response.data?.profile
+                        self.myProfile = data?.profileImage ?? ""
+                        self.myID = data?.id ?? ""
+                        self.myNick = data?.nick ?? ""
+                        self.myBroom = data?.broom ?? 0
+                        
+                        let url = URL(string: data?.profileImage ?? "person.circle")
+                        self.profileImageView.kf.setImage(with: url)
+                        
+                        self.nickNameLabel.text = data?.nick
+                    }
+                        
+
+
+                case .failure(let error):
+                    VALUNLog.error("getMyProfile - err")
+                    print(error.localizedDescription)
+                    if let statusCode = response.response?.statusCode {
+                        print("에러코드 : \(statusCode)")
+                        
+                    }
+                }
+            }
     }
 }
 
