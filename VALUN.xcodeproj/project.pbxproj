@@ -22,6 +22,10 @@
 		EB1CAE3D296563D5009425EA /* MyIssueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB1CAE3C296563D5009425EA /* MyIssueTableViewCell.xib */; };
 		EB1CAE4029656615009425EA /* MyIssueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CAE3F29656615009425EA /* MyIssueTableViewCell.swift */; };
 		EB1EA0CB296A845000140622 /* myProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1EA0CA296A845000140622 /* myProfileResponse.swift */; };
+		EB1EA0CD296AB16D00140622 /* RecentIssueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1EA0CC296AB16D00140622 /* RecentIssueResponse.swift */; };
+		EB1EA0CF296AB1AA00140622 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1EA0CE296AB1AA00140622 /* Issue.swift */; };
+		EB1EA0D2296AC14500140622 /* ReportIssueRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1EA0D1296AC14500140622 /* ReportIssueRequest.swift */; };
+		EB1EA0D4296AC15300140622 /* ReportIssueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1EA0D3296AC15300140622 /* ReportIssueResponse.swift */; };
 		EB264846295AA5CC0014BC89 /* SUIT-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB26483C295AA5CC0014BC89 /* SUIT-Thin.otf */; };
 		EB264847295AA5CC0014BC89 /* SUIT-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = EB26483D295AA5CC0014BC89 /* SUIT-Regular.otf */; };
 		EB264848295AA5CC0014BC89 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = EB26483E295AA5CC0014BC89 /* LICENSE */; };
@@ -144,6 +148,10 @@
 		EB1CAE3C296563D5009425EA /* MyIssueTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyIssueTableViewCell.xib; sourceTree = "<group>"; };
 		EB1CAE3F29656615009425EA /* MyIssueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIssueTableViewCell.swift; sourceTree = "<group>"; };
 		EB1EA0CA296A845000140622 /* myProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myProfileResponse.swift; sourceTree = "<group>"; };
+		EB1EA0CC296AB16D00140622 /* RecentIssueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentIssueResponse.swift; sourceTree = "<group>"; };
+		EB1EA0CE296AB1AA00140622 /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
+		EB1EA0D1296AC14500140622 /* ReportIssueRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportIssueRequest.swift; sourceTree = "<group>"; };
+		EB1EA0D3296AC15300140622 /* ReportIssueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportIssueResponse.swift; sourceTree = "<group>"; };
 		EB26483C295AA5CC0014BC89 /* SUIT-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Thin.otf"; sourceTree = "<group>"; };
 		EB26483D295AA5CC0014BC89 /* SUIT-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUIT-Regular.otf"; sourceTree = "<group>"; };
 		EB26483E295AA5CC0014BC89 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -341,6 +349,8 @@
 		EB1EA0C8296A83ED00140622 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				EB1EA0CC296AB16D00140622 /* RecentIssueResponse.swift */,
+				EB1EA0D0296AC12600140622 /* ReportIssue */,
 				EB1EA0C9296A83FC00140622 /* MyProfile */,
 			);
 			path = Home;
@@ -352,6 +362,15 @@
 				EB1EA0CA296A845000140622 /* myProfileResponse.swift */,
 			);
 			path = MyProfile;
+			sourceTree = "<group>";
+		};
+		EB1EA0D0296AC12600140622 /* ReportIssue */ = {
+			isa = PBXGroup;
+			children = (
+				EB1EA0D1296AC14500140622 /* ReportIssueRequest.swift */,
+				EB1EA0D3296AC15300140622 /* ReportIssueResponse.swift */,
+			);
+			path = ReportIssue;
 			sourceTree = "<group>";
 		};
 		EB26483A295AA5A90014BC89 /* Font */ = {
@@ -590,6 +609,7 @@
 			children = (
 				EB625F45296688950084808A /* VALUNURL.swift */,
 				EB9C1CF1296695F200F3F729 /* ErrorData.swift */,
+				EB1EA0CE296AB1AA00140622 /* Issue.swift */,
 				EB625F3929667C5E0084808A /* Login */,
 				EB625F3C29667D6E0084808A /* Signup */,
 				EB1EA0C8296A83ED00140622 /* Home */,
@@ -889,6 +909,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB625F4429667DE30084808A /* SignupResponse.swift in Sources */,
+				EB1EA0D2296AC14500140622 /* ReportIssueRequest.swift in Sources */,
 				EB1CAE3529656206009425EA /* Solved_AllIssueViewController.swift in Sources */,
 				EBE33266295BF977001A615B /* FilterCollectionViewCell.swift in Sources */,
 				EB1CAE372965623F009425EA /* Solved_SolvingViewController.swift in Sources */,
@@ -899,6 +920,7 @@
 				EB85B0FD295C543A00823E87 /* IssueDetailViewController.swift in Sources */,
 				EB1CAE2429656003009425EA /* I_Reported_IssueViewController.swift in Sources */,
 				EBF4C34A2955858400936E8D /* HomeViewController.swift in Sources */,
+				EB1EA0D4296AC15300140622 /* ReportIssueResponse.swift in Sources */,
 				EB1CAE4029656615009425EA /* MyIssueTableViewCell.swift in Sources */,
 				EBEAE22A2962A6370015BB82 /* IssueResolutionViewController.swift in Sources */,
 				EBACD9D129586E3800EF1A5C /* IssueReportViewController.swift in Sources */,
@@ -917,8 +939,10 @@
 				EB27564C2963F7D800BC8073 /* RejectedModalViewController.swift in Sources */,
 				EB1CAE2C29656108009425EA /* Reported_SolvingViewController.swift in Sources */,
 				EB96628A29484D5B00040DCD /* AppDelegate.swift in Sources */,
+				EB1EA0CF296AB1AA00140622 /* Issue.swift in Sources */,
 				EB1EA0CB296A845000140622 /* myProfileResponse.swift in Sources */,
 				EB1CAE2629656032009425EA /* I_Reported_IssueTabmanViewController.swift in Sources */,
+				EB1EA0CD296AB16D00140622 /* RecentIssueResponse.swift in Sources */,
 				EB1CAE3129656187009425EA /* I_Solved_IssueViewController.swift in Sources */,
 				EB96628C29484D5B00040DCD /* SceneDelegate.swift in Sources */,
 				EB625F4229667DCD0084808A /* SignupRequest.swift in Sources */,

@@ -42,6 +42,10 @@ class HomeViewController: UIViewController {
     var myID = ""
     var myBroom = 0
         
+    
+    //최근 이슈
+    var recentIssueList: [Issue] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getMyProfile()
@@ -52,6 +56,7 @@ class HomeViewController: UIViewController {
     //이미지 탭 제스쳐
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
+        
         let storyBoard = UIStoryboard(name: "MyProfile", bundle: nil)
         let profileVC = storyBoard.instantiateViewController(identifier: "MyProfileViewController") as! MyProfileViewController
         self.navigationController?.pushViewController(profileVC, animated: true)
@@ -65,15 +70,21 @@ class HomeViewController: UIViewController {
     //MARK: - IBAction
     
     @IBAction func locationNowBtnPressed(_ sender: UIButton) {
-        addressInfo(lati: lat_now, longi: lng_now)
-        locationManger.stopUpdatingLocation()
-        
+        locationManger.startUpdatingLocation()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
+            self.addressInfo(lati: self.lat_now, longi: self.lng_now)
+            self.locationManger.stopUpdatingLocation()
+            self.getRecentIssue()
+        }
     }
     
     @IBAction func issueReportBtnPressed(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "IssueReport", bundle: nil)
         let issueReportVC = storyBoard.instantiateViewController(identifier: "IssueReportViewController") as! IssueReportViewController
         self.navigationController?.pushViewController(issueReportVC, animated: true)
+        
+        issueReportVC.paramlat = lat_now
+        issueReportVC.paramlng = lng_now
     }
     
     @IBAction func mapShowBtnPressed(_ sender: UIButton) {
@@ -156,6 +167,35 @@ class HomeViewController: UIViewController {
 
                 case .failure(let error):
                     VALUNLog.error("getMyProfile - err")
+                    print(error.localizedDescription)
+                    if let statusCode = response.response?.statusCode {
+                        print("에러코드 : \(statusCode)")
+                        
+                    }
+                }
+            }
+    }
+    
+    //MARK: - Get RecentIssue
+    private func getRecentIssue() {
+        AF.request("\(VALUNURL.recentIssueURL)?lat=\(lat_now)&lng=\(lng_now)", method: .get, headers: header)
+            .validate()
+            .responseDecodable(of: RecentIssueResponse.self) { [weak self] response in
+                guard let self = self else {return}
+                switch response.result {
+                case .success(let response):
+                        print(VALUNLog.debug("getRecentIssue-success"))
+                    
+                    if response.data != nil {
+                        let data = response.data?.issues
+                        self.recentIssueList = data ?? []
+                        
+                    }
+                        
+
+
+                case .failure(let error):
+                    VALUNLog.error("getRecentIssue - err")
                     print(error.localizedDescription)
                     if let statusCode = response.response?.statusCode {
                         print("에러코드 : \(statusCode)")

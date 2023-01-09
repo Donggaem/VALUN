@@ -134,9 +134,14 @@ class SignupViewController: UIViewController {
         let headers: HTTPHeaders = ["Content - type": "multipart/form-data"]
         
         AF.upload(multipartFormData: { (multipartFormData) in
-            let id = self.idTextField.text ?? ""
-            let pw = self.pwTextField.text ?? ""
-            let nick = self.nickTextField.text ?? ""
+            
+            let id = parameters.id
+            let pw = parameters.pw
+            let nick = parameters.nick
+            
+//            let id = self.idTextField.text ?? ""
+//            let pw = self.pwTextField.text ?? ""
+//            let nick = self.nickTextField.text ?? ""
             
             let parameters: [String: Any] = [
                 "id": id,

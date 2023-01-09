@@ -25,6 +25,10 @@ class MyProfileViewController: UIViewController {
        
     }
     
+    @IBAction func backBtnPressed(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+
+    }
     @IBAction func profileNickChangeBtnPressed(_ sender: UIButton) {
         
         let storyboard = UIStoryboard.init(name: "MyProfile", bundle: nil)
