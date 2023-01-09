@@ -119,6 +119,8 @@
 		EBACD9D329586E4B00EF1A5C /* IssueReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBACD9D229586E4B00EF1A5C /* IssueReport.storyboard */; };
 		EBE33266295BF977001A615B /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE33265295BF977001A615B /* FilterCollectionViewCell.swift */; };
 		EBE33268295BF9C5001A615B /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBE33267295BF9C5001A615B /* FilterCollectionViewCell.xib */; };
+		EBE67B7E296BAB0200CA38A1 /* RecentIssueCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBE67B7D296BAB0200CA38A1 /* RecentIssueCollectionViewCell.xib */; };
+		EBE67B81296BAB3500CA38A1 /* RecentIssueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE67B80296BAB3500CA38A1 /* RecentIssueCollectionViewCell.swift */; };
 		EBEAE22829629AF20015BB82 /* IssueResolution.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBEAE22729629AF20015BB82 /* IssueResolution.storyboard */; };
 		EBEAE22A2962A6370015BB82 /* IssueResolutionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEAE2292962A6370015BB82 /* IssueResolutionViewController.swift */; };
 		EBEAE22C2962B7D80015BB82 /* IssueValidation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBEAE22B2962B7D80015BB82 /* IssueValidation.storyboard */; };
@@ -256,6 +258,8 @@
 		EBACD9D229586E4B00EF1A5C /* IssueReport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IssueReport.storyboard; sourceTree = "<group>"; };
 		EBE33265295BF977001A615B /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		EBE33267295BF9C5001A615B /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
+		EBE67B7D296BAB0200CA38A1 /* RecentIssueCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentIssueCollectionViewCell.xib; sourceTree = "<group>"; };
+		EBE67B80296BAB3500CA38A1 /* RecentIssueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentIssueCollectionViewCell.swift; sourceTree = "<group>"; };
 		EBEAE22729629AF20015BB82 /* IssueResolution.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IssueResolution.storyboard; sourceTree = "<group>"; };
 		EBEAE2292962A6370015BB82 /* IssueResolutionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueResolutionViewController.swift; sourceTree = "<group>"; };
 		EBEAE22B2962B7D80015BB82 /* IssueValidation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IssueValidation.storyboard; sourceTree = "<group>"; };
@@ -659,9 +663,18 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		EBE67B7F296BAB2400CA38A1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EBE67B80296BAB3500CA38A1 /* RecentIssueCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		EBF4C34B2955893800936E8D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				EBE67B7F296BAB2400CA38A1 /* Cell */,
 				EBF4C3492955858400936E8D /* HomeViewController.swift */,
 				EB2A68C0295709FA00A85299 /* Issue */,
 				EBF4C34C2955894000936E8D /* Map */,
@@ -695,6 +708,7 @@
 				EB2A68C229570A9000A85299 /* Issue */,
 				EBF4C34F29558BD300936E8D /* Map */,
 				EBF4C3472955854200936E8D /* Home.storyboard */,
+				EBE67B7D296BAB0200CA38A1 /* RecentIssueCollectionViewCell.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -837,6 +851,7 @@
 				EB78C6D0295185B10027DD1E /* point_sprite.png in Resources */,
 				EB78C6D8295185B10027DD1E /* map_present_background_update.png in Resources */,
 				EB78C6D4295185B10027DD1E /* map_present_direction.png in Resources */,
+				EBE67B7E296BAB0200CA38A1 /* RecentIssueCollectionViewCell.xib in Resources */,
 				EB4E8535295C07DE00986888 /* Pretendard-Black.ttf in Resources */,
 				EB4E853B295C07DE00986888 /* Pretendard-Bold.ttf in Resources */,
 				EB4E8534295C07DE00986888 /* Pretendard-Medium.ttf in Resources */,
@@ -922,6 +937,7 @@
 				EBF4C34A2955858400936E8D /* HomeViewController.swift in Sources */,
 				EB1EA0D4296AC15300140622 /* ReportIssueResponse.swift in Sources */,
 				EB1CAE4029656615009425EA /* MyIssueTableViewCell.swift in Sources */,
+				EBE67B81296BAB3500CA38A1 /* RecentIssueCollectionViewCell.swift in Sources */,
 				EBEAE22A2962A6370015BB82 /* IssueResolutionViewController.swift in Sources */,
 				EBACD9D129586E3800EF1A5C /* IssueReportViewController.swift in Sources */,
 				EB1CAE2A296560F0009425EA /* Reported_UnresolvedViewController.swift in Sources */,

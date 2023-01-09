@@ -9,11 +9,11 @@ import UIKit
 import CoreLocation
 import Alamofire
 import Kingfisher
+import FSPagerView
 
 class HomeViewController: UIViewController {
     
     @IBOutlet var topView: UIView!
-    @IBOutlet var nickNameLabel: UILabel!
     @IBOutlet var profileImageView: UIImageView! {
         didSet {
             if profileImageView == nil {
@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    @IBOutlet var RecentIssueCollectionView: UICollectionView!
     
     @IBOutlet var locationNowView: UIView!
     @IBOutlet var locationNowBtn: UIButton!
@@ -48,15 +49,27 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getMyProfile()
         setUI()
         setLocation()
+        setCollectionView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        getMyProfile()
+        getRecentIssue()
     }
     //MARK: - OBJC
     //이미지 탭 제스쳐
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
-        
+        print("이미지탭 클릭")
         let storyBoard = UIStoryboard(name: "MyProfile", bundle: nil)
         let profileVC = storyBoard.instantiateViewController(identifier: "MyProfileViewController") as! MyProfileViewController
         self.navigationController?.pushViewController(profileVC, animated: true)
@@ -70,12 +83,15 @@ class HomeViewController: UIViewController {
     //MARK: - IBAction
     
     @IBAction func locationNowBtnPressed(_ sender: UIButton) {
-        locationManger.startUpdatingLocation()
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
-            self.addressInfo(lati: self.lat_now, longi: self.lng_now)
-            self.locationManger.stopUpdatingLocation()
-            self.getRecentIssue()
-        }
+        print("로케이션 클릭")
+
+        self.addressInfo(lati: self.lat_now, longi: self.lng_now)
+        self.getRecentIssue()
+        
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
+//            self.addressInfo(lati: self.lat_now, longi: self.lng_now)
+//            self.getRecentIssue()
+//        }
     }
     
     @IBAction func issueReportBtnPressed(_ sender: UIButton) {
@@ -103,6 +119,9 @@ class HomeViewController: UIViewController {
     //MAEK: - INNER Func
     private func setUI() {
 
+        //네비바 숨김
+        self.navigationController?.navigationBar.isHidden = true
+        
         //view
         topView.layer.cornerRadius = 10
         topView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -139,6 +158,22 @@ class HomeViewController: UIViewController {
         
     }
     
+    func timeGap(issueDate: String) -> String {
+        
+        let date = Date()
+        let format = DateFormatter()
+        format.dateFormat = "yyyy-MM-dd'T'hh:mm:ss.SSSZ"
+        format.timeZone = TimeZone(identifier: TimeZone.current.identifier)
+        format.locale = Locale(identifier: Locale.current.identifier)
+        let aDate = format.date(from: issueDate)
+       
+        let formatter = RelativeDateTimeFormatter()
+        formatter.locale = Locale(identifier: "ko_KR")
+        let dateString = formatter.localizedString(for: aDate ?? Date(), relativeTo: date)
+        
+        return dateString
+    }
+    
     //MARK: - Get MyProfile
     let header: HTTPHeaders = ["authorization": UserDefaults.standard.string(forKey: "token")!]
     private func getMyProfile() {
@@ -160,7 +195,6 @@ class HomeViewController: UIViewController {
                         let url = URL(string: data?.profileImage ?? "person.circle")
                         self.profileImageView.kf.setImage(with: url)
                         
-                        self.nickNameLabel.text = data?.nick
                     }
                         
 
@@ -178,6 +212,7 @@ class HomeViewController: UIViewController {
     
     //MARK: - Get RecentIssue
     private func getRecentIssue() {
+
         AF.request("\(VALUNURL.recentIssueURL)?lat=\(lat_now)&lng=\(lng_now)", method: .get, headers: header)
             .validate()
             .responseDecodable(of: RecentIssueResponse.self) { [weak self] response in
@@ -187,12 +222,12 @@ class HomeViewController: UIViewController {
                         print(VALUNLog.debug("getRecentIssue-success"))
                     
                     if response.data != nil {
+                        self.recentIssueList.removeAll()
                         let data = response.data?.issues
                         self.recentIssueList = data ?? []
-                        
                     }
-                        
 
+                    self.RecentIssueCollectionView.reloadData()
 
                 case .failure(let error):
                     VALUNLog.error("getRecentIssue - err")
@@ -220,6 +255,15 @@ extension HomeViewController: CLLocationManagerDelegate {
 
     }
     
+    private func  distance(lat: Double, lng: Double) -> Int{
+        let from = CLLocation(latitude: lat_now, longitude: lng_now)
+        let to = CLLocation(latitude: lat, longitude: lng)
+        
+        let distance = Int(from.distance(from: to))
+        return distance
+        
+    }
+    
     //위치권한 설정
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
@@ -242,12 +286,11 @@ extension HomeViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         //        print("didUpdateLocations")
         if let location = locations.first {
-            print("위도: \(location.coordinate.latitude)")
-            print("경도: \(location.coordinate.longitude)")
             
             lat_now = location.coordinate.latitude
             lng_now = location.coordinate.longitude
-            
+            print("현재위도: \(lat_now)")
+            print("현재경도: \(lng_now)")
         }
     }
     
@@ -283,4 +326,69 @@ extension HomeViewController: CLLocationManagerDelegate {
         })
         
     }
+}
+
+//MARK: - CollectionViewExtension
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    //필터
+    // CollectionView 셋팅
+    func setCollectionView() {
+        
+        RecentIssueCollectionView.reloadData()
+        RecentIssueCollectionView.delegate = self
+        RecentIssueCollectionView.dataSource = self
+        RecentIssueCollectionView.register(UINib(nibName: "RecentIssueCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "RecentIssueCollectionViewCell")
+        
+    }
+
+    
+    // CollectionView item 개수
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return recentIssueList.count
+    }
+    
+    // CollectionView Cell의 Object
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecentIssueCollectionViewCell", for: indexPath) as! RecentIssueCollectionViewCell
+
+        let url = URL(string: recentIssueList[indexPath.row].imageUrl)
+        cell.recentIssueImageView.kf.setImage(with: url)
+        cell.destanceLabel.text = "\(distance(lat: recentIssueList[indexPath.row].lat, lng: recentIssueList[indexPath.row].lng)) m"
+        cell.issueCategoryLabel.text = recentIssueList[indexPath.row].category
+        
+        var issueDate = recentIssueList[indexPath.row].createdAt
+        
+        cell.timeAgoLabel.text = timeGap(issueDate: issueDate)
+        print("시간차: \(cell.timeAgoLabel.text)")
+        print("거리: \(cell.destanceLabel.text)")
+        
+        
+        return cell
+    }
+    
+    // CollectionView Cell 터치
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+    
+    // CollectionView Cell의 Size
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width: CGFloat = collectionView.frame.width / 3 - 1.0
+        
+        return CGSize(width: width, height: 125)
+    }
+    
+    // CollectionView Cell의 위아래 간격
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10.0
+    }
+    
+    // CollectionView Cell의 옆 간격
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 12.0
+    }
+    
 }
