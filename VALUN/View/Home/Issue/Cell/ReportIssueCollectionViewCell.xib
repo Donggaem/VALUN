@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ReportIssueCollectionViewCell" reuseIdentifier="" id="5aD-Xb-ONU" customClass="ReportIssueCollectionViewCell" customModule="VALUN" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="134" height="124"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fgY-BT-Vvm">
+                <rect key="frame" x="0.0" y="0.0" width="134" height="124"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aro-fU-nB4">
+                        <rect key="frame" x="0.0" y="0.0" width="134" height="124"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="134" id="IZo-B2-j08"/>
+                            <constraint firstAttribute="height" constant="124" id="XlR-sE-0cK"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="aro-fU-nB4" firstAttribute="top" secondItem="fgY-BT-Vvm" secondAttribute="top" id="FPJ-Bo-H5f"/>
+                    <constraint firstAttribute="trailing" secondItem="aro-fU-nB4" secondAttribute="trailing" id="WQI-1P-Rkf"/>
+                    <constraint firstItem="aro-fU-nB4" firstAttribute="leading" secondItem="fgY-BT-Vvm" secondAttribute="leading" id="aiv-xN-vRe"/>
+                    <constraint firstAttribute="bottom" secondItem="aro-fU-nB4" secondAttribute="bottom" id="bGa-uw-HfS"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <connections>
+                <outlet property="categoryImage" destination="aro-fU-nB4" id="2aw-iz-lSA"/>
+            </connections>
+            <point key="canvasLocation" x="-6.1068702290076331" y="-6.3380281690140849"/>
+        </collectionViewCell>
+    </objects>
+</document>

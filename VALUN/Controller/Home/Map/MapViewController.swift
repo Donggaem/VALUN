@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MapViewController: UIViewController {
     
@@ -53,6 +54,18 @@ class MapViewController: UIViewController {
     
     var filterTuple: [(String, Bool)] = [("PET", false), ("금속", false), ("종이", false), ("플라스틱", false), ("일반쓰레기", false), ("스티로폼", false), ("유리", false), ("음식물 쓰레기", false), ("폐기물", false), ("목재", false), ("비닐", false), ("기타", false)]
     
+    var filterDictionary: Dictionary<String, String> = ["PET":"pet,", "금속":"metal,", "종이":"paper,", "플라스틱":"plastic,", "일반쓰레기":"trash,", "스티로폼":"styrofoam,", "유리":"glass,", "음식물 쓰레기":"garbage,", "폐기물":"waste,", "목재":"lumber,", "비닐":"vinyl,", "기타":"etc,"]
+    
+    var filterStringList: [String] = []
+    var filterString = ""
+    
+    //현재 위치
+    var lat_now = 0.0
+    var lng_now = 0.0
+    
+    //최근 이슈
+    var nearIssueList: [Issue] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setMap()
@@ -65,73 +78,7 @@ class MapViewController: UIViewController {
         super.viewWillAppear(true)
         setMap()
         setUI()
-    }
-    
-    //MARK: - Inner Func
-    private func setUI() {
-        
-        //필터 초기화
-        removeFilter()
-        
-        //네비바 숨김
-        self.navigationController?.navigationBar.isHidden = true
-        
-        // 뷰를 최상위로
-        self.view.bringSubviewToFront(filterView)
-        self.view.bringSubviewToFront(listBtn)
-        self.view.bringSubviewToFront(modalBtn)
-        self.view.bringSubviewToFront(modalView)
-        self.view.bringSubviewToFront(listView)
-        
-        //둥글게
-        
-        categoryChoiceBtn.layer.cornerRadius = 10
-        categoryChoiceBtn.layer.borderWidth = 1
-        categoryChoiceBtn.layer.borderColor = UIColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 1).cgColor
-        
-        filter_CancelBtn.layer.cornerRadius = 10
-        filter_CancelBtn.layer.borderWidth = 1
-        filter_CancelBtn.layer.borderColor = UIColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 1).cgColor
-        
-        filter_ApplyBtn.layer.cornerRadius = 10
-        
-        listBtn.layer.cornerRadius = 16
-        modalView.layer.cornerRadius = 10
-        modalView.clipsToBounds = true
-        
-        modalImage.layer.cornerRadius = 10
-        
-        listView.layer.cornerRadius = 10
-        listView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        
-        modalDetailBtn.layer.cornerRadius = 8
-        modalDetailBtn.layer.borderWidth = 1
-        modalDetailBtn.layer.borderColor = UIColor(red: 0.416, green: 0.769, blue: 0.478, alpha: 1).cgColor
-        
-        modalSolveBtn.layer.cornerRadius = 8
-        modalSolveBtn.layer.borderWidth = 1
-        modalSolveBtn.layer.borderColor = UIColor(red: 0.416, green: 0.769, blue: 0.478, alpha: 1).cgColor
-        
-    }
-    
-    //컬렉션뷰셀 클릭
-    func cellClick(index: Int) {
-        let newValue: (String, Bool) = (filterTuple[index].0, !filterTuple[index].1)
-        filterTuple[index] = newValue
-        filterCollectionView.reloadData()
-        filter_OneCollectionView.reloadData()
-    }
-    
-    //필터 초기화
-    func removeFilter() {
-        for index in 0..<filterTuple.endIndex {
-            if filterTuple.map{$0.1}[index] == true {
-                let changeValue: (String, Bool) = (filterTuple[index].0, !filterTuple[index].1)
-                filterTuple[index] = changeValue
-            }
-        }
-        filterCollectionView.reloadData()
-        filter_OneCollectionView.reloadData()
+
     }
     
     //MARK: - IBAction
@@ -158,6 +105,8 @@ class MapViewController: UIViewController {
     @IBAction func filter_ApplyBtnPressed(_ sender: UIButton) {
         
         self.filterViewConstraint.constant = -281
+        filterToString()
+        getNearIssue()
         
     }
     
@@ -251,6 +200,115 @@ class MapViewController: UIViewController {
         let issueResolutionVC = storyBoard.instantiateViewController(identifier: "IssueResolutionViewController")
         self.navigationController?.pushViewController(issueResolutionVC, animated: true)
     }
+    
+    //MARK: - Inner Func
+    private func setUI() {
+        
+        //필터 초기화
+        removeFilter()
+        
+        //네비바 숨김
+        self.navigationController?.navigationBar.isHidden = true
+        
+        // 뷰를 최상위로
+        self.view.bringSubviewToFront(filterView)
+        self.view.bringSubviewToFront(listBtn)
+        self.view.bringSubviewToFront(modalBtn)
+        self.view.bringSubviewToFront(modalView)
+        self.view.bringSubviewToFront(listView)
+        
+        //둥글게
+        
+        categoryChoiceBtn.layer.cornerRadius = 10
+        categoryChoiceBtn.layer.borderWidth = 1
+        categoryChoiceBtn.layer.borderColor = UIColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 1).cgColor
+        
+        filter_CancelBtn.layer.cornerRadius = 10
+        filter_CancelBtn.layer.borderWidth = 1
+        filter_CancelBtn.layer.borderColor = UIColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 1).cgColor
+        
+        filter_ApplyBtn.layer.cornerRadius = 10
+        
+        listBtn.layer.cornerRadius = 16
+        modalView.layer.cornerRadius = 10
+        modalView.clipsToBounds = true
+        
+        modalImage.layer.cornerRadius = 10
+        
+        listView.layer.cornerRadius = 10
+        listView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
+        modalDetailBtn.layer.cornerRadius = 8
+        modalDetailBtn.layer.borderWidth = 1
+        modalDetailBtn.layer.borderColor = UIColor(red: 0.416, green: 0.769, blue: 0.478, alpha: 1).cgColor
+        
+        modalSolveBtn.layer.cornerRadius = 8
+        modalSolveBtn.layer.borderWidth = 1
+        modalSolveBtn.layer.borderColor = UIColor(red: 0.416, green: 0.769, blue: 0.478, alpha: 1).cgColor
+        
+    }
+    
+    //컬렉션뷰셀 클릭
+    func cellClick(index: Int) {
+        let newValue: (String, Bool) = (filterTuple[index].0, !filterTuple[index].1)
+        filterTuple[index] = newValue
+        filterCollectionView.reloadData()
+        filter_OneCollectionView.reloadData()
+    }
+    
+    //필터 초기화
+    func removeFilter() {
+        for index in 0..<filterTuple.endIndex {
+            if filterTuple.map{$0.1}[index] == true {
+                let changeValue: (String, Bool) = (filterTuple[index].0, !filterTuple[index].1)
+                filterTuple[index] = changeValue
+            }
+        }
+        filterCollectionView.reloadData()
+        filter_OneCollectionView.reloadData()
+    }
+    
+    func filterToString() {
+        var baseValue = ""
+        var changeValue = ""
+        
+        for index in 0..<filterStringList.endIndex {
+            baseValue = filterStringList[index]
+            changeValue = filterDictionary[baseValue] ?? ""
+            filterString = "\(filterString)\(changeValue)"
+        }
+        
+    }
+    
+    
+    //MARK: - Get RecentIssue
+    let header: HTTPHeaders = ["authorization": UserDefaults.standard.string(forKey: "token")!]
+
+    private func getNearIssue() {
+        AF.request("\(VALUNURL.nearIssueURL)?lat=\(lat_now)&lng=\(lng_now)&categories=\(filterString)", method: .get, headers: header)
+            .validate()
+            .responseDecodable(of: NearIssueResponse.self) { [self] response in
+                switch response.result {
+                case .success(let response):
+                    print(VALUNLog.debug("getNearIssue-success"))
+                    
+                    if response.data != nil {
+                        nearIssueList.removeAll()
+                        nearIssueList = response.data?.issues ?? []
+                        print(nearIssueList)
+                    }
+                    
+                case .failure(let error):
+                    VALUNLog.error("getRecentIssue_Map - err")
+                    print(error.localizedDescription)
+                    if let statusCode = response.response?.statusCode {
+                        print("에러코드 : \(statusCode)")
+                    }
+                    
+                }
+            }
+    }
+
 }
 
 //MARK: - MapExtension
@@ -274,6 +332,28 @@ extension MapViewController: MTMapViewDelegate {
             
         }
     }
+    
+    //핀찍기
+    private func setPin() {
+        
+    }
+    
+    //핀 클릭
+    func mapView(_ mapView: MTMapView!, selectedPOIItem poiItem: MTMapPOIItem!) -> Bool {
+        
+        return false
+    }
+    
+    //현 위치 트래킹 함수
+       func mapView(_ mapView: MTMapView!, updateCurrentLocation location: MTMapPoint!, withAccuracy accuracy: MTMapLocationAccuracy) {
+           let currentLocation = location?.mapPointGeo()
+           if let latitude = currentLocation?.latitude, let longitude = currentLocation?.longitude{
+//               print("MTMapView updateCurrentLocation (\(latitude),\(longitude)) accuracy (\(accuracy))")
+               lat_now = latitude
+               lng_now = longitude
+
+           }
+       }
 }
 
 //MARK: - CollectionViewExtension
@@ -287,6 +367,7 @@ extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegat
         filterCollectionView.delegate = self
         filterCollectionView.dataSource = self
         filterCollectionView.register(UINib(nibName: "FilterCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "FilterCollectionViewCell")
+        filterCollectionView.showsHorizontalScrollIndicator = false
         
         filter_OneCollectionView.delegate = self
         filter_OneCollectionView.dataSource = self
@@ -323,6 +404,8 @@ extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegat
             cell.filterTitle.text = filterTuple.filter{$0.1 == true}.map{$0.0}[indexPath.row]
             cell.filterTitle.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
             cell.filterView.backgroundColor = UIColor(red: 0.416, green: 0.769, blue: 0.478, alpha: 1)
+            
+            filterStringList = filterTuple.filter{$0.1 == true}.map{$0.0}
             
         }else if collectionView == filter_OneCollectionView {
             

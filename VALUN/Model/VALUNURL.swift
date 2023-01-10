@@ -23,7 +23,10 @@ struct VALUNURL {
     static let myProfileURL = "http://valun.kro.kr/user/myprofile"
     
     //MARK: - RecentIssue
-    static let recentIssueURL = "http://valun.kro.kr/issues"
+    static let recentIssueURL = "http://valun.kro.kr/issues/recent"
+    
+    //MARK: - NearIssue
+    static let nearIssueURL = "http://valun.kro.kr/issues"
     
     //MARK: - postIssue
     static let reportIssueURL = "http://valun.kro.kr/issues"

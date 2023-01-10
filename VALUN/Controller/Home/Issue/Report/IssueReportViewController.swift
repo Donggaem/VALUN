@@ -13,14 +13,15 @@ class IssueReportViewController: UIViewController {
     
     @IBOutlet var issueReportImage: UIImageView!
     var imageData: Data = Data()
-
+    
     @IBOutlet var cameraImgView: UIImageView!
     
     @IBOutlet var choiceBtn: UIButton!
-    @IBOutlet var categoryBtn: UIButton!
+    
+    @IBOutlet var categoryView: UIView!
+    @IBOutlet var categoryLabel: UILabel!
     
     @IBOutlet var contentTextView: UITextView!
-    @IBOutlet var placeholder: UILabel!
     
     
     @IBOutlet var issueReportBtn: UIButton!
@@ -32,12 +33,18 @@ class IssueReportViewController: UIViewController {
     var paramlat = 0.0
     var paramlng = 0.0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUI()
         setImagePicker()
         setTextView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+
     }
     
     //MARK: - OBJC
@@ -57,6 +64,12 @@ class IssueReportViewController: UIViewController {
     }
     
     @IBAction func choiceBtnPressed(_ sender: UIButton) {
+        guard let popUp = self.storyboard?.instantiateViewController(identifier: "CategoryModalViewController") as? CategoryModalViewController else {return}
+//        popUp.modalPresentationStyle = .overFullScreen
+        popUp.modalPresentationStyle = .fullScreen
+        popUp.modalTransitionStyle = .crossDissolve
+        popUp.delegate = self
+        self.present(popUp, animated: true)
         
     }
     
@@ -83,18 +96,13 @@ class IssueReportViewController: UIViewController {
         
         choiceBtn.layer.cornerRadius = 10
         
-        categoryBtn.layer.cornerRadius = 10
-        categoryBtn.isEnabled = false
-        categoryBtn.isHidden = true // 선택전
+        categoryView.layer.cornerRadius = 10
         
         contentTextView.layer.cornerRadius = 5
         contentTextView.layer.borderWidth = 1
         contentTextView.layer.borderColor = UIColor(red: 0.886, green: 0.886, blue: 0.886, alpha: 1).cgColor
         
         issueReportBtn.layer.cornerRadius = 10
-        
-        
-        
         
     }
     
@@ -124,13 +132,13 @@ class IssueReportViewController: UIViewController {
             self.imageData = self.issueReportImage.image?.jpegData(compressionQuality: 0.5) ?? Data()
             print(self.imageData)
             
-      
-            multipartFormData.append(self.imageData, withName: "image", fileName: "test.jpeg", mimeType: "image/jpeg")
-        
             
-//            if let image = self.imageData {
-//                multipartFormData.append(image, withName: "image", fileName: "test.jpeg", mimeType: "image/jpeg")
-//            }
+            multipartFormData.append(self.imageData, withName: "image", fileName: "test.jpeg", mimeType: "image/jpeg")
+            
+            
+            //            if let image = self.imageData {
+            //                multipartFormData.append(image, withName: "image", fileName: "test.jpeg", mimeType: "image/jpeg")
+            //            }
             
         }, to: VALUNURL.reportIssueURL, method: .post, headers: headers).responseDecodable(of: ReportIssueResponse.self) {
             [self] response in
@@ -142,7 +150,7 @@ class IssueReportViewController: UIViewController {
                 let okAction = UIAlertAction(title: "확인", style: .default) { (action) in
                     
                     self.navigationController?.popViewController(animated: true)
-        
+                    
                 }
                 report_alert.addAction(okAction)
                 present(report_alert, animated: false, completion: nil)
@@ -153,7 +161,7 @@ class IssueReportViewController: UIViewController {
                 if let statusCode = response.response?.statusCode {
                     print("에러코드 : \(statusCode)")
                     switch (statusCode) {
-                        case 400..<500:
+                    case 400..<500:
                         let reportFail_alert = UIAlertController(title: "실패", message:"입력을 확인해 주세요", preferredStyle: UIAlertController.Style.alert)
                         let okAction = UIAlertAction(title: "확인", style: .default)
                         reportFail_alert.addAction(okAction)
@@ -206,15 +214,15 @@ extension IssueReportViewController: UIImagePickerControllerDelegate, UINavigati
         
         picker.dismiss(animated: true, completion: nil) //dismiss를 직접 해야함
         
-//        self.imagePickerController.dismiss(animated: true)
-//
-//        // 선택된 이미지(소스)가 없을수도 있으니 옵셔널 바인딩해주고, 이미지가 선택된게 없다면 오류를 발생시킵니다.
-//        guard let userPickedImage = info[.originalImage] as? UIImage else {
-//            fatalError("선택된 이미지를 불러오지 못했습니다 : userPickedImage의 값이 nil입니다. ")
-//        }
-//        cameraImgView.isHidden = true
-//        issueReportImage.image = userPickedImage
-//        print(userPickedImage)
+        //        self.imagePickerController.dismiss(animated: true)
+        //
+        //        // 선택된 이미지(소스)가 없을수도 있으니 옵셔널 바인딩해주고, 이미지가 선택된게 없다면 오류를 발생시킵니다.
+        //        guard let userPickedImage = info[.originalImage] as? UIImage else {
+        //            fatalError("선택된 이미지를 불러오지 못했습니다 : userPickedImage의 값이 nil입니다. ")
+        //        }
+        //        cameraImgView.isHidden = true
+        //        issueReportImage.image = userPickedImage
+        //        print(userPickedImage)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -279,4 +287,18 @@ extension IssueReportViewController: UITextViewDelegate {
         }
     }
     
+}
+
+extension IssueReportViewController: DimissAction {
+    func GetTitle(categoryTitle: String) {
+        categoryLabel.text = categoryTitle
+        categoryView.backgroundColor = UIColor(red: 0.416, green: 0.769, blue: 0.478, alpha: 1)
+        
+        if categoryTitle == "" {
+            categoryView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        }
+            
+    }
+    
+
 }

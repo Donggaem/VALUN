@@ -11,5 +11,5 @@ struct ErrorData: Decodable {
     
     var code: Int
     var message: String
-    var timestamp: Date
+    var timestamp: String
 }

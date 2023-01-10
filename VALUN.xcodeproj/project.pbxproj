@@ -117,6 +117,10 @@
 		EBACD9CB29586DDD00EF1A5C /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBACD9CA29586DDD00EF1A5C /* MyProfileViewController.swift */; };
 		EBACD9D129586E3800EF1A5C /* IssueReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBACD9D029586E3800EF1A5C /* IssueReportViewController.swift */; };
 		EBACD9D329586E4B00EF1A5C /* IssueReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBACD9D229586E4B00EF1A5C /* IssueReport.storyboard */; };
+		EBE2EECF296D1EC400E33C4E /* NearIssueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2EECE296D1EC400E33C4E /* NearIssueResponse.swift */; };
+		EBE2EED2296D280E00E33C4E /* ReportIssueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2EED1296D280E00E33C4E /* ReportIssueCollectionViewCell.swift */; };
+		EBE2EED5296D283600E33C4E /* ReportIssueCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBE2EED4296D283600E33C4E /* ReportIssueCollectionViewCell.xib */; };
+		EBE2EED8296D293000E33C4E /* CategoryModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2EED7296D293000E33C4E /* CategoryModalViewController.swift */; };
 		EBE33266295BF977001A615B /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE33265295BF977001A615B /* FilterCollectionViewCell.swift */; };
 		EBE33268295BF9C5001A615B /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBE33267295BF9C5001A615B /* FilterCollectionViewCell.xib */; };
 		EBE67B7E296BAB0200CA38A1 /* RecentIssueCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBE67B7D296BAB0200CA38A1 /* RecentIssueCollectionViewCell.xib */; };
@@ -256,6 +260,10 @@
 		EBACD9CA29586DDD00EF1A5C /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		EBACD9D029586E3800EF1A5C /* IssueReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueReportViewController.swift; sourceTree = "<group>"; };
 		EBACD9D229586E4B00EF1A5C /* IssueReport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IssueReport.storyboard; sourceTree = "<group>"; };
+		EBE2EECE296D1EC400E33C4E /* NearIssueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearIssueResponse.swift; sourceTree = "<group>"; };
+		EBE2EED1296D280E00E33C4E /* ReportIssueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportIssueCollectionViewCell.swift; sourceTree = "<group>"; };
+		EBE2EED4296D283600E33C4E /* ReportIssueCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportIssueCollectionViewCell.xib; sourceTree = "<group>"; };
+		EBE2EED7296D293000E33C4E /* CategoryModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModalViewController.swift; sourceTree = "<group>"; };
 		EBE33265295BF977001A615B /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		EBE33267295BF9C5001A615B /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
 		EBE67B7D296BAB0200CA38A1 /* RecentIssueCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentIssueCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -354,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				EB1EA0CC296AB16D00140622 /* RecentIssueResponse.swift */,
+				EBE2EECD296D1EA400E33C4E /* Map */,
 				EB1EA0D0296AC12600140622 /* ReportIssue */,
 				EB1EA0C9296A83FC00140622 /* MyProfile */,
 			);
@@ -407,7 +416,8 @@
 		EB2A68C0295709FA00A85299 /* Issue */ = {
 			isa = PBXGroup;
 			children = (
-				EBACD9D029586E3800EF1A5C /* IssueReportViewController.swift */,
+				EBE2EED0296D27F500E33C4E /* Cell */,
+				EBE2EED6296D290600E33C4E /* Report */,
 				EB85B0FC295C543A00823E87 /* IssueDetailViewController.swift */,
 				EBEAE2292962A6370015BB82 /* IssueResolutionViewController.swift */,
 				EBEAE22D2962B8130015BB82 /* IssueValidationViewController.swift */,
@@ -432,6 +442,7 @@
 		EB2A68C229570A9000A85299 /* Issue */ = {
 			isa = PBXGroup;
 			children = (
+				EBE2EED3296D282B00E33C4E /* Cell */,
 				EBACD9D229586E4B00EF1A5C /* IssueReport.storyboard */,
 				EB4E8546295C09BC00986888 /* IssueDetail.storyboard */,
 				EBEAE22729629AF20015BB82 /* IssueResolution.storyboard */,
@@ -654,6 +665,39 @@
 			path = VALUN;
 			sourceTree = "<group>";
 		};
+		EBE2EECD296D1EA400E33C4E /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				EBE2EECE296D1EC400E33C4E /* NearIssueResponse.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		EBE2EED0296D27F500E33C4E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EBE2EED1296D280E00E33C4E /* ReportIssueCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EBE2EED3296D282B00E33C4E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EBE2EED4296D283600E33C4E /* ReportIssueCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EBE2EED6296D290600E33C4E /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				EBACD9D029586E3800EF1A5C /* IssueReportViewController.swift */,
+				EBE2EED7296D293000E33C4E /* CategoryModalViewController.swift */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
 		EBE33264295BF948001A615B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -867,6 +911,7 @@
 				EB4E8537295C07DE00986888 /* Pretendard-Thin.ttf in Resources */,
 				EB26484D295AA5CC0014BC89 /* SUIT-SemiBold.otf in Resources */,
 				EB4E853D295C07DE00986888 /* Pretendard-Regular.otf in Resources */,
+				EBE2EED5296D283600E33C4E /* ReportIssueCollectionViewCell.xib in Resources */,
 				EB4E853F295C07DE00986888 /* Pretendard-Medium.otf in Resources */,
 				EB78C6D9295185B10027DD1E /* daum_th_line.png in Resources */,
 				EB4E8547295C09BC00986888 /* IssueDetail.storyboard in Resources */,
@@ -927,6 +972,7 @@
 				EB1EA0D2296AC14500140622 /* ReportIssueRequest.swift in Sources */,
 				EB1CAE3529656206009425EA /* Solved_AllIssueViewController.swift in Sources */,
 				EBE33266295BF977001A615B /* FilterCollectionViewCell.swift in Sources */,
+				EBE2EED8296D293000E33C4E /* CategoryModalViewController.swift in Sources */,
 				EB1CAE372965623F009425EA /* Solved_SolvingViewController.swift in Sources */,
 				EB1CAE392965625E009425EA /* Solved_CompletedViewController.swift in Sources */,
 				EBF4C3522955902700936E8D /* UIViewController+Extension.swift in Sources */,
@@ -957,9 +1003,11 @@
 				EB96628A29484D5B00040DCD /* AppDelegate.swift in Sources */,
 				EB1EA0CF296AB1AA00140622 /* Issue.swift in Sources */,
 				EB1EA0CB296A845000140622 /* myProfileResponse.swift in Sources */,
+				EBE2EECF296D1EC400E33C4E /* NearIssueResponse.swift in Sources */,
 				EB1CAE2629656032009425EA /* I_Reported_IssueTabmanViewController.swift in Sources */,
 				EB1EA0CD296AB16D00140622 /* RecentIssueResponse.swift in Sources */,
 				EB1CAE3129656187009425EA /* I_Solved_IssueViewController.swift in Sources */,
+				EBE2EED2296D280E00E33C4E /* ReportIssueCollectionViewCell.swift in Sources */,
 				EB96628C29484D5B00040DCD /* SceneDelegate.swift in Sources */,
 				EB625F4229667DCD0084808A /* SignupRequest.swift in Sources */,
 				EBEAE22E2962B8130015BB82 /* IssueValidationViewController.swift in Sources */,

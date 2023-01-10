@@ -62,9 +62,14 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        getMyProfile()
-        getRecentIssue()
+        // 1초 후 실행될 부분
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
+            self.getMyProfile()
+            self.getRecentIssue()
+        }
+        
     }
+    
     //MARK: - OBJC
     //이미지 탭 제스쳐
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
@@ -289,8 +294,7 @@ extension HomeViewController: CLLocationManagerDelegate {
             
             lat_now = location.coordinate.latitude
             lng_now = location.coordinate.longitude
-            print("현재위도: \(lat_now)")
-            print("현재경도: \(lng_now)")
+
         }
     }
     
@@ -299,6 +303,7 @@ extension HomeViewController: CLLocationManagerDelegate {
         print(error)
     }
     
+    //현재위치 한글주소로 변경
     func addressInfo(lati:CLLocationDegrees, longi:CLLocationDegrees){
         let findLocation = CLLocation(latitude: lati, longitude: longi )
         let geocoder = CLGeocoder()
@@ -361,9 +366,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         var issueDate = recentIssueList[indexPath.row].createdAt
         
         cell.timeAgoLabel.text = timeGap(issueDate: issueDate)
-        print("시간차: \(cell.timeAgoLabel.text)")
-        print("거리: \(cell.destanceLabel.text)")
-        
         
         return cell
     }
