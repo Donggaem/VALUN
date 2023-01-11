@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		68A76CAEA9DF78B9FDDDFC98 /* Pods_VALUN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8260C6E4A81A06CEFE105FF2 /* Pods_VALUN.framework */; };
+		EB0A527A296E92250031B70B /* ResolutionIssueRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A5279296E92250031B70B /* ResolutionIssueRequest.swift */; };
+		EB0A527D296E92370031B70B /* ResolutionIssueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A527C296E92370031B70B /* ResolutionIssueResponse.swift */; };
 		EB1CAE2429656003009425EA /* I_Reported_IssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CAE2329656003009425EA /* I_Reported_IssueViewController.swift */; };
 		EB1CAE2629656032009425EA /* I_Reported_IssueTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CAE2529656032009425EA /* I_Reported_IssueTabmanViewController.swift */; };
 		EB1CAE28296560D6009425EA /* Reported_AllIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CAE27296560D6009425EA /* Reported_AllIssueViewController.swift */; };
@@ -117,6 +119,7 @@
 		EBACD9CB29586DDD00EF1A5C /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBACD9CA29586DDD00EF1A5C /* MyProfileViewController.swift */; };
 		EBACD9D129586E3800EF1A5C /* IssueReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBACD9D029586E3800EF1A5C /* IssueReportViewController.swift */; };
 		EBACD9D329586E4B00EF1A5C /* IssueReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBACD9D229586E4B00EF1A5C /* IssueReport.storyboard */; };
+		EBDAF2F6296EA22000C515A9 /* myReportIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDAF2F5296EA22000C515A9 /* myReportIssue.swift */; };
 		EBE2EECF296D1EC400E33C4E /* NearIssueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2EECE296D1EC400E33C4E /* NearIssueResponse.swift */; };
 		EBE2EED2296D280E00E33C4E /* ReportIssueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2EED1296D280E00E33C4E /* ReportIssueCollectionViewCell.swift */; };
 		EBE2EED5296D283600E33C4E /* ReportIssueCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBE2EED4296D283600E33C4E /* ReportIssueCollectionViewCell.xib */; };
@@ -140,6 +143,8 @@
 		50F5DC97A33750D68DF498B2 /* Pods-VALUN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VALUN.release.xcconfig"; path = "Target Support Files/Pods-VALUN/Pods-VALUN.release.xcconfig"; sourceTree = "<group>"; };
 		8260C6E4A81A06CEFE105FF2 /* Pods_VALUN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VALUN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		905D43EDF5643BE800197714 /* Pods-VALUN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VALUN.debug.xcconfig"; path = "Target Support Files/Pods-VALUN/Pods-VALUN.debug.xcconfig"; sourceTree = "<group>"; };
+		EB0A5279296E92250031B70B /* ResolutionIssueRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolutionIssueRequest.swift; sourceTree = "<group>"; };
+		EB0A527C296E92370031B70B /* ResolutionIssueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolutionIssueResponse.swift; sourceTree = "<group>"; };
 		EB1CAE2329656003009425EA /* I_Reported_IssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = I_Reported_IssueViewController.swift; sourceTree = "<group>"; };
 		EB1CAE2529656032009425EA /* I_Reported_IssueTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = I_Reported_IssueTabmanViewController.swift; sourceTree = "<group>"; };
 		EB1CAE27296560D6009425EA /* Reported_AllIssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reported_AllIssueViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +265,7 @@
 		EBACD9CA29586DDD00EF1A5C /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		EBACD9D029586E3800EF1A5C /* IssueReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueReportViewController.swift; sourceTree = "<group>"; };
 		EBACD9D229586E4B00EF1A5C /* IssueReport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IssueReport.storyboard; sourceTree = "<group>"; };
+		EBDAF2F5296EA22000C515A9 /* myReportIssue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myReportIssue.swift; sourceTree = "<group>"; };
 		EBE2EECE296D1EC400E33C4E /* NearIssueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearIssueResponse.swift; sourceTree = "<group>"; };
 		EBE2EED1296D280E00E33C4E /* ReportIssueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportIssueCollectionViewCell.swift; sourceTree = "<group>"; };
 		EBE2EED4296D283600E33C4E /* ReportIssueCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportIssueCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -306,6 +312,15 @@
 				50F5DC97A33750D68DF498B2 /* Pods-VALUN.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		EB0A5278296E91EF0031B70B /* Issue */ = {
+			isa = PBXGroup;
+			children = (
+				EB0A5279296E92250031B70B /* ResolutionIssueRequest.swift */,
+				EB0A527C296E92370031B70B /* ResolutionIssueResponse.swift */,
+			);
+			path = Issue;
 			sourceTree = "<group>";
 		};
 		EB1CAE2229655FF0009425EA /* I_Reported_Issue */ = {
@@ -364,6 +379,7 @@
 				EB1EA0CC296AB16D00140622 /* RecentIssueResponse.swift */,
 				EBE2EECD296D1EA400E33C4E /* Map */,
 				EB1EA0D0296AC12600140622 /* ReportIssue */,
+				EB0A5278296E91EF0031B70B /* Issue */,
 				EB1EA0C9296A83FC00140622 /* MyProfile */,
 			);
 			path = Home;
@@ -372,6 +388,7 @@
 		EB1EA0C9296A83FC00140622 /* MyProfile */ = {
 			isa = PBXGroup;
 			children = (
+				EBDAF2F4296EA18400C515A9 /* MyReportIssue */,
 				EB1EA0CA296A845000140622 /* myProfileResponse.swift */,
 			);
 			path = MyProfile;
@@ -663,6 +680,14 @@
 				EB78C696295184650027DD1E /* VALUN-Header.h */,
 			);
 			path = VALUN;
+			sourceTree = "<group>";
+		};
+		EBDAF2F4296EA18400C515A9 /* MyReportIssue */ = {
+			isa = PBXGroup;
+			children = (
+				EBDAF2F5296EA22000C515A9 /* myReportIssue.swift */,
+			);
+			path = MyReportIssue;
 			sourceTree = "<group>";
 		};
 		EBE2EECD296D1EA400E33C4E /* Map */ = {
@@ -973,6 +998,7 @@
 				EB1CAE3529656206009425EA /* Solved_AllIssueViewController.swift in Sources */,
 				EBE33266295BF977001A615B /* FilterCollectionViewCell.swift in Sources */,
 				EBE2EED8296D293000E33C4E /* CategoryModalViewController.swift in Sources */,
+				EB0A527D296E92370031B70B /* ResolutionIssueResponse.swift in Sources */,
 				EB1CAE372965623F009425EA /* Solved_SolvingViewController.swift in Sources */,
 				EB1CAE392965625E009425EA /* Solved_CompletedViewController.swift in Sources */,
 				EBF4C3522955902700936E8D /* UIViewController+Extension.swift in Sources */,
@@ -999,6 +1025,7 @@
 				EB625F4029667DBC0084808A /* LoginResponse.swift in Sources */,
 				EB96628E29484D5B00040DCD /* MapViewController.swift in Sources */,
 				EB27564C2963F7D800BC8073 /* RejectedModalViewController.swift in Sources */,
+				EB0A527A296E92250031B70B /* ResolutionIssueRequest.swift in Sources */,
 				EB1CAE2C29656108009425EA /* Reported_SolvingViewController.swift in Sources */,
 				EB96628A29484D5B00040DCD /* AppDelegate.swift in Sources */,
 				EB1EA0CF296AB1AA00140622 /* Issue.swift in Sources */,
@@ -1007,6 +1034,7 @@
 				EB1CAE2629656032009425EA /* I_Reported_IssueTabmanViewController.swift in Sources */,
 				EB1EA0CD296AB16D00140622 /* RecentIssueResponse.swift in Sources */,
 				EB1CAE3129656187009425EA /* I_Solved_IssueViewController.swift in Sources */,
+				EBDAF2F6296EA22000C515A9 /* myReportIssue.swift in Sources */,
 				EBE2EED2296D280E00E33C4E /* ReportIssueCollectionViewCell.swift in Sources */,
 				EB96628C29484D5B00040DCD /* SceneDelegate.swift in Sources */,
 				EB625F4229667DCD0084808A /* SignupRequest.swift in Sources */,

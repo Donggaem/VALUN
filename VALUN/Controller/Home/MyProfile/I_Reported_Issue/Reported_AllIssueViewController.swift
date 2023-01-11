@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class Reported_AllIssueViewController: UIViewController {
 
@@ -16,18 +17,51 @@ class Reported_AllIssueViewController: UIViewController {
     var tabletest3: [String] = ["미해결", "해결중", "해결완료"]
     var tabletestImg: [String] = ["common1", "common2", "common3"]
     
+    var unsolvedsList: [Issue] = []
+    var pendingsList: [WithSolution] = []
+    var solvedsList: [WithSolution] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setTableView()
     }
-    
+ 
+    //MARK: - GetMyAllIssue
+    let header: HTTPHeaders = ["authorization": UserDefaults.standard.string(forKey: "token")!]
+    private func getMyAllIssue() {
+        AF.request(VALUNURL.myReportIssueURL, method: .get, headers: header)
+            .validate()
+            .responseDecodable(of: myReportIssueResponse.self) { [weak self] response in
+                guard let self = self else {return}
+                switch response.result {
+                case .success(let response):
+                        print(VALUNLog.debug("getMyAllIssue-success"))
+                    
+                    if response.data != nil {
+                        let data = response.data
+                        self.unsolvedsList = data?.unsolveds ?? []
+                        self.pendingsList = data?.pendings ?? []
+                        self.solvedsList = data?.solveds ?? []
+                    }
+                        
+
+
+                case .failure(let error):
+                    VALUNLog.error("getMyAllIssue - err")
+                    print(error.localizedDescription)
+                    if let statusCode = response.response?.statusCode {
+                        print("에러코드 : \(statusCode)")
+                        
+                    }
+                }
+            }
+    }
 }
 
 //MARK: - TableViewExtension
 extension Reported_AllIssueViewController: UITableViewDataSource, UITableViewDelegate{
    
-    
     // TableView 셋팅
     private func setTableView() {
         self.allIssueTableView.delegate = self
@@ -41,7 +75,8 @@ extension Reported_AllIssueViewController: UITableViewDataSource, UITableViewDel
     
     //Cell 갯수 반환
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tabletest1.count
+        let allListCount = unsolvedsList.count + pendingsList.count + solvedsList.count
+        return allListCount
     }
     
     //각Row에서 해당하는 Cell을 Return하는 메소드
@@ -78,6 +113,7 @@ extension Reported_AllIssueViewController: UITableViewDataSource, UITableViewDel
     
     //클릭한 셀의 이벤트 처리
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+       
+
     }
 }

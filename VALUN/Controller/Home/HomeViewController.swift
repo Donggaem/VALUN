@@ -77,7 +77,6 @@ class HomeViewController: UIViewController {
     //이미지 탭 제스쳐
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
     {
-        print("이미지탭 클릭")
         let storyBoard = UIStoryboard(name: "MyProfile", bundle: nil)
         let profileVC = storyBoard.instantiateViewController(identifier: "MyProfileViewController") as! MyProfileViewController
         self.navigationController?.pushViewController(profileVC, animated: true)

@@ -56,6 +56,7 @@ class MapViewController: UIViewController {
     
     var filterTuple: [(String, Bool)] = [("PET", false), ("금속", false), ("종이", false), ("플라스틱", false), ("일반쓰레기", false), ("스티로폼", false), ("유리", false), ("음식물 쓰레기", false), ("폐기물", false), ("목재", false), ("비닐", false), ("기타", false)]
     
+    //키 한글 -> 밸류 영어
     var filterDictionary: Dictionary<String, String> = ["PET":"pet,", "금속":"metal,", "종이":"paper,", "플라스틱":"plastic,", "일반쓰레기":"trash,", "스티로폼":"styrofoam,", "유리":"glass,", "음식물 쓰레기":"garbage,", "폐기물":"waste,", "목재":"lumber,", "비닐":"vinyl,", "기타":"etc,"]
     
     //키 영어 -> 밸류 한글
@@ -415,6 +416,7 @@ extension MapViewController: MTMapViewDelegate {
         modalCategory.text = categoryDictionary[nearIssueList[poiItem.tag].category]
         modalDistance.text = "\(distance(lat: nearIssueList[poiItem.tag].lat, lng: nearIssueList[poiItem.tag].lng)) m"
         
+        modalObject.removeAll()
         modalObject.append(nearIssueList[poiItem.tag])
         
         return false

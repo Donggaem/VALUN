@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Pretendard-Bold.otf">
+        <array key="Pretendard-Bold.ttf">
             <string>Pretendard-Bold</string>
         </array>
-        <array key="Pretendard-Regular.otf">
+        <array key="Pretendard-Regular.ttf">
             <string>Pretendard-Regular</string>
         </array>
         <array key="SUIT-Bold.otf">
@@ -183,7 +183,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="161" id="Fbe-4e-N86"/>
                                                         </constraints>
-                                                        <fontDescription key="fontDescription" name="SUIT-Regular" family="SUIT" pointSize="10"/>
+                                                        <fontDescription key="fontDescription" name="SUIT-Regular" family="SUIT" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -361,6 +361,7 @@
                         <outlet property="categoryLabel" destination="QtS-c5-Oc5" id="B1N-l4-sXM"/>
                         <outlet property="chatBtn" destination="apj-in-YIj" id="ThU-oY-f9B"/>
                         <outlet property="contentLabel" destination="sW7-8y-HLP" id="cGG-OD-x8N"/>
+                        <outlet property="distanceImg" destination="cOC-bf-Mu2" id="FcV-aF-mJ1"/>
                         <outlet property="distanceLabel" destination="mWn-OU-eDC" id="fxW-4r-XCI"/>
                         <outlet property="issueDateLabel" destination="Yyq-6R-wN7" id="V0a-BY-ol5"/>
                         <outlet property="issueImage" destination="VFu-hh-mve" id="esq-4E-C99"/>

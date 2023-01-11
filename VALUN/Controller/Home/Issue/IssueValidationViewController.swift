@@ -23,6 +23,8 @@ class IssueValidationViewController: UIViewController {
     @IBOutlet var refusalBtn: UIButton!
     @IBOutlet var acceptBtn: UIButton!
     
+    var paramIssueObject: [WithSolution] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -63,6 +65,15 @@ class IssueValidationViewController: UIViewController {
         
         refusalBtn.layer.cornerRadius = 10
         acceptBtn.layer.cornerRadius = 10
+        
+        //넘어온데이터 처리
+        let beforeurl = URL(string: paramIssueObject[0].issue.imageUrl)
+        beforeImage.kf.setImage(with: beforeurl)
+        
+        let afterurl = URL(string: paramIssueObject[0].solution.imageUrl)
+        afterImage.kf.setImage(with: afterurl)
+        
+        specialNoteTextView.text = paramIssueObject[0].solution.description
     }
 }
 
@@ -80,7 +91,7 @@ extension IssueValidationViewController: MTMapViewDelegate {
             mapView.baseMapType = .standard
             
             //맵 센터
-            mapView.setMapCenter( MTMapPoint(geoCoord: MTMapPointGeo(latitude: 37.44128488649227, longitude: 127.12907852966377)), zoomLevel: -2, animated: true)
+            mapView.setMapCenter( MTMapPoint(geoCoord: MTMapPointGeo(latitude: paramIssueObject[0].issue.lat, longitude: paramIssueObject[0].issue.lng)), zoomLevel: -2, animated: true)
             
             mapView.isUserInteractionEnabled = false
             
@@ -91,11 +102,16 @@ extension IssueValidationViewController: MTMapViewDelegate {
     }
     
     func setPin() {
-        let poiltem = MTMapPOIItem()
-        poiltem.itemName = "test"
-        poiltem.markerType = .redPin
-        poiltem.mapPoint = MTMapPoint(geoCoord: MTMapPointGeo(latitude: 37.44128488649227, longitude: 127.12907852966377))
-        mapView!.addPOIItems([poiltem])
+        let beforepoiltem = MTMapPOIItem()
+        beforepoiltem.itemName = "before"
+        beforepoiltem.markerType = .redPin
+        beforepoiltem.mapPoint = MTMapPoint(geoCoord: MTMapPointGeo(latitude: paramIssueObject[0].issue.lat, longitude: paramIssueObject[0].issue.lng))
+        mapView!.addPOIItems([beforepoiltem])
 
+        let afterpoiltem = MTMapPOIItem()
+        afterpoiltem.itemName = "after"
+        afterpoiltem.markerType = .bluePin
+        afterpoiltem.mapPoint = MTMapPoint(geoCoord: MTMapPointGeo(latitude: paramIssueObject[0].solution.lat, longitude: paramIssueObject[0].solution.lng))
+        mapView!.addPOIItems([afterpoiltem])
     }
 }

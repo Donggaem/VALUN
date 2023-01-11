@@ -22,13 +22,19 @@ struct VALUNURL {
     //MARK: - MyProfile
     static let myProfileURL = "http://valun.kro.kr/user/my/profile"
     
+    //MARK: - MyReportIssue
+    static let myReportIssueURL = "http://valun.kro.kr/user/my/issues"
+    
     //MARK: - RecentIssue
     static let recentIssueURL = "http://valun.kro.kr/issues/recent"
     
     //MARK: - NearIssue
     static let nearIssueURL = "http://valun.kro.kr/issues/around"
     
-    //MARK: - postIssue
+    //MARK: - reprotIssue
     static let reportIssueURL = "http://valun.kro.kr/issues"
+    
+    //MARK: - ResolutionIssue
+    static let resolutionIssueURL = "http://valun.kro.kr/solutions"
 }
 

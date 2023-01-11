@@ -18,6 +18,7 @@ class IssueDetailViewController: UIViewController {
     @IBOutlet var categoryLabel: UILabel!
     @IBOutlet var statusView: UIView!
     @IBOutlet var statusLabel: UILabel!
+    @IBOutlet var distanceImg: UIImageView!
     @IBOutlet var distanceLabel: UILabel!
     
     @IBOutlet var contentLabel: UILabel!
@@ -74,6 +75,12 @@ class IssueDetailViewController: UIViewController {
         statusLabel.text = paramIssueObject[0].status
         contentLabel.text = paramIssueObject[0].description
         distanceLabel.text = paramIssueDistance
+        
+        if distanceLabel.text == "" {
+            distanceImg.isHidden = true
+        }else {
+            distanceImg.isHidden = false
+        }
         
         //시간 변경 utc -> kst
         let time = utcToLocale(utcDate: paramIssueObject[0].createdAt, dateFormat: "yyyy. MM. dd")

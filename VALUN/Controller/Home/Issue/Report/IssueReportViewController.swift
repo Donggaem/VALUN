@@ -33,6 +33,8 @@ class IssueReportViewController: UIViewController {
     var paramlat = 0.0
     var paramlng = 0.0
     
+    //키 한글 -> 밸류 영어
+    var koToengDictionary: Dictionary<String, String> = ["PET":"pet,", "금속":"metal,", "종이":"paper,", "플라스틱":"plastic,", "일반쓰레기":"trash,", "스티로폼":"styrofoam,", "유리":"glass,", "음식물 쓰레기":"garbage,", "폐기물":"waste,", "목재":"lumber,", "비닐":"vinyl,", "기타":"etc,"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +77,7 @@ class IssueReportViewController: UIViewController {
     
     @IBAction func issueReportBtnPressed(_ sender: UIButton) {
         let description = contentTextView.text ?? ""
-        let category = "metal"
+        let category = koToengDictionary[categoryLabel.text ?? ""] ?? ""
         let lat = paramlat
         let lng = paramlng
         let image = imageData
