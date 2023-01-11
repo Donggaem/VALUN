@@ -9,16 +9,17 @@ import UIKit
 import DropDown
 
 class IssueDetailViewController: UIViewController {
-
+    
     @IBOutlet var optionBtn: UIButton!
     
     @IBOutlet var issueImage: UIImageView!
+    
     @IBOutlet var bitgaruLabel: UILabel!
     @IBOutlet var categoryLabel: UILabel!
-    @IBOutlet var outstandingBtn: UIButton!
-    @IBOutlet var resolvingBtn: UIButton!
-    @IBOutlet var resolvedBtn: UIButton!
-    @IBOutlet var destanceLabel: UILabel!
+    @IBOutlet var statusView: UIView!
+    @IBOutlet var statusLabel: UILabel!
+    @IBOutlet var distanceLabel: UILabel!
+    
     @IBOutlet var contentLabel: UILabel!
     @IBOutlet var issueDateLabel: UILabel!
     
@@ -31,34 +32,32 @@ class IssueDetailViewController: UIViewController {
     
     let dropDown = DropDown()
     
+    var paramIssueObject: [Issue] = []
+    var paramIssueDistance = ""
+    
+    //키 영어 -> 밸류 한글
+    var categoryDictionary: Dictionary<String, String> = ["pet":"PET", "metal":"금속", "paper":"종이", "plastic":"플라스틱", "trash":"일반쓰레기", "styrofoam":"스티로폼", "glass":"유리", "garbage":"음식물 쓰레기", "waste":"폐기물", "lumber":"목재", "vinyl":"비닐", "etc":"기타"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         setMap()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
         
     }
-
+    
     //MARK: - INNER Func
     private func setUI() {
         
         //네비바 숨김
         self.navigationController?.navigationBar.isHidden = true
         
-        //Button UI조정
-        //미해결
-        outstandingBtn.layer.cornerRadius = 12
-        outstandingBtn.layer.borderWidth = 1
-        outstandingBtn.layer.borderColor = UIColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 1).cgColor
+        //status(이슈상태)
+        statusView.layer.cornerRadius = 12
         
-        //해결중
-        resolvingBtn.layer.cornerRadius = 12
-        resolvingBtn.layer.borderWidth = 1
-        resolvingBtn.layer.borderColor = UIColor(red: 0.929, green: 0.424, blue: 0.404, alpha: 1).cgColor
-        
-        //해결완료
-        resolvedBtn.layer.cornerRadius = 12
-        resolvedBtn.layer.borderWidth = 1
-        resolvedBtn.layer.borderColor = UIColor(red: 0.416, green: 0.769, blue: 0.478, alpha: 1).cgColor
         
         //채팅
         chatBtn.layer.cornerRadius = 10
@@ -67,8 +66,33 @@ class IssueDetailViewController: UIViewController {
         
         //해결완료
         issueResolveBtn.layer.cornerRadius = 10
-
-
+        
+        //넘어온 데이터 처리
+        let url = URL(string: paramIssueObject[0].imageUrl)
+        issueImage.kf.setImage(with: url)
+        categoryLabel.text = categoryDictionary[paramIssueObject[0].category]
+        statusLabel.text = paramIssueObject[0].status
+        contentLabel.text = paramIssueObject[0].description
+        distanceLabel.text = paramIssueDistance
+        
+        //시간 변경 utc -> kst
+        let time = utcToLocale(utcDate: paramIssueObject[0].createdAt, dateFormat: "yyyy. MM. dd")
+        issueDateLabel.text = time
+        
+        //이슈상태 변환
+        if statusLabel.text == "UNSOLVED" {
+            statusLabel.text = "미해결"
+            statusView.backgroundColor = UIColor(red: 0.929, green: 0.424, blue: 0.404, alpha: 1)
+        }else if statusLabel.text == "PENDING" {
+            statusLabel.text = "해결중"
+            statusView.backgroundColor = UIColor(red: 0.462, green: 0.672, blue: 0.988, alpha: 1)
+        }else if statusLabel.text == "SOLVED" {
+            statusLabel.text = "해결완료"
+            statusView.backgroundColor = UIColor(red: 0.416, green: 0.769, blue: 0.478, alpha: 1)
+        }else if statusLabel.text == "REPORTED" {
+            statusLabel.text = "신고됨"
+            statusView.backgroundColor = UIColor(red: 0.486, green: 0.416, blue: 0.769, alpha: 1)
+        }
     }
     
     private func setDropDown() {
@@ -88,18 +112,34 @@ class IssueDetailViewController: UIViewController {
             
             if item == "수정" {
                 
-
+                
             }else {
                 
-
+                
             }
         }
+    }
+    
+    public func utcToLocale(utcDate : String, dateFormat: String) -> String
+    {
+        let dfFormat = DateFormatter()
+        dfFormat.dateFormat = "yyyy-MM-dd'T'hh:mm:ss.SSSZ"
+        dfFormat.timeZone = TimeZone(abbreviation: "UTC")
+        let dtUtcDate = dfFormat.date(from: utcDate)
+        
+        dfFormat.timeZone = TimeZone(abbreviation: "KST")
+        dfFormat.dateFormat = dateFormat
+        return dfFormat.string(from: dtUtcDate ?? Date())
+        
+//        dfFormat.timeZone = TimeZone.current
+//        dfFormat.dateFormat = dateFormat
+//        return dfFormat.string(from: dtUtcDate!)
     }
     
     //MARK: - IBAction
     @IBAction func backBtnPressed(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
-
+        
     }
     @IBAction func optionBtnPressed(_ sender: UIButton) {
         setDropDown()
@@ -124,10 +164,10 @@ extension IssueDetailViewController: MTMapViewDelegate {
             // 지도의 타입 설정 - hybrid: 하이브리드, satellite: 위성지도, standard: 기본지도
             mapView.baseMapType = .standard
             
-
+            
             
             //맵 센터
-            mapView.setMapCenter( MTMapPoint(geoCoord: MTMapPointGeo(latitude: 37.44128488649227, longitude: 127.12907852966377)), zoomLevel: -2, animated: true)
+            mapView.setMapCenter( MTMapPoint(geoCoord: MTMapPointGeo(latitude: paramIssueObject[0].lat, longitude: paramIssueObject[0].lng)), zoomLevel: -2, animated: true)
             
             mapView.isUserInteractionEnabled = false
             
@@ -141,8 +181,8 @@ extension IssueDetailViewController: MTMapViewDelegate {
         let poiltem = MTMapPOIItem()
         poiltem.itemName = "test"
         poiltem.markerType = .redPin
-        poiltem.mapPoint = MTMapPoint(geoCoord: MTMapPointGeo(latitude: 37.44128488649227, longitude: 127.12907852966377))
+        poiltem.mapPoint = MTMapPoint(geoCoord: MTMapPointGeo(latitude: paramIssueObject[0].lat, longitude: paramIssueObject[0].lng))
         mapView!.addPOIItems([poiltem])
-
+        
     }
 }

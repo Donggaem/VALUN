@@ -374,15 +374,6 @@
                                     <action selector="listBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hm0-oX-pvE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L49-Yj-iZ2">
-                                <rect key="frame" x="40" y="300" width="53.666666666666657" height="34.333333333333314"/>
-                                <color key="backgroundColor" red="0.4823529412" green="0.83529411760000005" blue="0.88235294119999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="모달"/>
-                                <connections>
-                                    <action selector="modalTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xr2-AM-DDu"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -396,10 +387,8 @@
                             <constraint firstItem="LtA-IP-JO4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="134" id="XSo-lh-OgH"/>
                             <constraint firstItem="ttg-jw-2ez" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ZrW-Lv-Fqb"/>
                             <constraint firstAttribute="bottom" secondItem="ttg-jw-2ez" secondAttribute="bottom" id="ZxC-aQ-La1"/>
-                            <constraint firstItem="L49-Yj-iZ2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="300" id="bzS-Ia-jFe"/>
                             <constraint firstItem="V6N-xp-Q5d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fxF-CV-H3O"/>
                             <constraint firstAttribute="bottom" secondItem="lVf-cw-vCp" secondAttribute="bottom" constant="-476" id="lVz-hl-iQK"/>
-                            <constraint firstItem="L49-Yj-iZ2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="nUK-xJ-LjR"/>
                             <constraint firstItem="lVf-cw-vCp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qdM-BW-o4d"/>
                             <constraint firstItem="V6N-xp-Q5d" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="44" id="rc4-SP-pQX"/>
                             <constraint firstItem="LJN-Jx-qEZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s9e-wT-p1G"/>
@@ -413,18 +402,17 @@
                     <connections>
                         <outlet property="categoryChoiceBtn" destination="egZ-Is-wX5" id="T7I-tL-5tl"/>
                         <outlet property="filterCollectionView" destination="UMx-We-elo" id="qLX-9n-TQf"/>
+                        <outlet property="filterListCollectionView" destination="4wn-TB-eGl" id="And-2Q-Q7o"/>
                         <outlet property="filterView" destination="LJN-Jx-qEZ" id="qOq-N9-Ohp"/>
                         <outlet property="filterViewConstraint" destination="9TQ-41-Ha0" id="ukH-Su-6ad"/>
                         <outlet property="filter_ApplyBtn" destination="WOt-QF-Fjc" id="GTf-Kl-bma"/>
                         <outlet property="filter_CancelBtn" destination="7f8-s1-KuI" id="esC-Fu-6GR"/>
-                        <outlet property="filter_OneCollectionView" destination="4wn-TB-eGl" id="And-2Q-Q7o"/>
                         <outlet property="listBtn" destination="LtA-IP-JO4" id="E9O-1Q-C9h"/>
                         <outlet property="listBtnBottomToListViewConstraint" destination="8uI-YZ-5a4" id="qie-0i-ztZ"/>
                         <outlet property="listBtnBottomToModalViewConstraint" destination="xfD-4u-VL5" id="87M-Tu-qfW"/>
                         <outlet property="listTableView" destination="7Lj-lQ-KEE" id="m8r-sn-hnC"/>
                         <outlet property="listView" destination="lVf-cw-vCp" id="Kv2-FP-IKz"/>
                         <outlet property="listViewBottomConstraint" destination="lVz-hl-iQK" id="FgH-uL-fNc"/>
-                        <outlet property="modalBtn" destination="L49-Yj-iZ2" id="ryQ-Tg-ntl"/>
                         <outlet property="modalCategory" destination="VIf-ix-Mjw" id="mQ6-3L-Pcd"/>
                         <outlet property="modalDetailBtn" destination="fAd-z3-jTv" id="ILy-iM-9n5"/>
                         <outlet property="modalDistance" destination="cLL-e5-mFg" id="gRJ-Lv-ka1"/>

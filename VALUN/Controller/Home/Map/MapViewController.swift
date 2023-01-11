@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import CoreLocation
 
 class MapViewController: UIViewController {
     
@@ -20,7 +21,7 @@ class MapViewController: UIViewController {
     @IBOutlet var filterView: UIView!
     
     @IBOutlet var filterViewConstraint: NSLayoutConstraint!
-    @IBOutlet var filter_OneCollectionView: UICollectionView!
+    @IBOutlet var filterListCollectionView: UICollectionView!
     
     
     @IBOutlet var filter_CancelBtn: UIButton!
@@ -30,7 +31,6 @@ class MapViewController: UIViewController {
     @IBOutlet var listBtn: UIButton!
     
     @IBOutlet var modalView: UIView!
-    @IBOutlet var modalBtn: UIButton!
     
     @IBOutlet var modalViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet var listBtnBottomToModalViewConstraint: NSLayoutConstraint!
@@ -41,10 +41,12 @@ class MapViewController: UIViewController {
     @IBOutlet var modalDistance: UILabel!
     @IBOutlet var modalDetailBtn: UIButton!
     @IBOutlet var modalSolveBtn: UIButton!
+    var modalObject: [Issue] = []
     
     @IBOutlet var listView: UIView!
     @IBOutlet var listViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet var listTableView: UITableView!
+    var listObject: [Issue] = []
     
     var tabletest1: [String] = ["test1", "test2", "test3"]
     var tabletest2: [String] = ["test1", "test2", "test3"]
@@ -55,6 +57,9 @@ class MapViewController: UIViewController {
     var filterTuple: [(String, Bool)] = [("PET", false), ("금속", false), ("종이", false), ("플라스틱", false), ("일반쓰레기", false), ("스티로폼", false), ("유리", false), ("음식물 쓰레기", false), ("폐기물", false), ("목재", false), ("비닐", false), ("기타", false)]
     
     var filterDictionary: Dictionary<String, String> = ["PET":"pet,", "금속":"metal,", "종이":"paper,", "플라스틱":"plastic,", "일반쓰레기":"trash,", "스티로폼":"styrofoam,", "유리":"glass,", "음식물 쓰레기":"garbage,", "폐기물":"waste,", "목재":"lumber,", "비닐":"vinyl,", "기타":"etc,"]
+    
+    //키 영어 -> 밸류 한글
+   var categoryDictionary: Dictionary<String, String> = ["pet":"PET", "metal":"금속", "paper":"종이", "plastic":"플라스틱", "trash":"일반쓰레기", "styrofoam":"스티로폼", "glass":"유리", "garbage":"음식물 쓰레기", "waste":"폐기물", "lumber":"목재", "vinyl":"비닐", "etc":"기타"]
     
     var filterStringList: [String] = []
     var filterString = ""
@@ -68,6 +73,10 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //필터 초기화
+        removeFilter()
+        
         setMap()
         setUI()
         setTableView()
@@ -78,12 +87,37 @@ class MapViewController: UIViewController {
         super.viewWillAppear(true)
         setMap()
         setUI()
-
+        setPin()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        removeFilter()
+        for item in mapView!.poiItems {
+            mapView!.remove(item as! MTMapPOIItem)
+        }
+        
+        //모달
+        // 제약조건
+        self.modalViewBottomConstraint.constant = -self.modalView.frame.height
+        self.listBtnBottomToModalViewConstraint.constant = 64
+        
+        // 애니메이션
+        UIView.animate(withDuration: 0.3, delay: 0, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        
     }
     
     //MARK: - IBAction
     
     @IBAction func backBtnPressed(_ sender: UIButton) {
+        for item in mapView!.poiItems {
+            mapView!.remove(item as! MTMapPOIItem)
+        }
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func categoryChoiceBtnPressed(_ sender: UIButton) {
@@ -94,12 +128,18 @@ class MapViewController: UIViewController {
     @IBAction func categoryDeleteBtnPressed(_ sender: UIButton) {
         categoryChoiceBtn.isHidden = false
         removeFilter()
+        for item in mapView!.poiItems {
+            mapView!.remove(item as! MTMapPOIItem)
+        }
     }
     
     @IBAction func filter_CancelBtnPressed(_ sender: UIButton) {
         
         self.filterViewConstraint.constant = -281
         removeFilter()
+        for item in mapView!.poiItems {
+            mapView!.remove(item as! MTMapPOIItem)
+        }
 
     }
     @IBAction func filter_ApplyBtnPressed(_ sender: UIButton) {
@@ -152,28 +192,6 @@ class MapViewController: UIViewController {
         
     }
     
-    @IBAction func modalTest(_ sender: UIButton) {
-        self.listBtnBottomToModalViewConstraint.isActive = true //리스트버튼과 모달뷰의 제약 온
-        
-        //커스텀 모달뷰 방법
-        // Bottom 제약조건 높이 조절
-        self.modalViewBottomConstraint.constant = 56 //모달뷰와 슈퍼뷰
-        self.listBtnBottomToModalViewConstraint.constant = 16 //리스트버튼과 모달뷰
-        self.listBtnBottomToListViewConstraint.isActive = false //리스트버튼과 리스트뷰의 제약 오프
-        
-        self.listViewBottomConstraint.constant = -self.listView.frame.height //리스트뷰와 슈퍼뷰
-        listBtn.setImage(UIImage(systemName: "list.bullet"), for: .normal)
-        listBtn.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
-        listBtn.setTitleColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
-        listBtn.setTitle("  목록보기", for: .normal)
-        listBtn.titleLabel?.font = UIFont(name: "SUIT-Regular", size: 14)
-        
-        // 애니메이션 실행
-        UIView.animate(withDuration: 0.3, delay: 0, animations: {
-            self.view.layoutIfNeeded()
-        }, completion: nil)
-        
-    }
     
     @IBAction func exitBtnPresed(_ sender: UIButton) {
         // 제약조건
@@ -188,24 +206,27 @@ class MapViewController: UIViewController {
     }
     @IBAction func modalDetailBtnPressed(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "IssueDetail", bundle: nil)
-        let issueDetailVC = storyBoard.instantiateViewController(identifier: "IssueDetailViewController")
+        let issueDetailVC = storyBoard.instantiateViewController(identifier: "IssueDetailViewController") as! IssueDetailViewController
         self.navigationController?.pushViewController(issueDetailVC, animated: true)
         
         // 현재 위치 트래킹
         mapView!.currentLocationTrackingMode = .off
         mapView!.showCurrentLocationMarker = false
+        
+        issueDetailVC.paramIssueObject = modalObject
+        let distance = modalDistance.text
+        issueDetailVC.paramIssueDistance = distance ?? ""
     }
     @IBAction func modalSolveBtnPressed(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "IssueResolution", bundle: nil)
-        let issueResolutionVC = storyBoard.instantiateViewController(identifier: "IssueResolutionViewController")
+        let issueResolutionVC = storyBoard.instantiateViewController(identifier: "IssueResolutionViewController") as! IssueResolutionViewController
         self.navigationController?.pushViewController(issueResolutionVC, animated: true)
+        
+        issueResolutionVC.paramIsssueObject = modalObject
     }
     
     //MARK: - Inner Func
     private func setUI() {
-        
-        //필터 초기화
-        removeFilter()
         
         //네비바 숨김
         self.navigationController?.navigationBar.isHidden = true
@@ -213,7 +234,6 @@ class MapViewController: UIViewController {
         // 뷰를 최상위로
         self.view.bringSubviewToFront(filterView)
         self.view.bringSubviewToFront(listBtn)
-        self.view.bringSubviewToFront(modalBtn)
         self.view.bringSubviewToFront(modalView)
         self.view.bringSubviewToFront(listView)
         
@@ -253,7 +273,7 @@ class MapViewController: UIViewController {
         let newValue: (String, Bool) = (filterTuple[index].0, !filterTuple[index].1)
         filterTuple[index] = newValue
         filterCollectionView.reloadData()
-        filter_OneCollectionView.reloadData()
+        filterListCollectionView.reloadData()
     }
     
     //필터 초기화
@@ -264,8 +284,11 @@ class MapViewController: UIViewController {
                 filterTuple[index] = changeValue
             }
         }
+        
+        nearIssueList.removeAll()
+        listTableView.reloadData()
         filterCollectionView.reloadData()
-        filter_OneCollectionView.reloadData()
+        filterListCollectionView.reloadData()
     }
     
     func filterToString() {
@@ -280,6 +303,15 @@ class MapViewController: UIViewController {
         
     }
     
+    //거리계산
+    private func  distance(lat: Double, lng: Double) -> Int{
+        let from = CLLocation(latitude: lat_now, longitude: lng_now)
+        let to = CLLocation(latitude: lat, longitude: lng)
+        
+        let distance = Int(from.distance(from: to))
+        return distance
+        
+    }
     
     //MARK: - Get RecentIssue
     let header: HTTPHeaders = ["authorization": UserDefaults.standard.string(forKey: "token")!]
@@ -295,7 +327,8 @@ class MapViewController: UIViewController {
                     if response.data != nil {
                         nearIssueList.removeAll()
                         nearIssueList = response.data?.issues ?? []
-                        print(nearIssueList)
+                        setPin()
+                        listTableView.reloadData()
                     }
                     
                 case .failure(let error):
@@ -323,6 +356,7 @@ extension MapViewController: MTMapViewDelegate {
             mapView.delegate = self
             // 지도의 타입 설정 - hybrid: 하이브리드, satellite: 위성지도, standard: 기본지도
             mapView.baseMapType = .standard
+            mapView.setZoomLevel(0, animated: true)
             
             // 현재 위치 트래킹
             mapView.currentLocationTrackingMode = .onWithoutHeading
@@ -335,11 +369,53 @@ extension MapViewController: MTMapViewDelegate {
     
     //핀찍기
     private func setPin() {
-        
+        var cnt = 0
+        for index in 0..<nearIssueList.endIndex {
+            let item = nearIssueList[index]
+            let poiltem = MTMapPOIItem()
+            poiltem.markerType = .customImage
+            poiltem.customImageName = "\(item.category)_pin"
+            poiltem.markerSelectedType = .customImage
+            poiltem.customSelectedImageName = "\(item.category)_pin"
+            poiltem.mapPoint = MTMapPoint(geoCoord: MTMapPointGeo(latitude: item.lat, longitude: item.lng))
+            poiltem.tag = cnt
+            mapView!.addPOIItems([poiltem])
+            cnt += 1
+        }
     }
     
     //핀 클릭
     func mapView(_ mapView: MTMapView!, selectedPOIItem poiItem: MTMapPOIItem!) -> Bool {
+        
+        //모달창
+        self.listBtnBottomToModalViewConstraint.isActive = true //리스트버튼과 모달뷰의 제약 온
+        
+        //커스텀 모달뷰 방법
+        // Bottom 제약조건 높이 조절
+        self.modalViewBottomConstraint.constant = 56 //모달뷰와 슈퍼뷰
+        self.listBtnBottomToModalViewConstraint.constant = 16 //리스트버튼과 모달뷰
+        self.listBtnBottomToListViewConstraint.isActive = false //리스트버튼과 리스트뷰의 제약 오프
+        
+        self.listViewBottomConstraint.constant = -self.listView.frame.height //리스트뷰와 슈퍼뷰
+        listBtn.setImage(UIImage(systemName: "list.bullet"), for: .normal)
+        listBtn.tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        listBtn.setTitleColor(UIColor(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
+        listBtn.setTitle("  목록보기", for: .normal)
+        listBtn.titleLabel?.font = UIFont(name: "SUIT-Regular", size: 14)
+        
+        // 애니메이션 실행
+        UIView.animate(withDuration: 0.3, delay: 0, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        
+        //모달창 정보
+        let url = URL(string: nearIssueList[poiItem.tag].imageUrl)
+        modalImage.kf.setImage(with: url) 
+        
+        modalCategory.text = categoryDictionary[nearIssueList[poiItem.tag].category]
+        modalDistance.text = "\(distance(lat: nearIssueList[poiItem.tag].lat, lng: nearIssueList[poiItem.tag].lng)) m"
+        
+        modalObject.append(nearIssueList[poiItem.tag])
         
         return false
     }
@@ -369,9 +445,9 @@ extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegat
         filterCollectionView.register(UINib(nibName: "FilterCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "FilterCollectionViewCell")
         filterCollectionView.showsHorizontalScrollIndicator = false
         
-        filter_OneCollectionView.delegate = self
-        filter_OneCollectionView.dataSource = self
-        filter_OneCollectionView.register(UINib(nibName: "FilterCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "FilterCollectionViewCell")
+        filterListCollectionView.delegate = self
+        filterListCollectionView.dataSource = self
+        filterListCollectionView.register(UINib(nibName: "FilterCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "FilterCollectionViewCell")
     }
 
     
@@ -388,7 +464,7 @@ extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegat
 
             }
 
-        }else if collectionView == filter_OneCollectionView {
+        }else if collectionView == filterListCollectionView {
             count = filterTuple.count
 
         }
@@ -407,7 +483,7 @@ extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegat
             
             filterStringList = filterTuple.filter{$0.1 == true}.map{$0.0}
             
-        }else if collectionView == filter_OneCollectionView {
+        }else if collectionView == filterListCollectionView {
             
             cell.filterTitle.text = filterTuple.map{$0.0}[indexPath.row]
             cell.filterTitle.textColor =  UIColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
@@ -435,7 +511,7 @@ extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegat
         if collectionView == filterCollectionView {
             let width: CGFloat = collectionView.frame.width / 4 - 1.0
             size = CGSize(width: width, height: 29)
-        } else if collectionView == filter_OneCollectionView {
+        } else if collectionView == filterListCollectionView {
             
             let width: CGFloat = collectionView.frame.width / 5 - 1.0
             size = CGSize(width: width, height: 29)
@@ -461,7 +537,6 @@ extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegat
 //MARK: - TableViewExtension
 extension MapViewController: UITableViewDataSource, UITableViewDelegate{
     
-    
     // TableView 셋팅
     private func setTableView() {
         self.listTableView.delegate = self
@@ -475,23 +550,50 @@ extension MapViewController: UITableViewDataSource, UITableViewDelegate{
     
     //Cell 갯수 반환
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tabletest1.count
+        return nearIssueList.count
     }
     
     //각Row에서 해당하는 Cell을 Return하는 메소드
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as! ListTableViewCell
         
-        cell.listCategory.text = tabletest1[indexPath.row]
-        cell.listDestance.text = tabletest2[indexPath.row]
-        cell.listImage.image = UIImage(named: tabletestImg[indexPath.row])
+        cell.delegate = self
+
+        let url = URL(string: nearIssueList[indexPath.row].imageUrl)
+        cell.listImage.kf.setImage(with: url)
+        
+        cell.listCategory.text = categoryDictionary[nearIssueList[indexPath.row].category]
+        cell.listDestance.text = "\(distance(lat: nearIssueList[indexPath.row].lat, lng: nearIssueList[indexPath.row].lng)) m"
         
         cell.selectionStyle = .none
+        
+        listObject.append(nearIssueList[indexPath.row])
+
         return cell
     }
     
     //클릭한 셀의 이벤트 처리
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "IssueDetail", bundle: nil)
+        let issueDetailVC = storyBoard.instantiateViewController(identifier: "IssueDetailViewController") as! IssueDetailViewController
+        self.navigationController?.pushViewController(issueDetailVC, animated: true)
         
+        issueDetailVC.paramIssueObject.append(nearIssueList[indexPath.row])
+        issueDetailVC.paramIssueDistance = "\(distance(lat: nearIssueList[indexPath.row].lat, lng: nearIssueList[indexPath.row].lng)) m"
+        
+        // 현재 위치 트래킹
+        mapView!.currentLocationTrackingMode = .off
+        mapView!.showCurrentLocationMarker = false
     }
+}
+
+extension MapViewController: NaviAction {
+    func moveSolveVC() {
+        let storyBoard = UIStoryboard(name: "IssueResolution", bundle: nil)
+        let issueResolutionVC = storyBoard.instantiateViewController(identifier: "IssueResolutionViewController") as! IssueResolutionViewController
+        self.navigationController?.pushViewController(issueResolutionVC, animated: true)
+        
+        issueResolutionVC.paramIsssueObject = listObject
+    }
+    
 }

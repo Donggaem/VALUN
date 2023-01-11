@@ -47,6 +47,9 @@ class HomeViewController: UIViewController {
     //최근 이슈
     var recentIssueList: [Issue] = []
     
+    //키 영어 -> 밸류 한글
+    var categoryDictionary: Dictionary<String, String> = ["pet":"PET", "metal":"금속", "paper":"종이", "plastic":"플라스틱", "trash":"일반쓰레기", "styrofoam":"스티로폼", "glass":"유리", "garbage":"음식물 쓰레기", "waste":"폐기물", "lumber":"목재", "vinyl":"비닐", "etc":"기타"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -344,7 +347,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         RecentIssueCollectionView.delegate = self
         RecentIssueCollectionView.dataSource = self
         RecentIssueCollectionView.register(UINib(nibName: "RecentIssueCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "RecentIssueCollectionViewCell")
-        
+        RecentIssueCollectionView.showsHorizontalScrollIndicator = false
+
     }
 
     
@@ -361,7 +365,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         let url = URL(string: recentIssueList[indexPath.row].imageUrl)
         cell.recentIssueImageView.kf.setImage(with: url)
         cell.destanceLabel.text = "\(distance(lat: recentIssueList[indexPath.row].lat, lng: recentIssueList[indexPath.row].lng)) m"
-        cell.issueCategoryLabel.text = recentIssueList[indexPath.row].category
+        cell.issueCategoryLabel.text = categoryDictionary[recentIssueList[indexPath.row].category]
         
         var issueDate = recentIssueList[indexPath.row].createdAt
         

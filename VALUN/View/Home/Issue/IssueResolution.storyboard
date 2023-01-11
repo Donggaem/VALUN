@@ -11,7 +11,7 @@
         <array key="Pretendard-Bold.otf">
             <string>Pretendard-Bold</string>
         </array>
-        <array key="Pretendard-Regular.ttf">
+        <array key="Pretendard-Regular.otf">
             <string>Pretendard-Regular</string>
         </array>
         <array key="SUIT-Bold.otf">
@@ -117,7 +117,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ipL-AY-uDG" userLabel="Body2View">
                                                 <rect key="frame" x="0.0" y="268" width="390" height="302"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aQZ-ce-ubp">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera2" translatesAutoresizingMaskIntoConstraints="NO" id="aQZ-ce-ubp">
                                                         <rect key="frame" x="73" y="16" width="317" height="260"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="317" id="WND-YP-My5"/>
@@ -346,6 +346,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera2" width="260" height="260"/>
         <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <systemColor name="labelColor">

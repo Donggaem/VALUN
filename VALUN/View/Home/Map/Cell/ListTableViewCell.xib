@@ -29,19 +29,19 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쓰레기 카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPX-Jd-Zoh">
-                        <rect key="frame" x="128" y="11" width="95.333333333333314" height="19"/>
+                        <rect key="frame" x="128" y="11.000000000000002" width="95" height="17.666666666666671"/>
                         <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJI-n7-joh">
-                        <rect key="frame" x="147" y="81" width="31.333333333333343" height="15"/>
+                        <rect key="frame" x="147" y="80.333333333333329" width="29.666666666666657" height="14"/>
                         <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="12"/>
                         <color key="textColor" red="0.41568627450000001" green="0.76862745099999996" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pp" translatesAutoresizingMaskIntoConstraints="NO" id="xg5-ng-fIk">
-                        <rect key="frame" x="128" y="81" width="15" height="15"/>
+                        <rect key="frame" x="128" y="79.666666666666671" width="15" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="YD9-nk-Z38"/>
                             <constraint firstAttribute="width" constant="15" id="jwn-P9-qXS"/>
@@ -58,6 +58,9 @@
                         <state key="normal" title="해결하기">
                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </state>
+                        <connections>
+                            <action selector="listSolveBtnPressed:" destination="rIn-XO-6XD" eventType="touchUpInside" id="KJw-s9-5gB"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

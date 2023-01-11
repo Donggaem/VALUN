@@ -7,8 +7,15 @@
 
 import UIKit
 
+protocol NaviAction: AnyObject {
+    
+    func moveSolveVC()
+}
+
 class ListTableViewCell: UITableViewCell {
 
+    weak var delegate: NaviAction?
+    
     @IBOutlet var listImage: UIImageView! {
         didSet {
             listImage.layer.cornerRadius = 10
@@ -23,6 +30,11 @@ class ListTableViewCell: UITableViewCell {
             listSolveBtn.layer.borderColor = UIColor(red: 0.416, green: 0.769, blue: 0.478, alpha: 1).cgColor
 
         }
+    }
+    
+    @IBAction func listSolveBtnPressed(_ sender: UIButton) {
+        print("해결하기 버튼 클릭")
+        self.delegate?.moveSolveVC()
     }
     
     override func awakeFromNib() {
