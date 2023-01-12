@@ -10,6 +10,10 @@
 		68A76CAEA9DF78B9FDDDFC98 /* Pods_VALUN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8260C6E4A81A06CEFE105FF2 /* Pods_VALUN.framework */; };
 		EB0A527A296E92250031B70B /* ResolutionIssueRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A5279296E92250031B70B /* ResolutionIssueRequest.swift */; };
 		EB0A527D296E92370031B70B /* ResolutionIssueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A527C296E92370031B70B /* ResolutionIssueResponse.swift */; };
+		EB1B3448297014DA00A6CCDE /* OverlapIdRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1B3447297014DA00A6CCDE /* OverlapIdRequest.swift */; };
+		EB1B344A297014F900A6CCDE /* OverlapIdResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1B3449297014F900A6CCDE /* OverlapIdResponse.swift */; };
+		EB1B344C2970150A00A6CCDE /* OverlapNickRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1B344B2970150A00A6CCDE /* OverlapNickRequest.swift */; };
+		EB1B344E2970151700A6CCDE /* OverlapNickResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1B344D2970151700A6CCDE /* OverlapNickResponse.swift */; };
 		EB1CAE2429656003009425EA /* I_Reported_IssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CAE2329656003009425EA /* I_Reported_IssueViewController.swift */; };
 		EB1CAE2629656032009425EA /* I_Reported_IssueTabmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CAE2529656032009425EA /* I_Reported_IssueTabmanViewController.swift */; };
 		EB1CAE28296560D6009425EA /* Reported_AllIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CAE27296560D6009425EA /* Reported_AllIssueViewController.swift */; };
@@ -147,6 +151,10 @@
 		905D43EDF5643BE800197714 /* Pods-VALUN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VALUN.debug.xcconfig"; path = "Target Support Files/Pods-VALUN/Pods-VALUN.debug.xcconfig"; sourceTree = "<group>"; };
 		EB0A5279296E92250031B70B /* ResolutionIssueRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolutionIssueRequest.swift; sourceTree = "<group>"; };
 		EB0A527C296E92370031B70B /* ResolutionIssueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolutionIssueResponse.swift; sourceTree = "<group>"; };
+		EB1B3447297014DA00A6CCDE /* OverlapIdRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlapIdRequest.swift; sourceTree = "<group>"; };
+		EB1B3449297014F900A6CCDE /* OverlapIdResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlapIdResponse.swift; sourceTree = "<group>"; };
+		EB1B344B2970150A00A6CCDE /* OverlapNickRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlapNickRequest.swift; sourceTree = "<group>"; };
+		EB1B344D2970151700A6CCDE /* OverlapNickResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlapNickResponse.swift; sourceTree = "<group>"; };
 		EB1CAE2329656003009425EA /* I_Reported_IssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = I_Reported_IssueViewController.swift; sourceTree = "<group>"; };
 		EB1CAE2529656032009425EA /* I_Reported_IssueTabmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = I_Reported_IssueTabmanViewController.swift; sourceTree = "<group>"; };
 		EB1CAE27296560D6009425EA /* Reported_AllIssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reported_AllIssueViewController.swift; sourceTree = "<group>"; };
@@ -325,6 +333,17 @@
 				EB0A527C296E92370031B70B /* ResolutionIssueResponse.swift */,
 			);
 			path = Issue;
+			sourceTree = "<group>";
+		};
+		EB1B3446297014B000A6CCDE /* Overlap */ = {
+			isa = PBXGroup;
+			children = (
+				EB1B3447297014DA00A6CCDE /* OverlapIdRequest.swift */,
+				EB1B3449297014F900A6CCDE /* OverlapIdResponse.swift */,
+				EB1B344B2970150A00A6CCDE /* OverlapNickRequest.swift */,
+				EB1B344D2970151700A6CCDE /* OverlapNickResponse.swift */,
+			);
+			path = Overlap;
 			sourceTree = "<group>";
 		};
 		EB1CAE2229655FF0009425EA /* I_Reported_Issue */ = {
@@ -648,6 +667,7 @@
 				EB9C1CF1296695F200F3F729 /* ErrorData.swift */,
 				EB1EA0CE296AB1AA00140622 /* Issue.swift */,
 				EBAE6525296FCD2F0026953C /* WithSolution.swift */,
+				EB1B3446297014B000A6CCDE /* Overlap */,
 				EB625F3929667C5E0084808A /* Login */,
 				EB625F3C29667D6E0084808A /* Signup */,
 				EB1EA0C8296A83ED00140622 /* Home */,
@@ -1008,6 +1028,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB625F4429667DE30084808A /* SignupResponse.swift in Sources */,
+				EB1B344E2970151700A6CCDE /* OverlapNickResponse.swift in Sources */,
 				EB1EA0D2296AC14500140622 /* ReportIssueRequest.swift in Sources */,
 				EB1CAE3529656206009425EA /* Solved_AllIssueViewController.swift in Sources */,
 				EBE33266295BF977001A615B /* FilterCollectionViewCell.swift in Sources */,
@@ -1043,12 +1064,15 @@
 				EB0A527A296E92250031B70B /* ResolutionIssueRequest.swift in Sources */,
 				EB1CAE2C29656108009425EA /* Reported_SolvingViewController.swift in Sources */,
 				EBAE6529296FD4430026953C /* MySolutionIssueResponse.swift in Sources */,
+				EB1B344C2970150A00A6CCDE /* OverlapNickRequest.swift in Sources */,
 				EB96628A29484D5B00040DCD /* AppDelegate.swift in Sources */,
+				EB1B3448297014DA00A6CCDE /* OverlapIdRequest.swift in Sources */,
 				EB1EA0CF296AB1AA00140622 /* Issue.swift in Sources */,
 				EB1EA0CB296A845000140622 /* MyProfileResponse.swift in Sources */,
 				EBE2EECF296D1EC400E33C4E /* NearIssueResponse.swift in Sources */,
 				EB1CAE2629656032009425EA /* I_Reported_IssueTabmanViewController.swift in Sources */,
 				EB1EA0CD296AB16D00140622 /* RecentIssueResponse.swift in Sources */,
+				EB1B344A297014F900A6CCDE /* OverlapIdResponse.swift in Sources */,
 				EB1CAE3129656187009425EA /* I_Solved_IssueViewController.swift in Sources */,
 				EBDAF2F6296EA22000C515A9 /* MyReportIssueResponse.swift in Sources */,
 				EBE2EED2296D280E00E33C4E /* ReportIssueCollectionViewCell.swift in Sources */,

@@ -60,7 +60,7 @@ class MapViewController: UIViewController {
     var filterDictionary: Dictionary<String, String> = ["PET":"pet,", "금속":"metal,", "종이":"paper,", "플라스틱":"plastic,", "일반쓰레기":"trash,", "스티로폼":"styrofoam,", "유리":"glass,", "음식물 쓰레기":"garbage,", "폐기물":"waste,", "목재":"lumber,", "비닐":"vinyl,", "기타":"etc,"]
     
     //키 영어 -> 밸류 한글
-   var categoryDictionary: Dictionary<String, String> = ["pet":"PET", "metal":"금속", "paper":"종이", "plastic":"플라스틱", "trash":"일반쓰레기", "styrofoam":"스티로폼", "glass":"유리", "garbage":"음식물 쓰레기", "waste":"폐기물", "lumber":"목재", "vinyl":"비닐", "etc":"기타"]
+    var categoryDictionary: Dictionary<String, String> = ["pet":"PET", "metal":"금속", "paper":"종이", "plastic":"플라스틱", "trash":"일반쓰레기", "styrofoam":"스티로폼", "glass":"유리", "garbage":"음식물 쓰레기", "waste":"폐기물", "lumber":"목재", "vinyl":"비닐", "etc":"기타"]
     
     var filterStringList: [String] = []
     var filterString = ""
@@ -82,35 +82,47 @@ class MapViewController: UIViewController {
         setUI()
         setTableView()
         setCollectionView()
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.5) {
+            self.getNearIssue()
+        }
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        print("뷰윌어피어")
+        for item in mapView!.poiItems {
+            mapView!.remove(item as! MTMapPOIItem)
+        }
         setMap()
         setUI()
         setPin()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        removeFilter()
-        for item in mapView!.poiItems {
-            mapView!.remove(item as! MTMapPOIItem)
-        }
-        
-        //모달
-        // 제약조건
-        self.modalViewBottomConstraint.constant = -self.modalView.frame.height
-        self.listBtnBottomToModalViewConstraint.constant = 64
-        
-        // 애니메이션
-        UIView.animate(withDuration: 0.3, delay: 0, animations: {
-            self.view.layoutIfNeeded()
-        }, completion: nil)
+        print("윌디스어피어")
+//        removeFilter()
+//        for item in mapView!.poiItems {
+//            mapView!.remove(item as! MTMapPOIItem)
+//        }
+//
+//        //모달
+//        // 제약조건
+//        self.modalViewBottomConstraint.constant = -self.modalView.frame.height
+//        self.listBtnBottomToModalViewConstraint.constant = 64
+//
+//        // 애니메이션
+//        UIView.animate(withDuration: 0.3, delay: 0, animations: {
+//            self.view.layoutIfNeeded()
+//        }, completion: nil)
         
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
-        
+        print("윌디드어피어")
+
     }
     
     //MARK: - IBAction
@@ -122,7 +134,6 @@ class MapViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func categoryChoiceBtnPressed(_ sender: UIButton) {
-
         self.filterViewConstraint.constant = 0
         
     }
@@ -132,6 +143,7 @@ class MapViewController: UIViewController {
         for item in mapView!.poiItems {
             mapView!.remove(item as! MTMapPOIItem)
         }
+        getNearIssue()
     }
     
     @IBAction func filter_CancelBtnPressed(_ sender: UIButton) {
@@ -141,9 +153,12 @@ class MapViewController: UIViewController {
         for item in mapView!.poiItems {
             mapView!.remove(item as! MTMapPOIItem)
         }
-
+        getNearIssue()
     }
     @IBAction func filter_ApplyBtnPressed(_ sender: UIButton) {
+        for item in mapView!.poiItems {
+            mapView!.remove(item as! MTMapPOIItem)
+        }
         
         self.filterViewConstraint.constant = -281
         filterToString()
@@ -275,6 +290,7 @@ class MapViewController: UIViewController {
         filterTuple[index] = newValue
         filterCollectionView.reloadData()
         filterListCollectionView.reloadData()
+        
     }
     
     //필터 초기화
@@ -286,6 +302,8 @@ class MapViewController: UIViewController {
             }
         }
         
+        filterString = ""
+        filterStringList.removeAll()
         nearIssueList.removeAll()
         listTableView.reloadData()
         filterCollectionView.reloadData()
@@ -295,6 +313,7 @@ class MapViewController: UIViewController {
     func filterToString() {
         var baseValue = ""
         var changeValue = ""
+        filterString = ""
         
         for index in 0..<filterStringList.endIndex {
             baseValue = filterStringList[index]
@@ -316,7 +335,7 @@ class MapViewController: UIViewController {
     
     //MARK: - Get RecentIssue
     let header: HTTPHeaders = ["authorization": UserDefaults.standard.string(forKey: "token")!]
-
+    
     private func getNearIssue() {
         AF.request("\(VALUNURL.nearIssueURL)?lat=\(lat_now)&lng=\(lng_now)&categories=\(filterString)", method: .get, headers: header)
             .validate()
@@ -342,7 +361,7 @@ class MapViewController: UIViewController {
                 }
             }
     }
-
+    
 }
 
 //MARK: - MapExtension
@@ -411,7 +430,7 @@ extension MapViewController: MTMapViewDelegate {
         
         //모달창 정보
         let url = URL(string: nearIssueList[poiItem.tag].imageUrl)
-        modalImage.kf.setImage(with: url) 
+        modalImage.kf.setImage(with: url)
         
         modalCategory.text = categoryDictionary[nearIssueList[poiItem.tag].category]
         modalDistance.text = "\(distance(lat: nearIssueList[poiItem.tag].lat, lng: nearIssueList[poiItem.tag].lng)) m"
@@ -423,15 +442,15 @@ extension MapViewController: MTMapViewDelegate {
     }
     
     //현 위치 트래킹 함수
-       func mapView(_ mapView: MTMapView!, updateCurrentLocation location: MTMapPoint!, withAccuracy accuracy: MTMapLocationAccuracy) {
-           let currentLocation = location?.mapPointGeo()
-           if let latitude = currentLocation?.latitude, let longitude = currentLocation?.longitude{
-//               print("MTMapView updateCurrentLocation (\(latitude),\(longitude)) accuracy (\(accuracy))")
-               lat_now = latitude
-               lng_now = longitude
-
-           }
-       }
+    func mapView(_ mapView: MTMapView!, updateCurrentLocation location: MTMapPoint!, withAccuracy accuracy: MTMapLocationAccuracy) {
+        let currentLocation = location?.mapPointGeo()
+        if let latitude = currentLocation?.latitude, let longitude = currentLocation?.longitude{
+            //               print("MTMapView updateCurrentLocation (\(latitude),\(longitude)) accuracy (\(accuracy))")
+            lat_now = latitude
+            lng_now = longitude
+            
+        }
+    }
 }
 
 //MARK: - CollectionViewExtension
@@ -451,7 +470,7 @@ extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegat
         filterListCollectionView.dataSource = self
         filterListCollectionView.register(UINib(nibName: "FilterCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "FilterCollectionViewCell")
     }
-
+    
     
     // CollectionView item 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -460,15 +479,15 @@ extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegat
             count = filterTuple.filter{$0.1 == true}.count
             if count == 0 {
                 categoryChoiceBtn.isHidden = false
-
+                removeFilter()
             }else {
                 categoryChoiceBtn.isHidden = true
-
+                
             }
-
+            
         }else if collectionView == filterListCollectionView {
             count = filterTuple.count
-
+            
         }
         
         return count
@@ -483,6 +502,7 @@ extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegat
             cell.filterTitle.textColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
             cell.filterView.backgroundColor = UIColor(red: 0.416, green: 0.769, blue: 0.478, alpha: 1)
             
+            filterStringList.removeAll()
             filterStringList = filterTuple.filter{$0.1 == true}.map{$0.0}
             
         }else if collectionView == filterListCollectionView {
@@ -491,18 +511,21 @@ extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegat
             cell.filterTitle.textColor =  UIColor(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
             cell.filterView.backgroundColor = UIColor(red: 0.933, green: 0.933, blue: 0.933, alpha: 1)
             cell.cellBool = filterTuple.map{$0.1}[indexPath.row]
-
+            
         }
         
-
+        
         
         return cell
     }
     
     // CollectionView Cell 터치
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if collectionView == filterListCollectionView {
+            cellClick(index: indexPath.row)
 
-        cellClick(index: indexPath.row)
+        }
         
     }
     
@@ -519,7 +542,7 @@ extension MapViewController: UICollectionViewDataSource, UICollectionViewDelegat
             size = CGSize(width: width, height: 29)
         }
         
-       
+        
         
         return size
     }
@@ -560,7 +583,7 @@ extension MapViewController: UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as! ListTableViewCell
         
         cell.delegate = self
-
+        
         let url = URL(string: nearIssueList[indexPath.row].imageUrl)
         cell.listImage.kf.setImage(with: url)
         
@@ -570,7 +593,7 @@ extension MapViewController: UITableViewDataSource, UITableViewDelegate{
         cell.selectionStyle = .none
         
         listObject.append(nearIssueList[indexPath.row])
-
+        
         return cell
     }
     

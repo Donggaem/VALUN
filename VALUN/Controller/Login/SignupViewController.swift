@@ -51,9 +51,15 @@ class SignupViewController: UIViewController {
     
     @IBAction func idOverlapBtnPressed(_ sender: UIButton) {
         
+        let id = idTextField.text ?? ""
+        let params = OverlapIdRequest(id: id)
+        postOverlapId(params)
     }
     @IBAction func nickOverlapBtnPressed(_ sender: UIButton) {
         
+        let nick = idTextField.text ?? ""
+        let params = OverlapNickRequest(nick: nick)
+        postOverlapNick(params)
     }
     @IBAction func signupBtnPressed(_ sender: UIButton) {
         let id = self.idTextField.text ?? ""
@@ -127,6 +133,102 @@ class SignupViewController: UIViewController {
                 = alertController.popoverPresentationController
         else {return}
         prepareForPopoverPresentation(alertControllerPopoverPresentationController)
+    }
+    
+    //MARK: - POSTOverlapId
+    private func postOverlapId(_ parameters: OverlapIdRequest){
+        
+        AF.request(VALUNURL.overlapIdURL, method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: nil)
+//            .validate(statusCode: 200..<300)
+            .validate()
+            .responseDecodable(of: OverlapIdResponse.self) { [self] response in
+                switch response.result {
+                case .success(let response):
+                    VALUNLog.debug("PostOverlapId - Success")
+                    
+                    if response.data != nil {
+                        if response.data?.available == true {
+                            let overlapId_alert = UIAlertController(title: "성공", message:"사용가능한 아이디입니다", preferredStyle: UIAlertController.Style.alert)
+                            let okAction = UIAlertAction(title: "확인", style: .default)
+                            overlapId_alert.addAction(okAction)
+                            present(overlapId_alert, animated: false, completion: nil)
+                        }else {
+                            let overlapId_alert = UIAlertController(title: "중복", message:"중복된 아이디입니다", preferredStyle: UIAlertController.Style.alert)
+                            let okAction = UIAlertAction(title: "확인", style: .default)
+                            overlapId_alert.addAction(okAction)
+                            present(overlapId_alert, animated: false, completion: nil)
+                        }
+                    }
+                    
+                    
+                case .failure(let error):
+                    VALUNLog.error("PostOverlapId - err")
+                    print(error.localizedDescription)
+                    if let statusCode = response.response?.statusCode {
+                        print("에러코드 : \(statusCode)")
+                        switch (statusCode) {
+                            case 400..<500:
+                            let loginFail_alert = UIAlertController(title: "실패", message:"아이디를 확인해 주세요", preferredStyle: UIAlertController.Style.alert)
+                            let okAction = UIAlertAction(title: "확인", style: .default)
+                            loginFail_alert.addAction(okAction)
+                            present(loginFail_alert, animated: false, completion: nil)
+                        default:
+                            let loginFail_alert = UIAlertController(title: "실패", message: "서버 통신 실패", preferredStyle: UIAlertController.Style.alert)
+                            let okAction = UIAlertAction(title: "확인", style: .default)
+                            loginFail_alert.addAction(okAction)
+                            present(loginFail_alert, animated: false, completion: nil)
+                        }
+                    }
+                }
+            }
+    }
+    
+    //MARK: - POSTOverlapNick
+    private func postOverlapNick(_ parameters: OverlapNickRequest){
+        
+        AF.request(VALUNURL.overlapNickURL, method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: nil)
+//            .validate(statusCode: 200..<300)
+            .validate()
+            .responseDecodable(of: OverlapNickResponse.self) { [self] response in
+                switch response.result {
+                case .success(let response):
+                    VALUNLog.debug("PostOverlapNick - Success")
+                    
+                    if response.data != nil {
+                        if response.data?.available == true {
+                            let overlapNick_alert = UIAlertController(title: "성공", message:"사용가능한 닉네임입니다", preferredStyle: UIAlertController.Style.alert)
+                            let okAction = UIAlertAction(title: "확인", style: .default)
+                            overlapNick_alert.addAction(okAction)
+                            present(overlapNick_alert, animated: false, completion: nil)
+                        }else {
+                            let overlapNick_alert = UIAlertController(title: "중복", message:"중복된 닉네임입니다", preferredStyle: UIAlertController.Style.alert)
+                            let okAction = UIAlertAction(title: "확인", style: .default)
+                            overlapNick_alert.addAction(okAction)
+                            present(overlapNick_alert, animated: false, completion: nil)
+                        }
+                    }
+                    
+                    
+                case .failure(let error):
+                    VALUNLog.error("PostOverlapNick - err")
+                    print(error.localizedDescription)
+                    if let statusCode = response.response?.statusCode {
+                        print("에러코드 : \(statusCode)")
+                        switch (statusCode) {
+                            case 400..<500:
+                            let loginFail_alert = UIAlertController(title: "실패", message:"닉네임을 확인해 주세요", preferredStyle: UIAlertController.Style.alert)
+                            let okAction = UIAlertAction(title: "확인", style: .default)
+                            loginFail_alert.addAction(okAction)
+                            present(loginFail_alert, animated: false, completion: nil)
+                        default:
+                            let loginFail_alert = UIAlertController(title: "실패", message: "서버 통신 실패", preferredStyle: UIAlertController.Style.alert)
+                            let okAction = UIAlertAction(title: "확인", style: .default)
+                            loginFail_alert.addAction(okAction)
+                            present(loginFail_alert, animated: false, completion: nil)
+                        }
+                    }
+                }
+            }
     }
     
     //MARK: - Post Signup

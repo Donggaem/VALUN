@@ -19,6 +19,12 @@ struct VALUNURL {
     //MARK: - Signup
     static let signupURL = "http://valun.kro.kr/user/signup"
     
+    //MARK: - OverlapId
+    static let overlapIdURL = "http://valun.kro.kr/user/exist/id"
+    
+    //MARK: - OverlapNick
+    static let overlapNickURL = "http://valun.kro.kr/user/exist/nick"
+    
     //MARK: - MyProfile
     static let myProfileURL = "http://valun.kro.kr/user/my/profile"
     
