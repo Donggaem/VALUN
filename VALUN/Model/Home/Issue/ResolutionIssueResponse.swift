@@ -10,4 +10,5 @@ import Foundation
 struct ResolutionIssueResponse: Decodable {
     var message: String
     var data: String?
+    var error: ErrorData?
 }

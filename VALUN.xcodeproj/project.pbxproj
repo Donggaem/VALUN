@@ -119,6 +119,7 @@
 		EBACD9CB29586DDD00EF1A5C /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBACD9CA29586DDD00EF1A5C /* MyProfileViewController.swift */; };
 		EBACD9D129586E3800EF1A5C /* IssueReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBACD9D029586E3800EF1A5C /* IssueReportViewController.swift */; };
 		EBACD9D329586E4B00EF1A5C /* IssueReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBACD9D229586E4B00EF1A5C /* IssueReport.storyboard */; };
+		EBAE6526296FCD2F0026953C /* WithSolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAE6525296FCD2F0026953C /* WithSolution.swift */; };
 		EBDAF2F6296EA22000C515A9 /* myReportIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDAF2F5296EA22000C515A9 /* myReportIssue.swift */; };
 		EBE2EECF296D1EC400E33C4E /* NearIssueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2EECE296D1EC400E33C4E /* NearIssueResponse.swift */; };
 		EBE2EED2296D280E00E33C4E /* ReportIssueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2EED1296D280E00E33C4E /* ReportIssueCollectionViewCell.swift */; };
@@ -265,6 +266,7 @@
 		EBACD9CA29586DDD00EF1A5C /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		EBACD9D029586E3800EF1A5C /* IssueReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueReportViewController.swift; sourceTree = "<group>"; };
 		EBACD9D229586E4B00EF1A5C /* IssueReport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IssueReport.storyboard; sourceTree = "<group>"; };
+		EBAE6525296FCD2F0026953C /* WithSolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithSolution.swift; sourceTree = "<group>"; };
 		EBDAF2F5296EA22000C515A9 /* myReportIssue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myReportIssue.swift; sourceTree = "<group>"; };
 		EBE2EECE296D1EC400E33C4E /* NearIssueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearIssueResponse.swift; sourceTree = "<group>"; };
 		EBE2EED1296D280E00E33C4E /* ReportIssueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportIssueCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -642,6 +644,7 @@
 				EB625F45296688950084808A /* VALUNURL.swift */,
 				EB9C1CF1296695F200F3F729 /* ErrorData.swift */,
 				EB1EA0CE296AB1AA00140622 /* Issue.swift */,
+				EBAE6525296FCD2F0026953C /* WithSolution.swift */,
 				EB625F3929667C5E0084808A /* Login */,
 				EB625F3C29667D6E0084808A /* Signup */,
 				EB1EA0C8296A83ED00140622 /* Home */,
@@ -1017,6 +1020,7 @@
 				EB6151812965ACB6008B743C /* PwChangeModalViewController.swift in Sources */,
 				EBFBA3FC29607A9E0038F0CE /* SignupViewController.swift in Sources */,
 				EB78C6F3295188FD0027DD1E /* LoginViewController.swift in Sources */,
+				EBAE6526296FCD2F0026953C /* WithSolution.swift in Sources */,
 				EB625F3B29667CC80084808A /* VALUNLog.swift in Sources */,
 				EB1CAE2E29656125009425EA /* Reported_CompletedViewController.swift in Sources */,
 				EB264853295AB95A0014BC89 /* ListTableViewCell.swift in Sources */,

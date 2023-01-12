@@ -7,6 +7,7 @@
 
 import UIKit
 import AVFoundation
+import Alamofire
 
 class IssueResolutionViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class IssueResolutionViewController: UIViewController {
     
     @IBOutlet var afterMarkView: UIView!
     @IBOutlet var afterImage: UIImageView!
+    var imageData: Data = Data()
     
     @IBOutlet var mapSubView: UIView!
     private var mapView: MTMapView?
@@ -28,6 +30,9 @@ class IssueResolutionViewController: UIViewController {
     let imagePickerController = UIImagePickerController()
     
     var paramIsssueObject: [Issue] = []
+    
+    var lat_now = 0.0
+    var lng_now = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +60,23 @@ class IssueResolutionViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func resolutionBtnPressed(_ sender: UIButton) {
+        let issueId = paramIsssueObject[0].id
+        let description = specialNoteTextView.text ?? ""
+        let lat = lat_now
+        let lng = lng_now
+        let image = imageData
         
+        print("======================")
+        print(issueId)
+        print(description)
+        print(lat)
+        print(lng)
+        print(image)
+        print("======================")
+
+        let params = ResolutionIssueRequest(issueId: issueId, description: description, lat: lat, lng: lng, image: image)
+        
+        postResolutionIssue(params)
     }
     
     //MARK: INNER Func
@@ -80,6 +101,70 @@ class IssueResolutionViewController: UIViewController {
         let url = URL(string: paramIsssueObject[0].imageUrl)
         beforeImage.kf.setImage(with: url)
         
+    }
+    
+    //MARK: - POSTResolutionIssue
+    
+    func postResolutionIssue(_ parameters: ResolutionIssueRequest) {
+        let headers: HTTPHeaders = ["Content - type": "multipart/form-data", "authorization": UserDefaults.standard.string(forKey: "token")!]
+        
+        AF.upload(multipartFormData: { (multipartFormData) in
+            let issueId = parameters.issueId
+            let description = parameters.description
+            let lat = parameters.lat
+            let lng = parameters.lng
+            
+            let parameters: [String: Any] = [
+                "description" : description,
+                "issueId" : issueId,
+                "lat" : lat,
+                "lng" : lng,
+            ]
+            
+            for (key, value) in parameters {
+                multipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
+            }
+            
+            self.imageData = self.afterImage.image?.jpegData(compressionQuality: 0.5) ?? Data()
+            
+            multipartFormData.append(self.imageData, withName: "image", fileName: "test.jpeg", mimeType: "image/jpeg")
+
+            
+        }, to: VALUNURL.reportIssueURL, method: .post, headers: headers).responseDecodable(of: ResolutionIssueResponse.self) {
+            [self] response in
+            switch response.result {
+            case .success(let response):
+                VALUNLog.debug("postResolutionIssue-success")
+                
+                let report_alert = UIAlertController(title: "성공", message: response.message, preferredStyle: UIAlertController.Style.alert)
+                let okAction = UIAlertAction(title: "확인", style: .default) { (action) in
+                    
+                    self.navigationController?.popViewController(animated: true)
+                    
+                }
+                report_alert.addAction(okAction)
+                present(report_alert, animated: false, completion: nil)
+                
+            case .failure(let error):
+                VALUNLog.error("postResolutionIssue - err")
+                print(error.localizedDescription)
+                if let statusCode = response.response?.statusCode {
+                    print("에러코드 : \(statusCode)")
+                    switch (statusCode) {
+                    case 400..<500:
+                        let reportFail_alert = UIAlertController(title: "실패", message:"입력을 확인해 주세요", preferredStyle: UIAlertController.Style.alert)
+                        let okAction = UIAlertAction(title: "확인", style: .default)
+                        reportFail_alert.addAction(okAction)
+                        present(reportFail_alert, animated: false, completion: nil)
+                    default:
+                        let reportFail_alert = UIAlertController(title: "실패", message: "서버 통신 실패", preferredStyle: UIAlertController.Style.alert)
+                        let okAction = UIAlertAction(title: "확인", style: .default)
+                        reportFail_alert.addAction(okAction)
+                        present(reportFail_alert, animated: false, completion: nil)
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -121,6 +206,16 @@ extension IssueResolutionViewController: MTMapViewDelegate {
         mapView!.addPOIItems([poiltem])
 
     }
+    
+    //현 위치 트래킹 함수
+       func mapView(_ mapView: MTMapView!, updateCurrentLocation location: MTMapPoint!, withAccuracy accuracy: MTMapLocationAccuracy) {
+           let currentLocation = location?.mapPointGeo()
+           if let latitude = currentLocation?.latitude, let longitude = currentLocation?.longitude{
+               lat_now = latitude
+               lng_now = longitude
+
+           }
+       }
 }
 //MARK: - Extension UIImagePicker
 extension IssueResolutionViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -153,6 +248,7 @@ extension IssueResolutionViewController: UIImagePickerControllerDelegate, UINavi
         
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             afterImage.image = image
+            imageData = image.jpegData(compressionQuality: 0.5) ?? Data()
         }
         
         picker.dismiss(animated: true, completion: nil) //dismiss를 직접 해야함
