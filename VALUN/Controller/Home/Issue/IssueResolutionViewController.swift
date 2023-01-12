@@ -130,7 +130,7 @@ class IssueResolutionViewController: UIViewController {
             multipartFormData.append(self.imageData, withName: "image", fileName: "test.jpeg", mimeType: "image/jpeg")
 
             
-        }, to: VALUNURL.reportIssueURL, method: .post, headers: headers).responseDecodable(of: ResolutionIssueResponse.self) {
+        }, to: VALUNURL.resolutionIssueURL, method: .post, headers: headers).responseDecodable(of: ResolutionIssueResponse.self) {
             [self] response in
             switch response.result {
             case .success(let response):

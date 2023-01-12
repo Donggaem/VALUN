@@ -12,11 +12,6 @@ class Reported_AllIssueViewController: UIViewController {
     
     @IBOutlet var allIssueTableView: UITableView!
     
-    var tabletest1: [String] = ["test1", "test2", "test3"]
-    var tabletest2: [String] = ["test1", "test2", "test3"]
-    var tabletest3: [String] = ["미해결", "해결중", "해결완료"]
-    var tabletestImg: [String] = ["common1", "common2", "common3"]
-    
     var unsolvedsList: [Issue] = []
     var pendingsList: [WithSolution] = []
     var solvedsList: [WithSolution] = []
@@ -44,7 +39,7 @@ class Reported_AllIssueViewController: UIViewController {
     private func getMyAllIssue() {
         AF.request(VALUNURL.myReportIssueURL, method: .get, headers: header)
             .validate()
-            .responseDecodable(of: myReportIssueResponse.self) { [weak self] response in
+            .responseDecodable(of: MyReportIssueResponse.self) { [weak self] response in
                 guard let self = self else {return}
                 switch response.result {
                 case .success(let response):

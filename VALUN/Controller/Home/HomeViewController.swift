@@ -186,7 +186,7 @@ class HomeViewController: UIViewController {
     private func getMyProfile() {
         AF.request(VALUNURL.myProfileURL, method: .get, headers: header)
             .validate()
-            .responseDecodable(of: myProfileResponse.self) { [weak self] response in
+            .responseDecodable(of: MyProfileResponse.self) { [weak self] response in
                 guard let self = self else {return}
                 switch response.result {
                 case .success(let response):

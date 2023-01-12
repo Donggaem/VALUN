@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct myProfileResponse: Decodable {
+struct MyProfileResponse: Decodable {
     
     var message: String
     var data: MyProfileData?

@@ -32,7 +32,7 @@ class Reported_SolvingViewController: UIViewController {
     private func getMyPendingIssue() {
         AF.request(VALUNURL.myReportIssueURL, method: .get, headers: header)
             .validate()
-            .responseDecodable(of: myReportIssueResponse.self) { [weak self] response in
+            .responseDecodable(of: MyReportIssueResponse.self) { [weak self] response in
                 guard let self = self else {return}
                 switch response.result {
                 case .success(let response):

@@ -33,7 +33,7 @@ class Reported_CompletedViewController: UIViewController {
     private func getMySolvedIssue() {
         AF.request(VALUNURL.myReportIssueURL, method: .get, headers: header)
             .validate()
-            .responseDecodable(of: myReportIssueResponse.self) { [weak self] response in
+            .responseDecodable(of: MyReportIssueResponse.self) { [weak self] response in
                 guard let self = self else {return}
                 switch response.result {
                 case .success(let response):

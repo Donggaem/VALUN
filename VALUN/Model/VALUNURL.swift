@@ -25,6 +25,9 @@ struct VALUNURL {
     //MARK: - MyReportIssue
     static let myReportIssueURL = "http://valun.kro.kr/user/my/issues"
     
+    //MARK: - MySolutionIssue
+    static let mySoltionIssueURL = "http://valun.kro.kr/user/my/solutions"
+    
     //MARK: - RecentIssue
     static let recentIssueURL = "http://valun.kro.kr/issues/recent"
     
@@ -37,5 +40,6 @@ struct VALUNURL {
     //MARK: - ResolutionIssue
     static let resolutionIssueURL = "http://valun.kro.kr/solutions"
 
+        
 }
 

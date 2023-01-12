@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Sl-OP-puL">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -18,11 +17,11 @@
             <objects>
                 <viewController storyboardIdentifier="I_Solved_IssueViewController" id="pA8-EX-JLk" customClass="I_Solved_IssueViewController" customModule="VALUN" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EqL-RN-ZNk">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dqz-Uh-7I3" userLabel="naviView">
-                                <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iY8-Au-Wv2">
                                         <rect key="frame" x="19" y="15" width="20" height="20"/>
@@ -39,13 +38,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내가 해결한 이슈" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JsS-BJ-J9A">
-                                        <rect key="frame" x="136.33333333333334" y="11" width="117.33333333333334" height="21"/>
+                                        <rect key="frame" x="240.66666666666663" y="11" width="119" height="21"/>
                                         <fontDescription key="fontDescription" name="Pretendard-Bold" family="Pretendard" pointSize="18"/>
                                         <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NjP-h3-4iN">
-                                        <rect key="frame" x="352.66666666666669" y="14" width="18.333333333333314" height="22"/>
+                                        <rect key="frame" x="562.66666666666663" y="14" width="18.333333333333371" height="22"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="ellipsis" catalog="system"/>
@@ -66,7 +65,7 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Cr-fr-nyS">
-                                <rect key="frame" x="0.0" y="88" width="390" height="722"/>
+                                <rect key="frame" x="0.0" y="88" width="600" height="512"/>
                                 <connections>
                                     <segue destination="KZ9-E3-wNs" kind="embed" id="ng9-CZ-K2x"/>
                                 </connections>
@@ -147,7 +146,7 @@
                     </view>
                     <size key="freeformSize" width="390" height="722"/>
                     <connections>
-                        <outlet property="solvingTableView" destination="8TR-UA-Ruq" id="VlE-ja-xLH"/>
+                        <outlet property="pendingTableView" destination="8TR-UA-Ruq" id="VlE-ja-xLH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JAu-0M-12j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -209,7 +208,7 @@
                     </view>
                     <size key="freeformSize" width="390" height="722"/>
                     <connections>
-                        <outlet property="completedTableView" destination="WVd-Ia-ti3" id="Mur-dK-RvE"/>
+                        <outlet property="solvedTableView" destination="WVd-Ia-ti3" id="Mur-dK-RvE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uoQ-BM-XTa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

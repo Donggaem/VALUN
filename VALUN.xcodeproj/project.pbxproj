@@ -23,7 +23,7 @@
 		EB1CAE392965625E009425EA /* Solved_CompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CAE382965625E009425EA /* Solved_CompletedViewController.swift */; };
 		EB1CAE3D296563D5009425EA /* MyIssueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB1CAE3C296563D5009425EA /* MyIssueTableViewCell.xib */; };
 		EB1CAE4029656615009425EA /* MyIssueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1CAE3F29656615009425EA /* MyIssueTableViewCell.swift */; };
-		EB1EA0CB296A845000140622 /* myProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1EA0CA296A845000140622 /* myProfileResponse.swift */; };
+		EB1EA0CB296A845000140622 /* MyProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1EA0CA296A845000140622 /* MyProfileResponse.swift */; };
 		EB1EA0CD296AB16D00140622 /* RecentIssueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1EA0CC296AB16D00140622 /* RecentIssueResponse.swift */; };
 		EB1EA0CF296AB1AA00140622 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1EA0CE296AB1AA00140622 /* Issue.swift */; };
 		EB1EA0D2296AC14500140622 /* ReportIssueRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1EA0D1296AC14500140622 /* ReportIssueRequest.swift */; };
@@ -120,7 +120,8 @@
 		EBACD9D129586E3800EF1A5C /* IssueReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBACD9D029586E3800EF1A5C /* IssueReportViewController.swift */; };
 		EBACD9D329586E4B00EF1A5C /* IssueReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBACD9D229586E4B00EF1A5C /* IssueReport.storyboard */; };
 		EBAE6526296FCD2F0026953C /* WithSolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAE6525296FCD2F0026953C /* WithSolution.swift */; };
-		EBDAF2F6296EA22000C515A9 /* myReportIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDAF2F5296EA22000C515A9 /* myReportIssue.swift */; };
+		EBAE6529296FD4430026953C /* MySolutionIssueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAE6528296FD4430026953C /* MySolutionIssueResponse.swift */; };
+		EBDAF2F6296EA22000C515A9 /* MyReportIssueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDAF2F5296EA22000C515A9 /* MyReportIssueResponse.swift */; };
 		EBE2EECF296D1EC400E33C4E /* NearIssueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2EECE296D1EC400E33C4E /* NearIssueResponse.swift */; };
 		EBE2EED2296D280E00E33C4E /* ReportIssueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE2EED1296D280E00E33C4E /* ReportIssueCollectionViewCell.swift */; };
 		EBE2EED5296D283600E33C4E /* ReportIssueCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBE2EED4296D283600E33C4E /* ReportIssueCollectionViewCell.xib */; };
@@ -159,7 +160,7 @@
 		EB1CAE382965625E009425EA /* Solved_CompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solved_CompletedViewController.swift; sourceTree = "<group>"; };
 		EB1CAE3C296563D5009425EA /* MyIssueTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyIssueTableViewCell.xib; sourceTree = "<group>"; };
 		EB1CAE3F29656615009425EA /* MyIssueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyIssueTableViewCell.swift; sourceTree = "<group>"; };
-		EB1EA0CA296A845000140622 /* myProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myProfileResponse.swift; sourceTree = "<group>"; };
+		EB1EA0CA296A845000140622 /* MyProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileResponse.swift; sourceTree = "<group>"; };
 		EB1EA0CC296AB16D00140622 /* RecentIssueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentIssueResponse.swift; sourceTree = "<group>"; };
 		EB1EA0CE296AB1AA00140622 /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		EB1EA0D1296AC14500140622 /* ReportIssueRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportIssueRequest.swift; sourceTree = "<group>"; };
@@ -267,7 +268,8 @@
 		EBACD9D029586E3800EF1A5C /* IssueReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueReportViewController.swift; sourceTree = "<group>"; };
 		EBACD9D229586E4B00EF1A5C /* IssueReport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = IssueReport.storyboard; sourceTree = "<group>"; };
 		EBAE6525296FCD2F0026953C /* WithSolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithSolution.swift; sourceTree = "<group>"; };
-		EBDAF2F5296EA22000C515A9 /* myReportIssue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myReportIssue.swift; sourceTree = "<group>"; };
+		EBAE6528296FD4430026953C /* MySolutionIssueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySolutionIssueResponse.swift; sourceTree = "<group>"; };
+		EBDAF2F5296EA22000C515A9 /* MyReportIssueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReportIssueResponse.swift; sourceTree = "<group>"; };
 		EBE2EECE296D1EC400E33C4E /* NearIssueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearIssueResponse.swift; sourceTree = "<group>"; };
 		EBE2EED1296D280E00E33C4E /* ReportIssueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportIssueCollectionViewCell.swift; sourceTree = "<group>"; };
 		EBE2EED4296D283600E33C4E /* ReportIssueCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportIssueCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -390,8 +392,9 @@
 		EB1EA0C9296A83FC00140622 /* MyProfile */ = {
 			isa = PBXGroup;
 			children = (
+				EBAE6527296FD41C0026953C /* MySolutionIssue */,
 				EBDAF2F4296EA18400C515A9 /* MyReportIssue */,
-				EB1EA0CA296A845000140622 /* myProfileResponse.swift */,
+				EB1EA0CA296A845000140622 /* MyProfileResponse.swift */,
 			);
 			path = MyProfile;
 			sourceTree = "<group>";
@@ -685,10 +688,18 @@
 			path = VALUN;
 			sourceTree = "<group>";
 		};
+		EBAE6527296FD41C0026953C /* MySolutionIssue */ = {
+			isa = PBXGroup;
+			children = (
+				EBAE6528296FD4430026953C /* MySolutionIssueResponse.swift */,
+			);
+			path = MySolutionIssue;
+			sourceTree = "<group>";
+		};
 		EBDAF2F4296EA18400C515A9 /* MyReportIssue */ = {
 			isa = PBXGroup;
 			children = (
-				EBDAF2F5296EA22000C515A9 /* myReportIssue.swift */,
+				EBDAF2F5296EA22000C515A9 /* MyReportIssueResponse.swift */,
 			);
 			path = MyReportIssue;
 			sourceTree = "<group>";
@@ -1031,14 +1042,15 @@
 				EB27564C2963F7D800BC8073 /* RejectedModalViewController.swift in Sources */,
 				EB0A527A296E92250031B70B /* ResolutionIssueRequest.swift in Sources */,
 				EB1CAE2C29656108009425EA /* Reported_SolvingViewController.swift in Sources */,
+				EBAE6529296FD4430026953C /* MySolutionIssueResponse.swift in Sources */,
 				EB96628A29484D5B00040DCD /* AppDelegate.swift in Sources */,
 				EB1EA0CF296AB1AA00140622 /* Issue.swift in Sources */,
-				EB1EA0CB296A845000140622 /* myProfileResponse.swift in Sources */,
+				EB1EA0CB296A845000140622 /* MyProfileResponse.swift in Sources */,
 				EBE2EECF296D1EC400E33C4E /* NearIssueResponse.swift in Sources */,
 				EB1CAE2629656032009425EA /* I_Reported_IssueTabmanViewController.swift in Sources */,
 				EB1EA0CD296AB16D00140622 /* RecentIssueResponse.swift in Sources */,
 				EB1CAE3129656187009425EA /* I_Solved_IssueViewController.swift in Sources */,
-				EBDAF2F6296EA22000C515A9 /* myReportIssue.swift in Sources */,
+				EBDAF2F6296EA22000C515A9 /* MyReportIssueResponse.swift in Sources */,
 				EBE2EED2296D280E00E33C4E /* ReportIssueCollectionViewCell.swift in Sources */,
 				EB96628C29484D5B00040DCD /* SceneDelegate.swift in Sources */,
 				EB625F4229667DCD0084808A /* SignupRequest.swift in Sources */,

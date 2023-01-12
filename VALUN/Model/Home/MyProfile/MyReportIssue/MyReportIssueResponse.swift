@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct myReportIssueResponse: Decodable {
+struct MyReportIssueResponse: Decodable {
     var message: String
-    var data: myReportIssueData?
+    var data: MyReportIssueData?
     var error: ErrorData?
 }
 
-struct myReportIssueData: Decodable {
+struct MyReportIssueData: Decodable {
     var unsolveds: [Issue]
     var pendings: [WithSolution]
     var solveds: [WithSolution]
