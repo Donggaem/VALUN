@@ -27,6 +27,7 @@ class IssueValidationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         setUI()
         setMap()
     }
@@ -97,8 +98,9 @@ extension IssueValidationViewController: MTMapViewDelegate {
             
             mapSubView.addSubview(mapView)
             
-            setPin()
+            
         }
+        setPin()
     }
     
     func setPin() {
@@ -106,12 +108,14 @@ extension IssueValidationViewController: MTMapViewDelegate {
         beforepoiltem.itemName = "before"
         beforepoiltem.markerType = .redPin
         beforepoiltem.mapPoint = MTMapPoint(geoCoord: MTMapPointGeo(latitude: paramIssueObject[0].issue.lat, longitude: paramIssueObject[0].issue.lng))
-        mapView!.addPOIItems([beforepoiltem])
+        mapView!.add(beforepoiltem)
 
         let afterpoiltem = MTMapPOIItem()
         afterpoiltem.itemName = "after"
         afterpoiltem.markerType = .bluePin
         afterpoiltem.mapPoint = MTMapPoint(geoCoord: MTMapPointGeo(latitude: paramIssueObject[0].solution.lat, longitude: paramIssueObject[0].solution.lng))
-        mapView!.addPOIItems([afterpoiltem])
+        mapView!.add(afterpoiltem)
+
     }
+    
 }

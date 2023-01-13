@@ -155,6 +155,11 @@ class IssueDetailViewController: UIViewController {
     }
     
     @IBAction func issueResolveBtnPressed(_ sender: UIButton) {
+        let storyBoard = UIStoryboard(name: "IssueResolution", bundle: nil)
+        let issueResolutionVC = storyBoard.instantiateViewController(identifier: "IssueResolutionViewController") as! IssueResolutionViewController
+        self.navigationController?.pushViewController(issueResolutionVC, animated: true)
+        
+        issueResolutionVC.paramIsssueObject = paramIssueObject
     }
 }
 
