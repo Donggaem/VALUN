@@ -184,9 +184,10 @@ extension IssueResolutionViewController: MTMapViewDelegate {
             mapView.setZoomLevel(-2, animated: true)
             
             // 현재 위치 트래킹
-            mapView.currentLocationTrackingMode = .onWithoutHeading
-            mapView.showCurrentLocationMarker = true
-            
+            DispatchQueue.main.async {
+                mapView.currentLocationTrackingMode = .onWithoutHeading
+                mapView.showCurrentLocationMarker = true
+            }
 //            //맵 센터
 //            mapView.setMapCenter( MTMapPoint(geoCoord: MTMapPointGeo(latitude: 37.44128488649227, longitude: 127.12907852966377)), zoomLevel: -2, animated: true)
             

@@ -1236,11 +1236,17 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VALUN/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "앱에서 카메라 앱에 접근하여 사진을 찍으려고 합니다. 허용하시겠습니까?";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "앱에서 위치 정보 제공을 허용하시겠습니까?";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "앱에서 위치 정보 제공을 허용하시겠습니까?";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "앱에서 위치 정보 제공을 허용하시겠습니까?";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앱에서 사진첩에 접근하여 사진을 선택하려 합니다. 허용하시겠습니까?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Login;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1271,11 +1277,17 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VALUN/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "앱에서 카메라 앱에 접근하여 사진을 찍으려고 합니다. 허용하시겠습니까?";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "앱에서 위치 정보 제공을 허용하시겠습니까?";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "앱에서 위치 정보 제공을 허용하시겠습니까?";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "앱에서 위치 정보 제공을 허용하시겠습니까?";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앱에서 사진첩에 접근하여 사진을 선택하려 합니다. 허용하시겠습니까?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Login;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

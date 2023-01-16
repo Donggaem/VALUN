@@ -129,13 +129,20 @@ class IssueDetailViewController: UIViewController {
     
     public func utcToLocale(utcDate : String, dateFormat: String) -> String
     {
-        let dfFormat = DateFormatter()
-        dfFormat.dateFormat = "yyyy-MM-dd'T'hh:mm:ss.SSSZ"
-        dfFormat.timeZone = TimeZone(abbreviation: "UTC")
-        let dtUtcDate = dfFormat.date(from: utcDate)
+        let inputDate = utcDate.split(separator: "T").map{String($0)}[0]
         
+        let dfFormat = DateFormatter()
+        //dfFormat.dateFormat = "yyyy-MM-dd'T'hh:mm:ss.SSSZ"
+        dfFormat.dateFormat = "yyyy-MM-dd"
+        print("🔥[DEBUG] \(inputDate)")
+        dfFormat.locale = Locale(identifier: "ko-KR")
+        dfFormat.timeZone = TimeZone(abbreviation: "UTC")
+        let dtUtcDate = dfFormat.date(from: inputDate)
+        
+        print("🔥[DEBUG] \(dtUtcDate)")
         dfFormat.timeZone = TimeZone(abbreviation: "KST")
         dfFormat.dateFormat = dateFormat
+        print("🔥[DEBUG] \(dtUtcDate)")
         return dfFormat.string(from: dtUtcDate ?? Date())
         
 //        dfFormat.timeZone = TimeZone.current
@@ -175,8 +182,6 @@ extension IssueDetailViewController: MTMapViewDelegate {
             mapView.delegate = self
             // 지도의 타입 설정 - hybrid: 하이브리드, satellite: 위성지도, standard: 기본지도
             mapView.baseMapType = .standard
-            
-            
             
             //맵 센터
             mapView.setMapCenter( MTMapPoint(geoCoord: MTMapPointGeo(latitude: paramIssueObject[0].lat, longitude: paramIssueObject[0].lng)), zoomLevel: -2, animated: true)

@@ -369,22 +369,33 @@ extension MapViewController: MTMapViewDelegate {
     
     private func setMap() {
         // 지도 불러오기
-        mapView = MTMapView(frame: subView.frame)
         
-        if let mapView = mapView {
-            // 델리게이트 연결
-            mapView.delegate = self
-            // 지도의 타입 설정 - hybrid: 하이브리드, satellite: 위성지도, standard: 기본지도
-            mapView.baseMapType = .standard
-            mapView.setZoomLevel(0, animated: true)
+       // DispatchQueue.main.async { [weak self] in
+            // 2022 wwdc what's new swift 참고
+       //     guard let self else { return }
             
-            // 현재 위치 트래킹
-            mapView.currentLocationTrackingMode = .onWithoutHeading
-            mapView.showCurrentLocationMarker = true
+            self.mapView = MTMapView(frame: self.subView.frame)
             
-            self.view.addSubview(mapView)
             
-        }
+            if let mapView = self.mapView {
+                // 델리게이트 연결
+                mapView.delegate = self
+                // 지도의 타입 설정 - hybrid: 하이브리드, satellite: 위성지도, standard: 기본지도
+                mapView.baseMapType = .standard
+                mapView.setZoomLevel(0, animated: true)
+                
+                // 현재 위치 트래킹
+                DispatchQueue.main.async {
+                    mapView.currentLocationTrackingMode = .onWithoutHeading
+                    mapView.showCurrentLocationMarker = true
+                    
+                }
+                
+                self.view.addSubview(mapView)
+            }
+        //}
+        
+        
     }
     
     //핀찍기

@@ -94,7 +94,7 @@ extension IssueValidationViewController: MTMapViewDelegate {
             //맵 센터
             mapView.setMapCenter( MTMapPoint(geoCoord: MTMapPointGeo(latitude: paramIssueObject[0].issue.lat, longitude: paramIssueObject[0].issue.lng)), zoomLevel: -2, animated: true)
             
-            mapView.isUserInteractionEnabled = false
+//            mapView.isUserInteractionEnabled = false
             
             mapSubView.addSubview(mapView)
             
@@ -106,15 +106,17 @@ extension IssueValidationViewController: MTMapViewDelegate {
     func setPin() {
         let beforepoiltem = MTMapPOIItem()
         beforepoiltem.itemName = "before"
-        beforepoiltem.markerType = .redPin
+        beforepoiltem.markerType = .customImage
+        beforepoiltem.customImageName = "question"
         beforepoiltem.mapPoint = MTMapPoint(geoCoord: MTMapPointGeo(latitude: paramIssueObject[0].issue.lat, longitude: paramIssueObject[0].issue.lng))
-        mapView!.add(beforepoiltem)
+        mapView!.addPOIItems([beforepoiltem])
 
         let afterpoiltem = MTMapPOIItem()
         afterpoiltem.itemName = "after"
-        afterpoiltem.markerType = .bluePin
+        afterpoiltem.markerType = .customImage
+        afterpoiltem.customImageName = "exclamation"
         afterpoiltem.mapPoint = MTMapPoint(geoCoord: MTMapPointGeo(latitude: paramIssueObject[0].solution.lat, longitude: paramIssueObject[0].solution.lng))
-        mapView!.add(afterpoiltem)
+        mapView!.addPOIItems([afterpoiltem])
 
     }
     
