@@ -23,6 +23,7 @@ class IssueValidationViewController: UIViewController {
     @IBOutlet var refusalBtn: UIButton!
     @IBOutlet var acceptBtn: UIButton!
     
+    @IBOutlet var completedBtn: UIButton!
     var paramIssueObject: [WithSolution] = []
     
     override func viewDidLoad() {
@@ -66,6 +67,24 @@ class IssueValidationViewController: UIViewController {
         
         refusalBtn.layer.cornerRadius = 10
         acceptBtn.layer.cornerRadius = 10
+        
+        completedBtn.layer.cornerRadius = 10
+        completedBtn.isHidden = true
+        completedBtn.isEnabled = false
+        
+        if paramIssueObject[0].issue.status == "SOLVED" {
+            if paramIssueObject[0].issue.isMine == true {
+                completedBtn.isHidden = false
+
+            }
+        } else if paramIssueObject[0].issue.status == "PENDING" {
+            if paramIssueObject[0].solution.isMine == true {
+                completedBtn.isHidden = false
+                completedBtn.setTitle("해결 검증중", for: .normal)
+            }
+        }
+        
+       
         
         //넘어온데이터 처리
         let beforeurl = URL(string: paramIssueObject[0].issue.imageUrl)

@@ -166,14 +166,16 @@ class HomeViewController: UIViewController {
     }
     
     func timeGap(issueDate: String) -> String {
+        print("🔥[DEBUG]\(issueDate)")
         
         let date = Date()
         let format = DateFormatter()
-        format.dateFormat = "yyyy-MM-dd'T'hh:mm:ss.SSSZ"
-        format.timeZone = TimeZone(identifier: TimeZone.current.identifier)
-        format.locale = Locale(identifier: Locale.current.identifier)
+        format.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+//        format.dateFormat = "yyyy-MM-dd'T'hh"
+        format.timeZone = TimeZone(abbreviation: "UTC")
+//        format.locale = Locale(identifier: "ko_KR")
         let aDate = format.date(from: issueDate)
-       
+        
         let formatter = RelativeDateTimeFormatter()
         formatter.locale = Locale(identifier: "ko_KR")
         let dateString = formatter.localizedString(for: aDate ?? Date(), relativeTo: date)

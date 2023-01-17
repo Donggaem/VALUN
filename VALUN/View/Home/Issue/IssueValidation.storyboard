@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Pretendard-Bold.otf">
+        <array key="Pretendard-Bold.ttf">
             <string>Pretendard-Bold</string>
         </array>
-        <array key="Pretendard-Regular.otf">
+        <array key="Pretendard-Regular.ttf">
             <string>Pretendard-Regular</string>
         </array>
         <array key="SUIT-Bold.otf">
@@ -267,16 +267,29 @@
                                                             <action selector="acceptBtnPressed:" destination="dkz-AN-V7R" eventType="touchUpInside" id="lpw-sS-5xa"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxz-Ve-84u">
+                                                        <rect key="frame" x="22" y="0.0" width="346" height="52"/>
+                                                        <color key="backgroundColor" red="0.41568627450000001" green="0.76862745099999996" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="18"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="해결 완료">
+                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="lxz-Ve-84u" firstAttribute="leading" secondItem="M8H-hG-pir" secondAttribute="leading" constant="22" id="261-ZN-pvE"/>
                                                     <constraint firstItem="Czg-ks-qWc" firstAttribute="top" secondItem="M8H-hG-pir" secondAttribute="top" id="4cn-t0-Ddg"/>
                                                     <constraint firstAttribute="height" constant="100" id="5Us-S1-1G8"/>
                                                     <constraint firstItem="IiD-Fd-VFA" firstAttribute="top" secondItem="M8H-hG-pir" secondAttribute="top" id="6E3-s1-nTr"/>
+                                                    <constraint firstItem="lxz-Ve-84u" firstAttribute="top" secondItem="M8H-hG-pir" secondAttribute="top" id="9LM-6d-o3B"/>
                                                     <constraint firstAttribute="trailing" secondItem="IiD-Fd-VFA" secondAttribute="trailing" constant="22" id="9vp-tg-gjV"/>
                                                     <constraint firstAttribute="bottom" secondItem="Czg-ks-qWc" secondAttribute="bottom" constant="48" id="CDW-VR-dDZ"/>
                                                     <constraint firstAttribute="bottom" secondItem="IiD-Fd-VFA" secondAttribute="bottom" constant="48" id="Mah-ho-pHL"/>
                                                     <constraint firstItem="IiD-Fd-VFA" firstAttribute="leading" secondItem="Czg-ks-qWc" secondAttribute="trailing" constant="8" id="UL2-re-kjG"/>
+                                                    <constraint firstAttribute="bottom" secondItem="lxz-Ve-84u" secondAttribute="bottom" constant="48" id="iR4-vX-FZU"/>
+                                                    <constraint firstAttribute="trailing" secondItem="lxz-Ve-84u" secondAttribute="trailing" constant="22" id="lR7-xA-vka"/>
                                                     <constraint firstItem="Czg-ks-qWc" firstAttribute="leading" secondItem="M8H-hG-pir" secondAttribute="leading" constant="22" id="pNy-fR-bdZ"/>
                                                 </constraints>
                                             </view>
@@ -338,6 +351,7 @@
                         <outlet property="afterMarkView" destination="2iY-b9-FCm" id="Aa8-K7-tY5"/>
                         <outlet property="beforeImage" destination="chC-PY-aTz" id="Mlu-0Z-cfU"/>
                         <outlet property="beforeMarkView" destination="Aml-na-EhF" id="gkW-ag-oKQ"/>
+                        <outlet property="completedBtn" destination="lxz-Ve-84u" id="qSU-cX-eKI"/>
                         <outlet property="mapSubView" destination="XQx-Zt-P22" id="abL-mO-ghY"/>
                         <outlet property="refusalBtn" destination="Czg-ks-qWc" id="PJb-IW-VXf"/>
                         <outlet property="specialNoteTextView" destination="tKX-cc-9HS" id="hbM-oM-5wq"/>

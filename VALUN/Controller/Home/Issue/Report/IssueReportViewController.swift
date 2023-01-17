@@ -42,6 +42,11 @@ class IssueReportViewController: UIViewController {
         setUI()
         setImagePicker()
         setTextView()
+        
+//        // 카메라 권한
+//        AVCaptureDevice.requestAccess(for: .video) { (result) in
+//            print(result)
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -100,6 +100,11 @@ class IssueDetailViewController: UIViewController {
             statusLabel.text = "신고됨"
             statusView.backgroundColor = UIColor(red: 0.486, green: 0.416, blue: 0.769, alpha: 1)
         }
+        
+        if paramIssueObject[0].isMine == true {
+            issueResolveBtn.setTitle("내가 제보한 이슈", for: .normal)
+            issueResolveBtn.isEnabled = false
+        }
     }
     
     private func setDropDown() {
@@ -134,15 +139,12 @@ class IssueDetailViewController: UIViewController {
         let dfFormat = DateFormatter()
         //dfFormat.dateFormat = "yyyy-MM-dd'T'hh:mm:ss.SSSZ"
         dfFormat.dateFormat = "yyyy-MM-dd"
-        print("🔥[DEBUG] \(inputDate)")
         dfFormat.locale = Locale(identifier: "ko-KR")
         dfFormat.timeZone = TimeZone(abbreviation: "UTC")
         let dtUtcDate = dfFormat.date(from: inputDate)
         
-        print("🔥[DEBUG] \(dtUtcDate)")
         dfFormat.timeZone = TimeZone(abbreviation: "KST")
         dfFormat.dateFormat = dateFormat
-        print("🔥[DEBUG] \(dtUtcDate)")
         return dfFormat.string(from: dtUtcDate ?? Date())
         
 //        dfFormat.timeZone = TimeZone.current
@@ -197,7 +199,8 @@ extension IssueDetailViewController: MTMapViewDelegate {
     func setPin() {
         let poiltem = MTMapPOIItem()
         poiltem.itemName = "test"
-        poiltem.markerType = .redPin
+        poiltem.markerType = .customImage
+        poiltem.customImageName = "question"
         poiltem.mapPoint = MTMapPoint(geoCoord: MTMapPointGeo(latitude: paramIssueObject[0].lat, longitude: paramIssueObject[0].lng))
         mapView!.addPOIItems([poiltem])
         

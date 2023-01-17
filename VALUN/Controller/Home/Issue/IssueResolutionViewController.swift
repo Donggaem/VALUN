@@ -202,7 +202,8 @@ extension IssueResolutionViewController: MTMapViewDelegate {
     func setPin() {
         let poiltem = MTMapPOIItem()
         poiltem.itemName = "test"
-        poiltem.markerType = .redPin
+        poiltem.markerType = .customImage
+        poiltem.customImageName = "question"
         poiltem.mapPoint = MTMapPoint(geoCoord: MTMapPointGeo(latitude: paramIsssueObject[0].lat, longitude: paramIsssueObject[0].lng))
         mapView!.addPOIItems([poiltem])
 

@@ -8,9 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="MPLUS1Code-Medium.ttf">
-            <string>MPLUS1Code-Medium</string>
-        </array>
         <array key="SUIT-Bold.otf">
             <string>SUIT-Bold</string>
         </array>
@@ -28,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ie-QZ-8Ru">
-                                <rect key="frame" x="30" y="464.66666666666669" width="330" height="45"/>
+                                <rect key="frame" x="30" y="463.33333333333331" width="330" height="45"/>
                                 <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="mta-xR-EyH"/>
@@ -43,12 +40,12 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="KZ4-tk-RG6" userLabel="아비Stack View">
-                                <rect key="frame" x="30" y="307" width="330" height="112.66666666666669"/>
+                                <rect key="frame" x="30" y="307" width="330" height="111.33333333333331"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="oBz-1O-UHu" userLabel="아이디Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="330" height="34.333333333333336"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ehdrua" placeholder="아이디" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="n5h-5C-fpn">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이디" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="n5h-5C-fpn">
                                                 <rect key="frame" x="0.0" y="0.0" width="330" height="19.333333333333332"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
@@ -64,16 +61,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="mRM-Ag-Q7E" userLabel="비밀번호Stack View">
-                                        <rect key="frame" x="0.0" y="78.333333333333314" width="330" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="78.333333333333314" width="330" height="33"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ldh-te-1zz">
-                                                <rect key="frame" x="0.0" y="0.0" width="330" height="19.333333333333332"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ldh-te-1zz">
+                                                <rect key="frame" x="0.0" y="0.0" width="330" height="18"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="THc-Hp-exp">
-                                                <rect key="frame" x="0.0" y="33.333333333333371" width="330" height="1"/>
+                                                <rect key="frame" x="0.0" y="32" width="330" height="1"/>
                                                 <color key="backgroundColor" systemColor="labelColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="dlq-Em-T4b"/>
@@ -84,16 +81,16 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VALUN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1e-jZ-DEZ">
-                                <rect key="frame" x="106.66666666666669" y="134" width="177" height="70"/>
+                                <rect key="frame" x="95.333333333333329" y="134" width="199.66666666666669" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="NeB-xS-dYg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="MPLUS1Code-Medium" family="M PLUS 1 Code" pointSize="55"/>
+                                <fontDescription key="fontDescription" name="SUIT-Bold" family="SUIT" pointSize="55"/>
                                 <color key="textColor" red="0.41568627450000001" green="0.76862745099999996" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ju0-8v-Zol" userLabel="회가,아비찾Stack View">
-                                <rect key="frame" x="200" y="523.66666666666663" width="160" height="12"/>
+                                <rect key="frame" x="200" y="522.33333333333337" width="160" height="12"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IAE-KH-hwL">
                                         <rect key="frame" x="0.0" y="0.0" width="42" height="12"/>
