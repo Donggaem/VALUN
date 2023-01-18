@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		68A76CAEA9DF78B9FDDDFC98 /* Pods_VALUN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8260C6E4A81A06CEFE105FF2 /* Pods_VALUN.framework */; };
+		EB043A0C297649F6007E45AC /* AcceptIssueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB043A0B297649F6007E45AC /* AcceptIssueResponse.swift */; };
+		EB043A0F29764DE0007E45AC /* AcceptIssueRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB043A0E29764DE0007E45AC /* AcceptIssueRequest.swift */; };
 		EB0A527A296E92250031B70B /* ResolutionIssueRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A5279296E92250031B70B /* ResolutionIssueRequest.swift */; };
 		EB0A527D296E92370031B70B /* ResolutionIssueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A527C296E92370031B70B /* ResolutionIssueResponse.swift */; };
 		EB1B3448297014DA00A6CCDE /* OverlapIdRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1B3447297014DA00A6CCDE /* OverlapIdRequest.swift */; };
@@ -149,6 +151,8 @@
 		50F5DC97A33750D68DF498B2 /* Pods-VALUN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VALUN.release.xcconfig"; path = "Target Support Files/Pods-VALUN/Pods-VALUN.release.xcconfig"; sourceTree = "<group>"; };
 		8260C6E4A81A06CEFE105FF2 /* Pods_VALUN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VALUN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		905D43EDF5643BE800197714 /* Pods-VALUN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VALUN.debug.xcconfig"; path = "Target Support Files/Pods-VALUN/Pods-VALUN.debug.xcconfig"; sourceTree = "<group>"; };
+		EB043A0B297649F6007E45AC /* AcceptIssueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptIssueResponse.swift; sourceTree = "<group>"; };
+		EB043A0E29764DE0007E45AC /* AcceptIssueRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptIssueRequest.swift; sourceTree = "<group>"; };
 		EB0A5279296E92250031B70B /* ResolutionIssueRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolutionIssueRequest.swift; sourceTree = "<group>"; };
 		EB0A527C296E92370031B70B /* ResolutionIssueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolutionIssueResponse.swift; sourceTree = "<group>"; };
 		EB1B3447297014DA00A6CCDE /* OverlapIdRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlapIdRequest.swift; sourceTree = "<group>"; };
@@ -326,6 +330,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		EB043A0D29764DC8007E45AC /* AcceptIssue */ = {
+			isa = PBXGroup;
+			children = (
+				EB043A0B297649F6007E45AC /* AcceptIssueResponse.swift */,
+				EB043A0E29764DE0007E45AC /* AcceptIssueRequest.swift */,
+			);
+			path = AcceptIssue;
+			sourceTree = "<group>";
+		};
 		EB0A5278296E91EF0031B70B /* Issue */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +424,7 @@
 		EB1EA0C9296A83FC00140622 /* MyProfile */ = {
 			isa = PBXGroup;
 			children = (
+				EB043A0D29764DC8007E45AC /* AcceptIssue */,
 				EBAE6527296FD41C0026953C /* MySolutionIssue */,
 				EBDAF2F4296EA18400C515A9 /* MyReportIssue */,
 				EB1EA0CA296A845000140622 /* MyProfileResponse.swift */,
@@ -1067,6 +1081,7 @@
 				EB1B344C2970150A00A6CCDE /* OverlapNickRequest.swift in Sources */,
 				EB96628A29484D5B00040DCD /* AppDelegate.swift in Sources */,
 				EB1B3448297014DA00A6CCDE /* OverlapIdRequest.swift in Sources */,
+				EB043A0C297649F6007E45AC /* AcceptIssueResponse.swift in Sources */,
 				EB1EA0CF296AB1AA00140622 /* Issue.swift in Sources */,
 				EB1EA0CB296A845000140622 /* MyProfileResponse.swift in Sources */,
 				EBE2EECF296D1EC400E33C4E /* NearIssueResponse.swift in Sources */,
@@ -1079,6 +1094,7 @@
 				EB96628C29484D5B00040DCD /* SceneDelegate.swift in Sources */,
 				EB625F4229667DCD0084808A /* SignupRequest.swift in Sources */,
 				EBEAE22E2962B8130015BB82 /* IssueValidationViewController.swift in Sources */,
+				EB043A0F29764DE0007E45AC /* AcceptIssueRequest.swift in Sources */,
 				EB625F46296688950084808A /* VALUNURL.swift in Sources */,
 				EB625F3E29667DA80084808A /* LoginRequest.swift in Sources */,
 			);

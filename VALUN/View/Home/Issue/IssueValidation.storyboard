@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Pretendard-Bold.ttf">
+        <array key="Pretendard-Bold.otf">
             <string>Pretendard-Bold</string>
         </array>
-        <array key="Pretendard-Regular.ttf">
+        <array key="Pretendard-Regular.otf">
             <string>Pretendard-Regular</string>
         </array>
         <array key="SUIT-Bold.otf">
@@ -353,6 +353,7 @@
                         <outlet property="beforeMarkView" destination="Aml-na-EhF" id="gkW-ag-oKQ"/>
                         <outlet property="completedBtn" destination="lxz-Ve-84u" id="qSU-cX-eKI"/>
                         <outlet property="mapSubView" destination="XQx-Zt-P22" id="abL-mO-ghY"/>
+                        <outlet property="naviTitleLabel" destination="HSo-fH-vZa" id="Wip-Sd-ECV"/>
                         <outlet property="refusalBtn" destination="Czg-ks-qWc" id="PJb-IW-VXf"/>
                         <outlet property="specialNoteTextView" destination="tKX-cc-9HS" id="hbM-oM-5wq"/>
                     </connections>

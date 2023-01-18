@@ -46,6 +46,7 @@ struct VALUNURL {
     //MARK: - ResolutionIssue
     static let resolutionIssueURL = "http://valun.kro.kr/solutions"
 
-        
+    //MARK: - IssueAccept
+    static let acceptIssueURL = "http://valun.kro.kr/solutions/accept"
 }
 

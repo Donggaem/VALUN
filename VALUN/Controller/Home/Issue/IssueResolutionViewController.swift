@@ -136,7 +136,7 @@ class IssueResolutionViewController: UIViewController {
             case .success(let response):
                 VALUNLog.debug("postResolutionIssue-success")
                 
-                let report_alert = UIAlertController(title: "성공", message: response.message, preferredStyle: UIAlertController.Style.alert)
+                let report_alert = UIAlertController(title: "성공", message: "해결제보가 완료되었습니다", preferredStyle: UIAlertController.Style.alert)
                 let okAction = UIAlertAction(title: "확인", style: .default) { (action) in
                     
                     self.navigationController?.popViewController(animated: true)

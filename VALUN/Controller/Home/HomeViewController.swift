@@ -166,7 +166,6 @@ class HomeViewController: UIViewController {
     }
     
     func timeGap(issueDate: String) -> String {
-        print("🔥[DEBUG]\(issueDate)")
         
         let date = Date()
         let format = DateFormatter()
